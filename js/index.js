@@ -15,7 +15,7 @@ $(document).on("pageinit", "#home", function () {
     if ($("#login").length > 0 || $("#mdp").length > 0) {
       $.ajax({
         method: "POST",
-        url : 'http://localhost/testForm-back/traitement_connexion.php',
+        url : 'http://localhost/backend/traitement_connexion.php',
         data: $('#formConnexion').serialize(),
         success: function (data) {
           var reponse = JSON.parse(data);
