@@ -1,0 +1,100 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #34A853;
+	border: none;
+	color: white;
+}
+
+
+.ui-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	height: 100%
+	width:100%;
+}
+
+.ui-content a {
+	/*border: 1px solid black;*/
+	height: 9.7em;
+	width: 9.7em;
+	margin: 0.2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: red;
+	background-color: white;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+.ui-content a:hover
+{
+	box-shadow: 0 2px 2px 2px
+				rgba(0,0,0,0.14),0 2px 2px 2px
+				rgba(0,0,0,0.12),0 2px 2px -5px
+				rgba(0,0,0,0.3);
+	/*border: 1px solid red;*/
+	transition: 0.7s;
+}
+
+#head{
+	background-color: #34A853;
+	color: white;
+}
+
+#achatBtn
+{
+	background-image: url(../img/tickets.png);
+	background-size: cover;
+	background-color: #fff;
+	transition: 0.7s;
+}
+
+#menuBtn
+{
+	background-image: url(../img/menu.png);
+	background-size: cover;
+}
+
+#paramBtn
+{
+	background-image: url(../img/param.png);
+	background-size: cover;
+}
+
+#confirmBtn
+{
+	background-image: url(../img/confirm.png);
+	background-size: cover;
+}
+
+#qrCodeBtn
+
+{
+	background-image: url(../img/qr.png);
+	background-size: cover;
+}
+
+
+.btn-compter {
+    width: auto!important;
+    height: auto!important;
+    margin-left: 200px;
+    text-align: right;
+}
+.btn-ticket {
+    position: absolute;
+}
