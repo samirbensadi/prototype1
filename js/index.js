@@ -42,7 +42,7 @@ $(document).on("pageinit", "#home", function () {
 
   // AU TAP DU BOUTON SE DECONNECTER
 
-    $('#logout').on('tap', function () {
+    $('#logOut').on('tap', function () {
       window.localStorage.clear(); // effacer le localStorage
       $.mobile.changePage($('#home'),{transition : "slide", reverse: true}); // retourner à la page home
     });

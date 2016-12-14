@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
-
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css">
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
     <script type="text/javascript" src="js/index.js"></script>
 
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Miam App</title>
   </head>
@@ -23,12 +19,12 @@
 <!-- PAGE D'ACCUEIL -->
 
     <div data-role="page" id="home">
-      <div data-role="header">
+      <div data-role="header" id="headAccueil">
         <h1>Bienvenue</h1>
       </div>
-      <div class="ui-content">
-        <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">J'ai un compte</a>
-        <a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">S'inscrire</a>
+      <div id="popForm" class="ui-content">
+          <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">J'ai un compte</a>
+          <a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">S'inscrire</a>
 
         <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
               <form method="POST" id="formConnexion">
@@ -40,8 +36,6 @@
 
                   <input type="password" name="mdp" id="mdp" placeholder="Password">
 
-                  <label for="log">Keep me logged in</label>
-                  <input type="checkbox" name="login" id="log" value="1" data-mini="true">
 
                   <button id="btnCo" data-inline="true">Se connecter</button>
 
@@ -57,9 +51,9 @@
     <div data-role="page" id="mainmenu">
 
       <!-- Header de la page -->
-      <section data-role="header" id="head">
+      <section data-role="header" id="headMenu">
         <h1>Utilisateur</h1>
-        <a id="logout" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-power">Se déconnecter</a>
+        <a id="logOut" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-power">log out</a>
     
       </section>
 

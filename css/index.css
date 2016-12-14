@@ -5,6 +5,13 @@
 	box-sizing: border-box;
 }
 
+
+/*************************************
+			MENU PRINCIPAL
+**************************************/
+
+
+#head
 {
 	display: flex;
 	flex-direction: column;
@@ -13,6 +20,15 @@
 	background-color: #34A853;
 	border: none;
 	color: white;
+}
+
+
+#logOut
+{
+	margin-top: 0.5em;
+	background-color: #D52E2E;
+	color: white;
+
 }
 
 
@@ -50,7 +66,8 @@
 	transition: 0.7s;
 }
 
-#head{
+#headMenu
+{
 	background-color: #34A853;
 	color: white;
 }
@@ -98,3 +115,50 @@
 .btn-ticket {
     position: absolute;
 }
+
+
+/*************************************
+			PAGE ACCUEIL
+**************************************/
+
+#headAccueil
+{
+	background-color: #34A853;
+	color: white;
+
+}
+
+#popForm
+{
+	height: 20em;
+	width: 98%;
+	margin:0px 3px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 7em;
+	background-color: rgba(0,0,0,0.5);
+}
+
+#popForm a
+{
+	height: 4em;
+	width: 20em;
+}
+
+
+
+#myPopup
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4em;
+	padding: 4em; 
+}
+
+
+
+
