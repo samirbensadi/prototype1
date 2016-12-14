@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-
+<head>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css">
 
@@ -12,174 +11,312 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Miam App</title>
-  </head>
+</head>
 
-  <body>
+<body onload="prix()">
 
-<!-- PAGE D'ACCUEIL -->
+    <!-- PAGE D'ACCUEIL -->
 
     <div data-role="page" id="home">
-      <div data-role="header" id="headAccueil">
-        <h1>Bienvenue</h1>
-      </div>
-      <div id="popForm" class="ui-content">
-          <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">J'ai un compte</a>
-          <a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">S'inscrire</a>
-
-        <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-              <form method="POST" id="formConnexion">
-                <div>
-
-                  <h3>Login information</h3>
-
-                  <input type="text" name="login" id="login" placeholder="Username">
-
-                  <input type="password" name="mdp" id="mdp" placeholder="Password">
-
-
-                  <button id="btnCo" data-inline="true">Se connecter</button>
-
-                </div>
-
-              </form>
-
+        <div data-role="header" id="headAccueil">
+            <h1>Bienvenue</h1>
         </div>
-      </div>
+        <div data-role="content" id="coForm" class="ui-content">
+
+                <form method="POST" id="formConnexion">
+                    <div>
+
+                        <h3>Login information</h3>
+
+                        <input type="text" name="login" id="login" placeholder="Username">
+
+                        <input type="password" name="mdp" id="mdp" placeholder="Password">
+
+
+                        <button id="btnCo" data-inline="true">Se connecter</button>
+
+                    </div>
+
+                </form>
+
+
+            <a href="#inscription" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide">S'inscrire</a>
+        </div>
     </div>
+
+    <!-- PAGE INSCRIPTION -->
+
+    <div data-role="page" id="inscription">
+
+    <div data-role="header">
+      <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
+    </div>
+
+    <div data-role="content">
+      <!-- début form -->
+      <form metod="POST" id="frminscription">
+        <div data-role="fieldcontain" id="champsinscription">
+          <label for="nom">Nom </label>
+          <input type="text" name="nom" id="nom" value="" class="required" />
+
+          <label for="prenom">Prénom</label>
+          <input type="text" name="prenom" id="prenom" value="" class="required" />
+
+          <label for="bday">Date de naissance:</label>
+          <input type="date" name="bday" id="bday">
+
+          <label for="tel">téléphone</label>
+          <input type="text" name="tel" id="tel" value="" class="required number" />
+
+
+          <label for="email">E-mail:</label>
+          <input type="email" name="email" id="email" placeholder="Your email..">
+
+          <label for="email">Confirmer votre E-mail:</label>
+          <input type="email" name="email" id="email" placeholder="Your email..">
+
+
+          <label for="tel">Mot de passe</label>
+          <input type="text" name="mdp" id="mdp" value="" class="required password" />
+
+          <label for="tel">Confirmer votre mot de passe</label>
+          <input type="text" name="mdp" id="mdp" value="" class="required password" />
+          <label id="message"></label>
+
+
+          <fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
+            <legend>Indiquer votre Formation</legend>
+
+
+            <select name="" id="">
+          		<option value="">Développeur web</option>
+          		<option value=""></option>
+          		<option value=""></option>
+          		<option value=""></option>
+          		<option value=""></option>
+          		<option value=""></option>
+          		<option value=""></option>
+        		</select>
+
+
+          </fieldset>
+          <button type="submit" id="btninscription">Je m'inscris</button>
+        </div>
+      </form>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h6>CODA 2016</h6>
+    </div>
+  </div>
 
     <!-- PAGE MENU PRINCIPAL -->
     <div data-role="page" id="mainmenu">
 
-      <!-- Header de la page -->
-      <section data-role="header" id="headMenu">
-        <h1>Utilisateur</h1>
-        <a id="logOut" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-power">log out</a>
-    
-      </section>
+        <!-- Header de la page -->
+        <section data-role="header" id="headMenu">
+            <h1>Utilisateur</h1>
+            <a id="logOut" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-power">log out</a>
+        </section>
 
-     <!-- corps de page, menu -->
-      <section role="main" class="ui-content">
+        <!-- corps de page, menu -->
+        <section role="main" class="ui-content">
 
-        <a id="achatBtn" data-transition="slide" href="#achat"></a>
-        <a id="menuBtn" href="#"></a>
-        <a>SOLDE</a>
-        <a id="confirmBtn" href="#"></a>
-        <a id="paramBtn" href="#"></a>
-        <a id="qrCodeBtn" href="#"></a>
+            <a id="achatBtn" data-transition="slide" href="#achat"></a>
+            <a id="menuBtn" href="#"></a>
+            <a>SOLDE</a>
+            <a id="confirmBtn" href="#"></a>
+            <a id="paramBtn" data-transition="slide" href="#parametres"></a>
+            <a id="qrCodeBtn" href="#"></a>
 
-      </section>
+        </section>
     </div>
 
     <!-- PAGE ACHAT TICKETS -->
 
-     <div data-role="page" id="achat" onload="prix()">
-       <div data-role="header">
-           <a href="#mainmenu" data-transition="slide" data-direction="reverse" class="ui-btn ui-icon-arrow-l ui-btn-icon-left">Retour</a>
-           <h1>Achat</h1>
-           <a href="#panier" onclick="panier()" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-notext">Shop Icon</a>
-       </div>
-             <!-- ID compter ticket
-                   jaune :1
-                   vert  :2
-                   violet:3        -->
-             <!-- SELECT TICKET -->
-           <ul data-role="listview">
-             <li>
-                 <img src="./img/ticket-jaune.png">
-                 <div class="btn-ticket">
-                   <h2>Ticket Jaune</h2>
-                   <p id="prix1"><!--Prix--></p>
-                 </div>
-                 <div>
-                   <button class="ui-btn ui-icon-plus ui-btn-icon-left btn-compter" onclick="add1()"></button>
-                   <p id="num1" class="btn-compter">0</p>
-                   <button class="ui-btn ui-icon-minus ui-btn-icon-left btn-compter" onclick="remove1()"></button>
-                 </div>
+    <div data-role="page" id="achat" >
+      <div data-role="header">
+          <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Retour</a>
+          <h1>Achat</h1>
+      </div>
+            <!-- ID compter ticket
+                  jaune :1
+                  vert  :2
+                  violet:3        -->
+            <!-- SELECT TICKET -->
+          <ul data-role="listview">
+            <li>
+                <a onclick="add1()">
+                    <img src="./img/ticket-jaune.png">
+                    <div class="btn-ticket">
+                      <h2>Ticket Jaune</h2>
+                        <p id="num1" class="btn-compter">0</p>
+                      <p id="prix1"><!--Prix--></p>
+                    </div>
+                </a>
+                <a onclick="remove1()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
+            </li>
+            <li>
+                <a onclick="add2()">
+                    <img src="./img/ticket-vert.png">
+                    <div class="btn-ticket">
+                        <h2>Ticket Vert</h2>
+                        <p id="num2" class="btn-compter">0</p>
+                        <p id="prix2"><!--Prix--></p>
 
-             </li>
-             <li>
-                 <img src="./img/ticket-vert.png">
-                 <div class="btn-ticket">
-                     <h2>Ticket Vert</h2>
-                     <p id="prix2"><!--Prix--></p>
-                 </div>
-                 <div>
-                   <button class="ui-btn ui-icon-plus ui-btn-icon-left btn-compter" onclick="add2()"></button>
-                   <p id="num2" class="btn-compter">0</p>
-                   <button class="ui-btn ui-icon-minus ui-btn-icon-left btn-compter" onclick="remove2()"></button>
-                 </div>
+                    </div>
+                </a>
+                <a onclick="remove2()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
 
-             </li>
-             <li>
-                 <img src="./img/ticket-violet.png">
-                 <div class="btn-ticket">
-                     <h2>Ticket Violet</h2>
-                     <p id="prix3"><!--Prix--></p>
-                 </div>
-                 <div>
-                   <button class="ui-btn ui-icon-plus ui-btn-icon-left btn-compter" onclick="add3()"></button>
-                   <p id="num3" class="btn-compter">0</p>
-                   <button class="ui-btn ui-icon-minus ui-btn-icon-left btn-compter" onclick="remove3()"></button>
-                 </div>
-             </li>
-             </br>
-               <!-- BOUTON -->
-               <button onclick="enregistre()" class="ui-btn">Enregistre</button>
-               <a href="#Paiement" class="ui-btn">Acheter</a>
-           </ul>
-         </div>
-     </div>
+            </li>
+            <li>
+                <a onclick="add3()">
+                    <img src="./img/ticket-violet.png">
+                    <div class="btn-ticket">
+                        <h2>Ticket Violet</h2>
+                        <p id="num3" class="btn-compter">0</p>
+                        <p id="prix3"><!--Prix--></p>
+                    </div>
+                </a>
+                <a onclick="remove3()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
+            </li>
+            </br>
+              <!-- BOUTON -->
+              <a href="#panier" onclick="panier()" class="ui-btn">Acheter</a>
+          </ul>
+        </div>
+    </div>
 
-     <!-- PANIER -->
-     <div data-role="page" id="panier">
+    <!-- PANIER -->
+    <div data-role="page" id="panier">
 
-         <div data-role="header">
-             <a href="#achat" class="ui-btn ui-icon-arrow-l ui-btn-icon-left">Retour</a>
-             <h1>Panier</h1>
-             <a onclick="panier()" class="ui-btn ui-corner-all ui-icon-refresh ui-btn-icon-notext">Refresh</a>
+        <div data-role="header">
+            <a href="#achat" class="ui-btn ui-icon-arrow-l ui-btn-icon-left"  data-rel="back">Retour</a>
+            <h1>Panier</h1>
+        </div>
+        <div data-role="main" class="ui-content">
 
-         </div>
-         <div data-role="main" class="ui-content">
+            <ul data-role="listview">
+                <li>
+                    <img src="./img/ticket-jaune.png">
+                    <div class="btn-ticket">
+                        <h2 id="jaune">vous avait pas de ticket jaune </br>
+                                       dans votre panier</h2>
+                        <p id="total1">TOTAL: 0€</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/ticket-vert.png">
+                    <div class="btn-ticket">
+                        <h2 id="vert">vous avait pas de ticket vert </br>
+                                      dans votre panier</h2>
+                        <p id="total2">TOTAL: 0€</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/ticket-violet.png">
+                    <div class="btn-ticket">
+                        <h2 id="violet">vous avait pas de ticket violet </br>
+                                        dans votre panier</h2>
+                        <p id="total3">TOTAL: 0€</p>
+                    </div>
+                </li>
+                <div data-role="footer">
+                    <h3 id="totalfinal">TOTAL: 0€</h3>
+                </div>
+                    <a href="#Paiement" onclick="panier()" class="ui-btn">Valider</a>
 
-             <ul data-role="listview">
-                 <li>
-                     <img src="./img/ticket-jaune.png">
-                     <div class="btn-ticket">
-                         <h2 id="jaune">vous avait pas de ticket jaune dans votre panier</h2>
-                         <p id="total1">TOTAL: 0€</p>
-                     </div>
-                 </li>
-                 <li>
-                     <img src="./img/ticket-vert.png">
-                     <div class="btn-ticket">
-                         <h2 id="vert">vous avait pas de ticket vert dans votre panier</h2>
-                         <p id="total2">TOTAL: 0€</p>
-                     </div>
-                 </li>
-                 <li>
-                     <img src="./img/ticket-violet.png">
-                     <div class="btn-ticket">
-                         <h2 id="violet">vous avait pas de ticket violet dans votre panier</h2>
-                         <p id="total3">TOTAL: 0€</p>
-                     </div>
-                 </li>
-                 <div data-role="footer">
-                     <h3 id="totalfinal">TOTAL: 0€</h3>
-                 </div>
+            </ul>
+        </div>
+    </div>
 
-             </ul>
-         </div>
-     </div>
+    <!-- PAIEMENT -->
+    <div data-role="page" id="Paiement">
+        <div data-role="header">
+            <a href="#panier" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Retour</a>
+            <h1>Paiement</h1>
+        </div>
+        <form method="post">
+            <div class="ui-field-contain">
+                <label for="creditCardIssuer">Type de carte de paiement :</label>
+                <select name="creditCardIssuer" id="creditCardIssuer">
+                    <option value="V0">Visa / Electron</option>
+                    <option value="M0">Eurocard / MasterCard</option>
+                    <option value="A0">American Express</option>
+                    <option value="F0">Carte Bancaire</option>
+                    <option value="R0">Carte Aurore</option>
+                </select>
+                <label for="addCreditCardNumber">Numéro de carte de paiement :</label>
+                <input type="text" name="addCreditCardNumber" id="addCreditCardNumber" autocomplete="off">
 
-     <!-- PAIEMENT -->
-     <div data-role="page" id="Paiement">
-         <div data-role="header">
-             <a href="#achat" class="ui-btn ui-icon-arrow-l ui-btn-icon-left">Retour</a>
-             <h1>Paiement</h1>
-             <a  class="ui-btn ui-corner-all ui-icon-refresh ui-btn-icon-notext">Refresh</a>
+                <label for="card-name">Nom complet du détenteur de la carte:</label>
+                <input type="text" name="card-name" id="card-name" autocomplete="off">
 
-         </div>
-     </div>
+                <label for="newCreditCardMonth">Date d'expiration :</label>
+                <select name="newCreditCardMonth" title="mois" id="newCreditCardMonth">
+                    <option value="01" selected="selected">01</option>
+                    <option value="02" >02</option>
+                    <option value="03" >03</option>
+                    <option value="04" >04</option>
+                    <option value="05" >05</option>
+                    <option value="06" >06</option>
+                    <option value="07" >07</option>
+                    <option value="08" >08</option>
+                    <option value="09" >09</option>
+                    <option value="10" >10</option>
+                    <option value="11" >11</option>
+                    <option value="12" >12</option>
+                </select>
+                <select name="newCreditCardYear" title="année" id="newCreditCardYear">
+                    <option value="2016" selected="selected">2016</option>
+                    <option value="2017" >2017</option>
+                    <option value="2018" >2018</option>
+                    <option value="2019" >2019</option>
+                    <option value="2020" >2020</option>
+                    <option value="2021" >2021</option>
+                    <option value="2022" >2022</option>
+                </select>
+
+            </div>
+        </form>
+    </div>
+
+    <!-- PAGE PARAMETRES  -->
+
+    <div data-role="page" id="parametres">
+      <div data-role="header">
+          <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
+      </div>
+
+
+      <div data-role="main" class="ui-content">
+        <h1>Modification des données</h1>
+
+          <!-- début form -->
+        <form metod="POST" id="frminscription">
+          <label for="adresse">Adresse</label>
+          <textarea type="text" name="adresse" id="adresse"  class="required"></textarea>
+
+          <label for="">Numéro de téléphone</label>
+          <input type="text" name="tel" id="tel" class="required number" />
+
+
+          <label for="email">Adresse e-mail:</label>
+          <input type="email" name="newEmail" id="newEmail">
+
+
+          <label for="tel">Ancien mot de passe</label>
+          <input type="text" name="mdp" id="mdp" value="" class="required password" />
+          <label for="tel">Nouveau mot de passe</label>
+          <input type="text" name="newMdp" id="newMdp" value="" class="required password" />
+          <label for="tel">Confirmer votre nouveau mot de passe</label>
+          <input type="text" name="newMdp" id="newMdp" value="" class="required password" />
+
+          <button type="submit" id="btnSave">Sauvegarder</button>
+
+        </form>
+
+      </div>
+    </div>
 
 
   </body>
