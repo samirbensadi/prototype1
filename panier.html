@@ -1,0 +1,42 @@
+<!-- PANIER -->
+<div data-role="page" id="panier">
+
+    <div data-role="header">
+        <a href="#achat" class="ui-btn ui-icon-arrow-l ui-btn-icon-left"  data-rel="back">Retour</a>
+        <h1>Panier</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+
+        <ul data-role="listview">
+            <li>
+                <img src="./img/ticket-jaune.png">
+                <div class="btn-ticket">
+                    <h2 id="jaune">vous avait pas de ticket jaune </br>
+                                   dans votre panier</h2>
+                    <p id="total1">TOTAL: 0€</p>
+                </div>
+            </li>
+            <li>
+                <img src="./img/ticket-vert.png">
+                <div class="btn-ticket">
+                    <h2 id="vert">vous avait pas de ticket vert </br>
+                                  dans votre panier</h2>
+                    <p id="total2">TOTAL: 0€</p>
+                </div>
+            </li>
+            <li>
+                <img src="./img/ticket-violet.png">
+                <div class="btn-ticket">
+                    <h2 id="violet">vous avait pas de ticket violet </br>
+                                    dans votre panier</h2>
+                    <p id="total3">TOTAL: 0€</p>
+                </div>
+            </li>
+            <div data-role="footer">
+                <h3 id="totalfinal">TOTAL: 0€</h3>
+            </div>
+                <a href="paiement.html" onclick="panier()" class="ui-btn">Valider</a>
+
+        </ul>
+    </div>
+</div>

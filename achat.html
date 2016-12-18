@@ -1,0 +1,54 @@
+<!-- PAGE ACHAT TICKETS -->
+
+<div data-role="page" id="achat" >
+  <div data-role="header">
+      <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Retour</a>
+      <h1>Achat</h1>
+  </div>
+        <!-- ID compter ticket
+              jaune :1
+              vert  :2
+              violet:3        -->
+        <!-- SELECT TICKET -->
+      <ul data-role="listview">
+        <li>
+            <a onclick="add1()">
+                <img src="./img/ticket-jaune.png">
+                <div class="btn-ticket">
+                  <h2>Ticket Jaune</h2>
+                    <p id="num1" class="btn-compter">0</p>
+                  <p id="prix1"><!--Prix--></p>
+                </div>
+            </a>
+            <a onclick="remove1()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
+        </li>
+        <li>
+            <a onclick="add2()">
+                <img src="./img/ticket-vert.png">
+                <div class="btn-ticket">
+                    <h2>Ticket Vert</h2>
+                    <p id="num2" class="btn-compter">0</p>
+                    <p id="prix2"><!--Prix--></p>
+
+                </div>
+            </a>
+            <a onclick="remove2()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
+
+        </li>
+        <li>
+            <a onclick="add3()">
+                <img src="./img/ticket-violet.png">
+                <div class="btn-ticket">
+                    <h2>Ticket Violet</h2>
+                    <p id="num3" class="btn-compter">0</p>
+                    <p id="prix3"><!--Prix--></p>
+                </div>
+            </a>
+            <a onclick="remove3()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
+        </li>
+        </br>
+          <!-- BOUTON -->
+          <a href="panier.html" onclick="panier()" class="ui-btn">Acheter</a>
+      </ul>
+    </div>
+</div>

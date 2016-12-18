@@ -1,0 +1,65 @@
+
+<!-- PAGE INSCRIPTION -->
+
+<div data-role="page" id="inscription">
+
+<div data-role="header">
+  <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
+</div>
+
+<div data-role="content">
+  <!-- début form -->
+  <form metod="POST" id="frminscription">
+    <div data-role="fieldcontain" id="champsinscription">
+      <label for="nom">Nom </label>
+      <input type="text" name="nom" id="nom" value="" class="required" />
+
+      <label for="prenom">Prénom</label>
+      <input type="text" name="prenom" id="prenom" value="" class="required" />
+
+      <label for="bday">Date de naissance:</label>
+      <input type="date" name="bday" id="bday">
+
+      <label for="tel">téléphone</label>
+      <input type="text" name="tel" id="tel" value="" class="required number" />
+
+
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" id="email" placeholder="Your email..">
+
+      <label for="email">Confirmer votre E-mail:</label>
+      <input type="email" name="email" id="email" placeholder="Your email..">
+
+
+      <label for="tel">Mot de passe</label>
+      <input type="text" name="mdp" id="mdp" value="" class="required password" />
+
+      <label for="tel">Confirmer votre mot de passe</label>
+      <input type="text" name="mdp" id="mdp" value="" class="required password" />
+      <label id="message"></label>
+
+
+      <fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
+        <legend>Indiquer votre Formation</legend>
+
+
+        <select name="" id="">
+          <option value="">Développeur web</option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+        </select>
+
+
+      </fieldset>
+      <button type="submit" id="btninscription">Je m'inscris</button>
+    </div>
+  </form>
+</div>
+<div data-role="footer" data-position="fixed">
+  <h6>CODA 2016</h6>
+</div>
+</div>
