@@ -2,7 +2,6 @@ $(document).on("pageinit", "#inscription", function () {
 
   $('#btninscription').on("tap",function (event) {
     event.preventDefault();
-    console.log("hello");
 
     var nom = $('#nom').val();
     var prenom = $('#prenom').val();
@@ -11,7 +10,7 @@ $(document).on("pageinit", "#inscription", function () {
     var email = $('#email').val();
     var emailconf = $('#emailconf').val();
 
-    var mdp = $('#mdp').val();
+    var mdpreg = $('#mdpreg').val();
     var mdpconf = $('#mdpconf').val();
 
     var regexNom = /[a-zA-Z]/;
@@ -22,7 +21,7 @@ $(document).on("pageinit", "#inscription", function () {
       if (regexNom.test(prenom) && prenom.length > 2 && prenom.length < 250) {
         if (regexTel.test(tel) && tel.length >= 10 ) {
           if (regexMail.test(email) && email == emailconf) {
-            if (mdp.length >= 6 && mdp == mdpconf) {
+            if (mdpreg.length > 5 && mdpreg == mdpconf) {
               $.ajax({
                 method: "POST",
                 url: 'http://192.168.1.46/prototype1/php/traitement_inscription.php',
@@ -30,6 +29,7 @@ $(document).on("pageinit", "#inscription", function () {
                 success: function (data) {
                   var reponse = JSON.parse(data);
                   console.log(reponse);
+                  $.mobile.changePage($('#confInscription'),{transition : "slide", reverse: false});
                 },
                 error: function () {
                   alert('Ya eu un problème !');
@@ -37,7 +37,7 @@ $(document).on("pageinit", "#inscription", function () {
               });
             }
             else {
-              alert("Vous n'avez entrer de mot de passe !");
+              alert("Vous n'avez pas entré de mot de passe !");
             }
 
           } else {
@@ -53,6 +53,12 @@ $(document).on("pageinit", "#inscription", function () {
     } else {
       alert("Votre nom n'est pas valide");
     }
+  });
+
+
+  // AU TAP DU BOUTON SE CONNECTER, BASCULEMENT VERS LA PAGE HOME
+  $('#logIn').on("tap", function () {
+    $.mobile.changePage($('#home'),{transition : "slide", reverse: true});
   });
 
 
