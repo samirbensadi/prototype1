@@ -15,7 +15,7 @@ $(document).on("pageinit", "#home", function () {
     if ($("#login").length > 0 || $("#mdp").length > 0) {
       $.ajax({
         method: "POST",
-        url : 'http://localhost/prototype1/php/traitement_connexion.php',
+        url : 'http://192.168.1.46/prototype1/php/traitement_connexion.php',
         data: $('#formConnexion').serialize(),
         success: function (data) {
           var reponse = JSON.parse(data);
