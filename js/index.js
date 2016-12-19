@@ -12,7 +12,7 @@ $(document).on("pageinit", "#home", function () {
   $('#btnCo').on("tap",function (event) {
     event.preventDefault();
 
-    if ($("#login").length > 0 || $("#mdp").length > 0) {
+    if ($("#login").val().length > 0 || $("#mdp").val().length > 0) {
       $.ajax({
         method: "POST",
         url : 'http://192.168.1.46/prototype1/php/traitement_connexion.php',

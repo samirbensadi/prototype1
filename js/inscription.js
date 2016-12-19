@@ -1,5 +1,4 @@
 $(document).on("pageinit", "#home", function () {
-  $.mobile.allowCrossDomainPages = true;
 
   $('#btninscription').on("tap",function (event) {
     event.preventDefault();
