@@ -1,15 +1,27 @@
 <?php
+if (isset($_POST) && !empty($_POST)) {
+  $nom = $_POST['nom'];
+  $prenom = $_POST['prenom'];
+  $bday = $_POST['bday'];
+  $tel = $_POST['tel'];
+  $email = $_POST['email'];
+  $emailconf = $_POST['emailconf'];
+  $mdp = $_POST['mdp'];
+  $mdpconf = $_POST['mdpconf'];
+  $formation = $_POST['formation'];
 
-if (isset( ??? )) { // vérifier d'abord que toutes les données ont bien été envoyées
+  $reponse = array('nom' =>  $nom, 'prenom' => $prenom, 'bday' => $bday, 'tel' => $tel, 'email' => $email, 'formation' => $formation );
 
-} else { // sinon
-  // envoyer msg d'erreur :
+
+
+
+}
+else {
   $reponse = false;
-  $reponsejson = json_encode($reponse);
-
-  echo $reponsejson;
 }
 
+$reponsejs = json_encode($tableau);
+echo $reponsejs;
 
 
  ?>

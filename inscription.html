@@ -9,54 +9,50 @@
 
 <div data-role="content">
   <!-- début form -->
-  <form metod="POST" id="frminscription">
-    <div data-role="fieldcontain" id="champsinscription">
+  <form method="POST" id="forminscription">
+
       <label for="nom">Nom </label>
-      <input type="text" name="nom" id="nom" value="" class="required" />
+      <input type="text" name="nom" id="nom" value="" />
 
       <label for="prenom">Prénom</label>
-      <input type="text" name="prenom" id="prenom" value="" class="required" />
+      <input type="text" name="prenom" id="prenom" value="" />
 
       <label for="bday">Date de naissance:</label>
       <input type="date" name="bday" id="bday">
 
       <label for="tel">téléphone</label>
-      <input type="text" name="tel" id="tel" value="" class="required number" />
+      <input type="tel" name="tel" id="tel" value="" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" />
 
 
       <label for="email">E-mail:</label>
       <input type="email" name="email" id="email" placeholder="Your email..">
 
-      <label for="email">Confirmer votre E-mail:</label>
-      <input type="email" name="email" id="email" placeholder="Your email..">
+      <label for="emailconf">Confirmer votre E-mail:</label>
+      <input type="email" name="emailconf" id="email" placeholder="Your email..">
 
 
-      <label for="tel">Mot de passe</label>
-      <input type="password" name="mdp" id="mdp" value="" class="required password" />
+      <label for="mdp">Mot de passe</label>
+      <input type="password" name="mdp" id="mdp" value=""/>
 
-      <label for="tel">Confirmer votre mot de passe</label>
-      <input type="password" name="mdp" id="mdp" value="" class="required password" />
-      <label id="message"></label>
-
-
-      <fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
-        <legend>Indiquer votre Formation</legend>
+      <label for="mdpconf">Confirmer votre mot de passe</label>
+      <input type="password" name="mdpconf" id="mdp" value=""/>
 
 
-        <select name="" id="">
-          <option value="">Développeur web</option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
+      <legend>Indiquer votre Formation</legend>
 
 
-      </fieldset>
-      <button type="submit" id="btninscription">Je m'inscris</button>
-    </div>
+      <select name="formation" id="formationSel">
+        <option value="">Développeur web</option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+
+
+      <button id="btninscription">Je m'inscris</button>
   </form>
 </div>
 <div data-role="footer" data-position="fixed">
