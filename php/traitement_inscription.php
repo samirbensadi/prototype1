@@ -13,14 +13,12 @@ if (isset($_POST) && !empty($_POST)) {
   $reponse = array('nom' =>  $nom, 'prenom' => $prenom, 'bday' => $bday, 'tel' => $tel, 'email' => $email, 'formation' => $formation );
 
 
-
-
 }
 else {
   $reponse = false;
 }
 
-$reponsejs = json_encode($tableau);
+$reponsejs = json_encode($reponse);
 echo $reponsejs;
 
 
