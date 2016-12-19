@@ -1,4 +1,8 @@
 <?php
+
+header("Access-Control-Allow-Origin: *"); // pour que tout le monde puisse interroger ce script
+
+
 if (isset($_POST) && !empty($_POST)) {
   $nom = $_POST['nom'];
   $prenom = $_POST['prenom'];
