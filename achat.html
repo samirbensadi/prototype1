@@ -5,50 +5,47 @@
       <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Retour</a>
       <h1>Achat</h1>
   </div>
-        <!-- ID compter ticket
-              jaune :1
-              vert  :2
-              violet:3        -->
+        <!-- ID ticket jaune:1 vert:2 violet:3     -->
         <!-- SELECT TICKET -->
       <ul data-role="listview">
         <li>
-            <a onclick="add1()">
-                <img src="./img/ticket-jaune.png">
+            <a id="add1">
+                <div class="imgJaune"></div>
                 <div class="btn-ticket">
                   <h2>Ticket Jaune</h2>
-                    <p id="num1" class="btn-compter">0</p>
-                  <p id="prix1"><!--Prix--></p>
+                    <p id="num1">0</p>
+                    <p id="prix1"><!--Prix--></p>
                 </div>
             </a>
-            <a onclick="remove1()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
+            <a id="remove1" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
         </li>
         <li>
-            <a onclick="add2()">
-                <img src="./img/ticket-vert.png">
+            <a id="add2">
+                <div class="imgVert"></div>
                 <div class="btn-ticket">
-                    <h2>Ticket Vert</h2>
-                    <p id="num2" class="btn-compter">0</p>
+                  <h2>Ticket Vert</h2>
+                    <p id="num2">0</p>
                     <p id="prix2"><!--Prix--></p>
 
                 </div>
             </a>
-            <a onclick="remove2()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
+            <a id="remove2" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
 
         </li>
         <li>
-            <a onclick="add3()">
-                <img src="./img/ticket-violet.png">
+            <a id="add3">
+                <div class="imgViolet"></div>
                 <div class="btn-ticket">
-                    <h2>Ticket Violet</h2>
-                    <p id="num3" class="btn-compter">0</p>
+                  <h2>Ticket Violet</h2>
+                    <p id="num3">0</p>
                     <p id="prix3"><!--Prix--></p>
                 </div>
             </a>
-            <a onclick="remove3()" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
+            <a id="remove3" class="ui-btn ui-icon-minus ui-btn-icon-notext">Some Text</a>
         </li>
         </br>
           <!-- BOUTON -->
-          <a href="panier.html" onclick="panier()" class="ui-btn">Acheter</a>
+          <a href="panier.html" id="Slot" class="ui-btn">Acheter</a>
       </ul>
     </div>
 </div>

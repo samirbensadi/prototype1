@@ -106,15 +106,8 @@
 }
 
 
-.btn-compter {
-    width: auto!important;
-    height: auto!important;
-    margin-left: 200px;
-    text-align: right;
-}
-.btn-ticket {
-    position: absolute;
-}
+
+
 
 
 /*************************************
@@ -156,9 +149,31 @@
 	justify-content: center;
 	align-items: center;
 	margin-top: 4em;
-	padding: 4em; 
+	padding: 4em;
 }
 
+/*************************************
+			PAGE ACHAT
+**************************************/
 
+#add1, #add2, #add3 {
+	display: flex;
+	flex-direction: row;
+}
+.zone {
+	display: flex;
+	flex-direction: row;
+}
 
+.imgJaune, .imgVert, .imgViolet {
+	width: 5em;
+	height: 5em;
+}
 
+.imgJaune {background-color: #edd53c}
+.imgVert {background-color: #7aed4c}
+.imgViolet {background-color: #a800ff}
+
+.btn-ticket {
+	margin-left: 1em;
+}

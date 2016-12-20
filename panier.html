@@ -2,30 +2,30 @@
 <div data-role="page" id="panier">
 
     <div data-role="header">
-        <a href="#achat" class="ui-btn ui-icon-arrow-l ui-btn-icon-left"  data-rel="back">Retour</a>
+        <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left"  data-rel="back">Retour</a>
         <h1>Panier</h1>
     </div>
-    <div data-role="main" class="ui-content">
+    <div data-role="main">
 
         <ul data-role="listview">
-            <li>
-                <img src="./img/ticket-jaune.png">
+            <li id="zone">
+                <div class="imgJaune"></div>
                 <div class="btn-ticket">
                     <h2 id="jaune">vous avait pas de ticket jaune </br>
                                    dans votre panier</h2>
                     <p id="total1">TOTAL: 0€</p>
                 </div>
             </li>
-            <li>
-                <img src="./img/ticket-vert.png">
+            <li id="zone">
+                <div class="imgVert"></div>
                 <div class="btn-ticket">
                     <h2 id="vert">vous avait pas de ticket vert </br>
                                   dans votre panier</h2>
                     <p id="total2">TOTAL: 0€</p>
                 </div>
             </li>
-            <li>
-                <img src="./img/ticket-violet.png">
+            <li id="zone">
+                <div class="imgViolet"></div>
                 <div class="btn-ticket">
                     <h2 id="violet">vous avait pas de ticket violet </br>
                                     dans votre panier</h2>
@@ -35,7 +35,7 @@
             <div data-role="footer">
                 <h3 id="totalfinal">TOTAL: 0€</h3>
             </div>
-                <a href="paiement.html" onclick="panier()" class="ui-btn">Valider</a>
+                <a href="paiement.html" class="ui-btn">Valider</a>
 
         </ul>
     </div>
