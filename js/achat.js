@@ -77,7 +77,7 @@ $(document).on("pageinit", "#achat", function () {
         var prixTotal = total1 + total2 + total3;
 
         localStorage.setItem('prixtotal', prixTotal);
-        
+
         $(document).on("pageinit", "#panier", function () {
 
             //affiche nombre de ticket
@@ -93,6 +93,13 @@ $(document).on("pageinit", "#achat", function () {
             $('#totalfinal').text('TOTAL: ' + prixTotal + '€');
 
         });
+    });
+
+    $('#resetTicket').click(function () {
+        localStorage.removeItem('ticket1');
+        localStorage.removeItem('ticket2');
+        localStorage.removeItem('ticket3');
+        localStorage.removeItem('prixtotal');
     });
 
 });
