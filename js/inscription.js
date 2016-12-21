@@ -21,7 +21,7 @@ $(document).on("pageinit", "#inscription", function () {
 
     if (regexNom.test(nom) && nom.length > 2 && nom.length < 250) {
       if (regexNom.test(prenom) && prenom.length > 2 && prenom.length < 250) {
-        if (regexDate.test(bday)) {
+        // if (regexDate.test(bday)) {
           if (regexTel.test(tel) && tel.length >= 10 ) {
             if (regexMail.test(email) && email == emailconf) {
               if (mdpreg.length > 5 && mdpreg == mdpconf) {
@@ -32,12 +32,6 @@ $(document).on("pageinit", "#inscription", function () {
                   success: function (data) {
                     var reponse = JSON.parse(data);
                     console.log(reponse);
-                    if (reponse == "nothing received") {
-                      alert("Erreur : aucun champ n'a été renseigné !")
-                    }
-                    else if () {
-
-                    }
                     $.mobile.changePage($('#confInscription'),{transition : "slide", reverse: false});
                   },
                   error: function () {
@@ -45,7 +39,7 @@ $(document).on("pageinit", "#inscription", function () {
                   }
                 });
               } else {
-                alert("Vous n'avez pas entré de mot de passe !");
+                alert("Vous n'avez pas entré de mot de passe ! Votre mot de passe doit contenir 6 caractères minimum");
               }
 
             } else {
@@ -54,9 +48,9 @@ $(document).on("pageinit", "#inscription", function () {
           } else {
             alert("Votre numéro n'est pas valide");
           }
-        } else {
-          alert("Votre date n'est pas valide");
-        }
+        // } else {
+          // alert("Votre date n'est pas valide");
+        // }
 
       } else {
         alert("Votre prénom n'est pas valide");
