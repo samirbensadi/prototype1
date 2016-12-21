@@ -1,45 +1,44 @@
 <!-- PAGE ACHAT TICKETS -->
 
 <div data-role="page" id="achat" >
-  <div data-role="header">
-      <a href="#" id="resetTicket" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Retour</a>
-      <h1>Achat</h1>
-  </div>
-        <!-- ID ticket jaune:1 vert:2 violet:3     -->
-    <div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
-      <div data-role="collapsible">
-          <h3>Formules</h3>
-        <p>Ticket Jaune : Plat</p>
-        <p>Ticket Vert : Entrée + plat // ou Plat + Dessert</p>
-        <p>Ticket Rose : Entrée + Plat + Dessert</p>
-      </div>
+    <div data-role="header">
+        <a href="#" id="resetTicket" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Retour</a>
+        <h1>Achat</h1>
     </div>
-        <!-- TEST -->
 
-  <div class="ui-body ui-body-a ui-corner-all">
-      <h2>Ticket Jaune</h2> <p id="prix1"><!--Prix--></p>
-      <p id="num1">0</p>
-      <a id="add1" class="ui-btn"> ajouter Ticket</a>
-      <a id="remove1" class="ui-btn">Supprimer Ticket</a>
-  </div>
+    <div data-role="content" class="ui-content">
+          <!-- ID ticket jaune:1 vert:2 violet:3     -->
 
-  <div class="ui-body ui-body-a ui-corner-all">
-      <h2>Ticket Vert</h2> <p id="prix2"><!--Prix--></p>
-      <p id="num2">0</p>
-      <a id="add2" class="ui-btn"> ajouter Ticket</a>
-      <a id="remove2" class="ui-btn">Supprimer Ticket</a  >
+    <div class="ui-body ui-body-a ui-corner-all">
+        <h2>Ticket Jaune</h2>
+        <h4>formule Plat uniquement</h4>
+        <p id="prix1"><!--Prix--></p>
+        <p><span id="num1" ></span> Tickets</p>
+        <a id="add1" class="ui-btn"> ajouter Ticket</a>
+        <a id="remove1" class="ui-btn">Supprimer Ticket</a>
+    </div>
+    <br> <!-- br code de crado -->
+    <div class="ui-body ui-body-a ui-corner-all">
+        <h2>Ticket Vert</h2>
+        <h4>formule Entrée + plat // Plat + Dessert</h4>
+        <p id="prix2"><!--Prix--></p>
+        <p><span id="num2" ></span> Tickets</p>
+        <a id="add2" class="ui-btn"> ajouter Ticket</a>
+        <a id="remove2" class="ui-btn">Supprimer Ticket</a  >
+    </div>
+    <br> <!-- br code de crado -->
+    <div class="ui-body ui-body-a ui-corner-all">
+        <h2>Ticket Rose</h2>
+        <h4>formule Entrée + Plat + Dessert</h4>
+        <p id="prix3"><!--Prix--></p>
+        <p><span id="num3" ></span> Tickets</p>
+        <a id="add3" class="ui-btn"> ajouter Ticket</a>
+        <a id="remove3" class="ui-btn">Supprimer Ticket</a  >
+    </div>
+
+            <!-- BOUTON -->
+            <a href="panier.html" id="Slot" class="ui-btn">Acheter</a>
+
+
   </div>
-
-  <div class="ui-body ui-body-a ui-corner-all">
-      <h2>Ticket Rose</h2> <p id="prix3"><!--Prix--></p>
-      <p id="num3">0</p>
-      <a id="add3" class="ui-btn"> ajouter Ticket</a>
-      <a id="remove3" class="ui-btn">Supprimer Ticket</a  >
-  </div>
-
-          <!-- BOUTON -->
-          <a href="panier.html" id="Slot" class="ui-btn">Acheter</a>
-
-
-
 </div>
