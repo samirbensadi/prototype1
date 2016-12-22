@@ -19,44 +19,36 @@ $(document).on("pageinit", "#inscription", function () {
     var regexMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
 
 
-    if (regexNom.test(nom) && nom.length > 2 && nom.length < 250) {
-      if (regexNom.test(prenom) && prenom.length > 2 && prenom.length < 250) {
-        // if (regexDate.test(bday)) {
-          if (regexTel.test(tel) && tel.length >= 10 ) {
-            if (regexMail.test(email) && email == emailconf) {
-              if (mdpreg.length > 5 && mdpreg == mdpconf) {
-                $.ajax({
-                  method: "POST",
-                  url: 'http://192.168.1.46/prototype1/php/traitement_inscription.php',
-                  data: $('#forminscription').serialize(),
-                  success: function (data) {
-                    var reponse = JSON.parse(data);
-                    console.log(reponse);
-                    $.mobile.changePage($('#confInscription'),{transition : "slide", reverse: false});
-                  },
-                  error: function () {
-                    alert('Ya eu un problème !');
-                  }
-                });
-              } else {
-                alert("Vous n'avez pas entré de mot de passe ! Votre mot de passe doit contenir 6 caractères minimum");
+    if (regexNom.test(nom) && regexNom.test(prenom) && nom.length > 2 && nom.length < 250 && prenom.length > 2 && prenom.length < 250) {
+      if (regexTel.test(tel) && tel.length >= 10 ) {
+        if (regexMail.test(email) && email == emailconf) {
+          if (mdpreg.length > 5 && mdpreg == mdpconf) {
+            $.ajax({
+              method: "POST",
+              url: 'http://192.168.1.46/prototype1/php/traitement_inscription.php',
+              data: $('#forminscription').serialize(),
+              success: function (data) {
+                var requete = JSON.parse(data);
+                console.log(requete.reponse);
+                if (requete.reponse == true) {
+                  $.mobile.changePage($('#confInscription'),{transition : "slide", reverse: false});
+                }
+              },
+              error: function () {
+                $("#alertCoReg").popup("open","fade");
               }
-
-            } else {
-              alert("Votre e-mail n'est pas valide");
-            }
+            });
           } else {
-            alert("Votre numéro n'est pas valide");
+            $("#alertMdpReg").popup("open","fade");
           }
-        // } else {
-          // alert("Votre date n'est pas valide");
-        // }
-
+        } else {
+          $("#alertMail").popup("open","fade");
+        }
       } else {
-        alert("Votre prénom n'est pas valide");
+        $("#alertNum").popup("open","fade");
       }
     } else {
-      alert("Votre nom n'est pas valide");
+      $("#alertNom").popup("open","fade");
     }
   });
 

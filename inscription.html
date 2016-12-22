@@ -3,64 +3,101 @@
 
 <div data-role="page" id="inscription">
 
-<div data-role="header">
-  <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
-  <h1>Inscription</h1>
-</div>
+  <div data-role="header">
+    <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
+    <h1>Inscription</h1>
+  </div>
 
-<div data-role="content">
-  <!-- début form -->
-  <form method="POST" id="forminscription">
+  <div data-role="content">
+    <!-- début form -->
+    <form method="POST" id="forminscription">
 
-      <label for="nom">Nom </label>
-      <input type="text" name="nom" id="nom" value="" />
+        <label for="nom">Nom </label>
+        <input type="text" name="nom" id="nom" value="" />
 
-      <label for="prenom">Prénom</label>
-      <input type="text" name="prenom" id="prenom" value="" />
+        <label for="prenom">Prénom</label>
+        <input type="text" name="prenom" id="prenom" value="" />
 
-      <label for="bday">Date de naissance:</label>
-      <input type="date" name="bday" id="bday">
+        <label for="bday">Date de naissance:</label>
+        <input type="date" name="bday" id="bday">
 
-      <label for="tel">Téléphone</label>
-      <input type="tel" name="tel" id="tel" value="" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" />
-
-
-      <label for="email">Adresse e-mail:</label>
-      <input type="email" name="email" id="email" placeholder="Your email..">
-
-      <label for="emailconf">Confirmer votre adresse e-mail:</label>
-      <input type="email" name="emailconf" id="emailconf" placeholder="Your email..">
+        <label for="tel">Téléphone</label>
+        <input type="tel" name="tel" id="tel" value="" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" />
 
 
-      <label for="mdpreg">Mot de passe</label>
-      <input type="password" name="mdp" id="mdpreg" value=""/>
+        <label for="email">Adresse e-mail:</label>
+        <input type="email" name="email" id="email" placeholder="Your email..">
 
-      <label for="mdpconf">Confirmer votre mot de passe</label>
-      <input type="password" name="mdpconf" id="mdpconf" value=""/>
-
-
-      <legend>Indiquez votre Formation</legend>
+        <label for="emailconf">Confirmez votre adresse e-mail:</label>
+        <input type="email" name="emailconf" id="emailconf" placeholder="Your email..">
 
 
-      <select name="formation" id="formationSel" data-mini="true">
-        <option value="">Développeur web</option>
-        <option value="">Chaudronnier</option>
-        <option value="">Soudeur</option>
-        <option value="">Commercial</option>
-      </select>
+        <label for="mdpreg">Mot de passe</label>
+        <input type="password" name="mdp" id="mdpreg" value=""/>
+
+        <label for="mdpconf">Confirmez votre mot de passe</label>
+        <input type="password" name="mdpconf" id="mdpconf" value=""/>
 
 
-      <button id="btninscription">Je m'inscris</button>
-  </form>
-</div>
-</div>
+        <legend>Indiquez votre Formation</legend>
 
 
-<!-- PAGE CONFIRMATION D'INSCRIPTION -->
+        <select name="formation" id="formationSel" data-mini="true">
+          <option value="dev">Développeur web</option>
+          <option value="chaud">Chaudronnier</option>
+          <option value="soud">Soudeur</option>
+          <option value="co">Commercial</option>
+        </select>
 
-<div data-role="page" id="confInscription">
-  <div data-role="content" class="ui-content">
-    <h3>Merci pour votre inscription ! Un e-mail de validation vous a été envoyé. Consultez le avant de vous connecter.</h3>
-    <a href="#" id="logIn">Se connecter</a>
+
+        <button id="btninscription">Je m'inscris</button>
+    </form>
+
+    <!-- POP-UPS D'ALERTE -->
+
+      <!-- champ nom ou prenom incomplet -->
+      <div data-role="popup" id="alertNom" data-overlay-theme="b">
+        <div data-role="content" class="ui-content">
+          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <p>Vos nom et prénom ne doivent comporter aucun chiffre et 2 caractères au minimum.
+          </p>
+        </div>
+      </div>
+
+      <!-- champ numero incomplet -->
+      <div data-role="popup" id="alertNum" data-overlay-theme="b">
+        <div data-role="content" class="ui-content">
+          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <p>Votre numéro doit contenir au minimum 10 chiffres (sans espaces).
+          </p>
+        </div>
+      </div>
+
+      <!-- champ email incomplet -->
+      <div data-role="popup" id="alertMail" data-overlay-theme="b">
+        <div data-role="content" class="ui-content">
+          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <p>Merci d'entrer une adresse e-mail valide (personne@exemple.com).
+          </p>
+        </div>
+      </div>
+
+      <!-- champ mdp incomplet -->
+      <div data-role="popup" id="alertMdpReg" data-overlay-theme="b">
+        <div data-role="content" class="ui-content">
+          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <p>Votre mot de passe doit contenir au minimum 6 caractères.
+          </p>
+        </div>
+      </div>
+
+      <!-- impossible de se connecter -->
+      <div data-role="popup" id="alertCoReg" data-overlay-theme="b">
+        <div data-role="content" class="ui-content">
+          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <p> <b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.
+          </p>
+        </div>
+      </div>
   </div>
 </div>

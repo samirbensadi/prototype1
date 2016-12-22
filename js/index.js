@@ -8,7 +8,7 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
   else {
     $.mobile.changePage($('#home')); // sinon je charge la page home
   }
-}, 1000); // temps d'attente : 2 sec
+}, 1000); // temps d'attente : 1 sec
 
 
 // AU TAP DU BOUTON SE CONNECTER
@@ -23,21 +23,19 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
         success: function (data) { // en cas de succes
           var requete = JSON.parse(data); // parser la reponse json
           console.log(requete);
-          // if (reponse == true) { // si la reponse vaut true
-          //   var token = "test"; // enregistrer le token
-          //   window.localStorage.setItem("remembertoken", token); // le stocker dans le local storage
-          //   $.mobile.changePage($('#mainmenu'),{transition : "slide", reverse: false}); // je charge la page 2
-          // } else {
-          //   alert("Erreur : les identifiants ne sont pas ok !"); // php n'a pas reçu les bonnes infos
-          // }
+          if (requete.reponse == true) { // si la reponse vaut true
+            window.localStorage.setItem("remembertoken", requete.token); // stocker le token dans le local storage
+            $.mobile.changePage($('#mainmenu'),{transition : "slide", reverse: false}); // je charge la page 2
+          } else {
+            $("#alertErreur").popup("open","fade"); // php n'a pas reçu les bonnes infos
+          }
         },
         error: function () {
-          alert('Ya eu un problème !'); // erreur de liaison avec le serveur
+          $("#alertCo").popup("open","fade"); // erreur de liaison avec le serveur
         }
       });
     } else {
-        // alert('Le mot de passe doit contenir au moins 6 caractères.');
-        $( "#alertmdp" ).popup("open","fade");
+        $("#alertmdp").popup("open","fade"); // champs incomplets
     }
   });
 
