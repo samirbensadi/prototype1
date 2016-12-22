@@ -27,9 +27,9 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
           //   var token = "test"; // enregistrer le token
           //   window.localStorage.setItem("remembertoken", token); // le stocker dans le local storage
           //   $.mobile.changePage($('#mainmenu'),{transition : "slide", reverse: false}); // je charge la page 2
-          } else {
-            alert("Erreur : les identifiants ne sont pas ok !"); // php n'a pas reçu les bonnes infos
-          }
+          // } else {
+          //   alert("Erreur : les identifiants ne sont pas ok !"); // php n'a pas reçu les bonnes infos
+          // }
         },
         error: function () {
           alert('Ya eu un problème !'); // erreur de liaison avec le serveur
