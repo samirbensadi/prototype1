@@ -8,25 +8,25 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
   else {
     $.mobile.changePage($('#home')); // sinon je charge la page home
   }
-}, 2000); // temps d'attente : 2 sec
+}, 1000); // temps d'attente : 2 sec
 
 
 // AU TAP DU BOUTON SE CONNECTER
   $('#btnCo').on("tap",function (event) {
     event.preventDefault();
 
-    if ($("#login").val().length > 0 || $("#mdp").val().length > 5) { // si le login et le mot de passe ont bien été entré
+    if ($("#login").val().length > 0 && $("#mdp").val().length > 5) { // si le login et le mot de passe ont bien été entré
       $.ajax({
         method: "POST",
         url : 'http://192.168.1.46/prototype1/php/traitement_connexion.php', // envoi vers ce script
         data: $('#formConnexion').serialize(),
         success: function (data) { // en cas de succes
-          var reponse = JSON.parse(data); // parser la reponse json
-          console.log(reponse);
-          if (reponse == true) { // si la reponse vaut true
-            var token = "test"; // enregistrer le token
-            window.localStorage.setItem("remembertoken", token); // le stocker dans le local storage
-            $.mobile.changePage($('#mainmenu'),{transition : "slide", reverse: false}); // je charge la page 2
+          var requete = JSON.parse(data); // parser la reponse json
+          console.log(requete);
+          // if (reponse == true) { // si la reponse vaut true
+          //   var token = "test"; // enregistrer le token
+          //   window.localStorage.setItem("remembertoken", token); // le stocker dans le local storage
+          //   $.mobile.changePage($('#mainmenu'),{transition : "slide", reverse: false}); // je charge la page 2
           } else {
             alert("Erreur : les identifiants ne sont pas ok !"); // php n'a pas reçu les bonnes infos
           }
@@ -37,7 +37,7 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
       });
     } else {
         // alert('Le mot de passe doit contenir au moins 6 caractères.');
-        $.mobile.changePage($('#alertmdp'),{transition : "pop", reverse: false});
+        $( "#alertmdp" ).popup("open","fade");
     }
   });
 
