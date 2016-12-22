@@ -19,30 +19,37 @@
 
 <body>
 
+  <!-- PAGE D'ALLUMAGE -->
+  <div data-role="page" id="first">
+    <h1>MiamApp</h1>
+  </div>
+
+
     <!-- PAGE D'ACCUEIL -->
 
     <div data-role="page" id="home">
         <div data-role="header" id="headAccueil">
-            <h1>Bienvenue</h1>
+            <h1>MiamApp</h1>
         </div>
         <div data-role="content" id="coForm" class="ui-content">
+          <form method="POST" id="formConnexion">
+            <h3>Connexion</h3>
+            <input type="text" name="login" id="login" placeholder="E-mail">
+            <input type="password" name="mdp" id="mdp" placeholder="Mot de passe">
+          </form>
 
-                <form method="POST" id="formConnexion">
-                    <div>
+            <a href="#" id="btnCo" class="ui-btn" data-transition="slide">Connexion</a>
+            <h3 style="text-align:center">OU</h3>
+            <a href="inscription.html" class="ui-btn" data-transition="slide">Inscription</a>
 
-                        <h3>Login information</h3>
-
-                        <input type="text" name="login" id="login" placeholder="Username">
-
-                        <input type="password" name="mdp" id="mdp" placeholder="Password">
-
-                    </div>
-
-                </form>
-
-            <a href="#" id="btnCo" class="ui-btn" data-transition="slide">connexion</a>
-            <a href="inscription.html" class="ui-btn" data-transition="slide">inscription</a>
         </div>
+
+    </div>
+
+    <div data-role="page" id="alertmdp" data-dialog="true">
+      <p>
+        Le mot de passe doit contenir au moins 6 caractères.
+      </p>
     </div>
 
 
@@ -52,19 +59,19 @@
 
         <!-- Header de la page -->
         <section data-role="header" id="headMenu">
-            <h1>Profil</h1>
+            <h1>Menu principal</h1>
             <a id="logOut" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-power">Log out</a>
         </section>
 
         <!-- corps de page, menu -->
         <section role="main" class="ui-content">
 
-            <a id="achatBtn" class="ui-btn" data-transition="slide" href="achat.html">Achat</a>
-            <a id="menuBtn" class="ui-btn" href="menucantine.html">Menu de la semaine</a>
-            <a class="ui-btn">SOLDE</a>
-            <a id="confirmBtn" class="ui-btn" href="#">confirmation présence</a>
+            <a id="achatBtn" class="ui-btn" data-transition="slide" href="achat.html">Achat de tickets</a>
+            <a id="menuBtn" class="ui-btn" data-transition="slide" href="menucantine.html">Menu de la semaine</a>
+            <a class="ui-btn" href="#">SOLDE</a>
+            <a id="confirmBtn" class="ui-btn" data-transition="slide" href="confirmation.html">Confirmation présence</a>
             <a id="paramBtn" class="ui-btn" data-transition="slide" href="parametres.html">Paramètres</a>
-            <a id="qrCodeBtn" class="ui-btn" href="code.html">QR CODE</a>
+            <a id="qrCodeBtn" class="ui-btn" data-transition="slide" href="code.html">QR CODE</a>
 
         </section>
     </div>

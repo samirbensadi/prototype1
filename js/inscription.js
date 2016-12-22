@@ -66,7 +66,4 @@ $(document).on("pageinit", "#inscription", function () {
     $.mobile.changePage($('#home'),{transition : "slide", reverse: true});
   });
 
-
-
-
 });

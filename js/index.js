@@ -1,41 +1,43 @@
-$(document).on("pageinit", "#home", function () {
+$(document).on("pagecreate", "#first", function () {
   $.mobile.allowCrossDomainPages = true;
 
-  if (localStorage.login && localStorage.mdp) { // si les identifiants sont déjà dans le localStorage
+setTimeout(function () { // je fixe un délai avant exécution de ma fonction anonyme
+  if (localStorage.remembertoken) { // si le remembertoken est dans le localStorage
     $.mobile.changePage($('#mainmenu')); // alors je charge la page 2
   }
   else {
-    $.mobile.changePage($('#home')); // sinon je charge la page connect
+    $.mobile.changePage($('#home')); // sinon je charge la page home
   }
+}, 2000); // temps d'attente : 2 sec
+
 
 // AU TAP DU BOUTON SE CONNECTER
   $('#btnCo').on("tap",function (event) {
     event.preventDefault();
 
-    if ($("#login").val().length > 0 || $("#mdp").val().length > 0) {
+    if ($("#login").val().length > 0 || $("#mdp").val().length > 5) { // si le login et le mot de passe ont bien été entré
       $.ajax({
         method: "POST",
-        url : 'http://192.168.1.46/prototype1/php/traitement_connexion.php',
+        url : 'http://192.168.1.46/prototype1/php/traitement_connexion.php', // envoi vers ce script
         data: $('#formConnexion').serialize(),
-        success: function (data) {
-          var reponse = JSON.parse(data);
+        success: function (data) { // en cas de succes
+          var reponse = JSON.parse(data); // parser la reponse json
           console.log(reponse);
-          if (reponse == true) {
-            var login = $('#login').val();
-            var mdp = $('#mdp').val();
-            window.localStorage.setItem("login", login);
-            window.localStorage.setItem("mdp", mdp);
+          if (reponse == true) { // si la reponse vaut true
+            var token = "test"; // enregistrer le token
+            window.localStorage.setItem("remembertoken", token); // le stocker dans le local storage
             $.mobile.changePage($('#mainmenu'),{transition : "slide", reverse: false}); // je charge la page 2
           } else {
-            alert("Erreur : something's missing !");
+            alert("Erreur : les identifiants ne sont pas ok !"); // php n'a pas reçu les bonnes infos
           }
         },
         error: function () {
-          alert('Ya eu un problème !');
+          alert('Ya eu un problème !'); // erreur de liaison avec le serveur
         }
       });
     } else {
-        alert('Tapez qqch');
+        // alert('Le mot de passe doit contenir au moins 6 caractères.');
+        $.mobile.changePage($('#alertmdp'),{transition : "pop", reverse: false});
     }
   });
 

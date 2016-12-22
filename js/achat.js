@@ -78,21 +78,7 @@ $(document).on("pageinit", "#achat", function () {
 
         localStorage.setItem('prixtotal', prixTotal);
 
-        $(document).on("pageinit", "#panier", function () {
 
-            //affiche nombre de ticket
-            $('#jaune').text(nombre1 + ' ticket jaune a '+ prix1 +'€ dans votre panier');
-            $('#vert').text(nombre2 + ' ticket vert a '+ prix2 +'€ dans votre panier');
-            $('#violet').text(nombre3 + ' ticket violet a '+ prix3 +'€ dans votre panier');
-
-            //affiche prix
-            $('#total1').text('TOTAL: ' + prix1 * nombre1 + '€');
-            $('#total2').text('TOTAL: ' + prix2 * nombre2 + '€');
-            $('#total3').text('TOTAL: ' + prix3 * nombre3 + '€');
-
-            $('#totalfinal').text('TOTAL: ' + prixTotal + '€');
-
-        });
     });
 
     $('#resetTicket').click(function () {
