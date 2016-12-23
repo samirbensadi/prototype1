@@ -1,91 +1,96 @@
-
 //ACHAT//
 
 $(document).on("pageinit", "#achat", function () {
+
     //NombreTicket
-    var nombre1 = 0;
-    var nombre2 = 0;
-    var nombre3 = 0;
+    var nombreJaune = 0;
+    var nombreVert = 0;
+    var nombreRose = 0;
 
-    //PRIX
-    var prix1 = 2.50;
-    var prix2 = 3;
-    var prix3 = 3.50;
+    //PRIX (on récuperera plus tard les prix en ajax depuis le serveur)
+    var prixJaune = 2.50;
+    var prixVert = 3;
+    var prixRose = 3.50;
 
-    $('#prix1').text(prix1 +'€');
-    $('#prix2').text(prix2 +'€');
-    $('#prix3').text(prix3 +'€');
 
-    //ticket Jaune
-    $('#add1').click(function () {
-        nombre1++;
-        $('#num1').text(nombre1);
+    // On indique par défaut le prix de chaque type de ticket
+    $('#prixJaune').text(prixJaune +' €');
+    $('#prixVert').text(prixVert +' €');
+    $('#prixRose').text(prixRose +' €');
+
+    // ajout de ticket Jaune
+    $('#addJaune').click(function () {
+        nombreJaune++; // on incrémente son compteur
+        $('#numJaune').text(nombreJaune + " ticket(s)"); // on actualise le compteur sur la page
     });
 
-    $('#remove1').click(function () {
-        if (nombre1<1) {
-            nombre1 = 0;
+    // retrait de ticket jaune
+    $('#removeJaune').click(function () {
+      nombreJaune--; // on décrémente le compteur
+        if (nombreJaune<1) { // si le compteur est inférieur à 1
+          $('#numJaune').text(" "); // on supprime le compteur de la page
         }
         else {
-            nombre1--;
-            $('#num1').text(nombre1);
+            $('#numJaune').text(nombreJaune + " ticket(s)"); // sinon on l'actualise
         }
     });
 
-    //ticket Vert
-    $('#add2').click(function () {
-        nombre2++;
-        $('#num2').text(nombre2);
+    //ajout de ticket Vert
+    $('#addVert').click(function () {
+        nombreVert++;
+        $('#numVert').text(nombreVert + " ticket(s)");
     });
-
-    $('#remove2').click(function () {
-        if (nombre2<1) {
-            nombre2 = 0;
-        }
-        else {
-            nombre2--;
-            $('#num2').text(nombre2);
-        }
-    });
-
-    //ticket Violet
-    $('#add3').click(function () {
-        nombre3++;
-        $('#num3').text(nombre3);
-    });
-
-    $('#remove3').click(function () {
-        if (nombre3<1) {
-            nombre3 = 0;
+    // retrait de ticket vert
+    $('#removeVert').click(function () {
+      nombreVert--;
+        if (nombreVert<1) {
+          $('#numVert').text(" ");
         }
         else {
-            nombre3--;
-            $('#num3').text(nombre3);
+            $('#numVert').text(nombreVert + " ticket(s)");
         }
     });
 
-    $('#Slot').click(function () {
-        //set localStorage
-        localStorage.setItem('ticket1', nombre1);
-        localStorage.setItem('ticket2', nombre2);
-        localStorage.setItem('ticket3', nombre3);
+    //ajout de ticket Violet
+    $('#addRose').click(function () {
+        nombreRose++;
+        $('#numRose').text(nombreRose + " ticket(s)");
+    });
+    // retrait de ticket violet
+    $('#removeRose').click(function () {
+      nombreRose--;
+        if (nombreRose<1) {
+          $('#numRose').text(" ");
+        }
+        else {
+            $('#numRose').text(nombreRose + " ticket(s)");
+        }
+    });
+
+    // quand on va au panier
+    $('.slot').click(function () {
+        //set sessionStorage
+        sessionStorage.setItem('ticketJaune', nombreJaune);
+        sessionStorage.setItem('ticketVert', nombreVert);
+        sessionStorage.setItem('ticketRose', nombreRose);
 
         //Calcule PrixTotal
-        var total1 = nombre1 * prix1;
-        var total2 = nombre2 * prix2;
-        var total3 = nombre3 * prix3;
-        var prixTotal = total1 + total2 + total3;
+        var totalJaune = nombreJaune * prixJaune;
+        var totalVert = nombreVert * prixVert;
+        var totalRose = nombreRose * prixRose;
+        var prixTotal = totalJaune + totalVert + totalRose;
 
-        localStorage.setItem('prixtotal', prixTotal);
+        sessionStorage.setItem('prixtotal', prixTotal);
 
 
     });
 
+    // quand on quitte la page achat, on supprime le sessionStorage
     $('#resetTicket').click(function () {
-        localStorage.removeItem('ticket1');
-        localStorage.removeItem('ticket2');
-        localStorage.removeItem('ticket3');
-        localStorage.removeItem('prixtotal');
+        sessionStorage.removeItem('ticketJaune');
+        sessionStorage.removeItem('ticketVert');
+        sessionStorage.removeItem('ticketRose');
+        sessionStorage.removeItem('prixtotal');
     });
 
 });
