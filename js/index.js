@@ -1,5 +1,9 @@
-$(document).on("pagecreate", "#first", function () {
+$(document).on("mobileinit", function () {
   $.mobile.allowCrossDomainPages = true;
+});
+
+
+$(document).on("pagecreate", "#first", function () {
 
 setTimeout(function () { // je fixe un délai avant exécution de ma fonction anonyme
   if (localStorage.remembertoken) { // si le remembertoken est dans le localStorage
@@ -18,13 +22,15 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
     if ($("#login").val().length > 0 && $("#mdp").val().length > 5) { // si le login et le mot de passe ont bien été entré
       $.ajax({
         method: "POST",
-        url : 'http://192.168.1.46/prototype1/php/traitement_connexion.php', // envoi vers ce script
+        url : 'http://localhost/prototype1/php/log_in.php', // envoi vers ce script
         data: $('#formConnexion').serialize(),
         success: function (data) { // en cas de succes
           var requete = JSON.parse(data); // parser la reponse json
           console.log(requete);
           if (requete.reponse == true) { // si la reponse vaut true
-            window.localStorage.setItem("remembertoken", requete.token); // stocker le token dans le local storage
+            // window.localStorage.setItem("remembertoken", requete.token); // stocker le token dans le local storage
+            // on va plutot utiliser un cookie généré directement côté serveur
+
             $.mobile.changePage($('#mainmenu'),{transition : "slide", reverse: false}); // je charge la page 2
           } else {
             $("#alertErreur").popup("open","fade"); // php n'a pas reçu les bonnes infos

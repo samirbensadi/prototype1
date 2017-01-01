@@ -25,7 +25,7 @@ $(document).on("pageinit", "#inscription", function () {
           if (mdpreg.length > 5 && mdpreg == mdpconf) {
             $.ajax({
               method: "POST",
-              url: 'http://192.168.1.46/prototype1/php/traitement_inscription.php',
+              url: 'http://localhost/prototype1/php/register.php',
               data: $('#forminscription').serialize(),
               success: function (data) {
                 var requete = JSON.parse(data);
