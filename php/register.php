@@ -11,6 +11,16 @@ if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_
   $prenom = htmlspecialchars($_POST['prenom']);
   $bday = $_POST['bday'];
   $tel = htmlspecialchars($_POST['tel']);
+
+  // On va vérifier que l'e-mail n'existe pas déjà dans la bdd
+
+  $reqmail = $bdd->prepare('SELECT email FROM clients WHERE email = ?');
+  $reqmail->execute([$_POST['email'])]);
+  $result_mail = $reqmail->fetch();
+
+  var_dump($result_mail);
+
+
   $email = $_POST['email']; // il faudra factoriser une condition permettant de vérifier s'il n'existe pas déjà dans la bdd
   $emailconf = $_POST['emailconf'];
 
