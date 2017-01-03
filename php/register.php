@@ -2,7 +2,6 @@
 
 header("Access-Control-Allow-Origin: *"); // pour que tout le monde puisse interroger ce script
 
-include "inc/db.php";
 include "inc/functions.php";
 
 if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['prenom'])) {
@@ -15,40 +14,44 @@ if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_
   // On va vérifier que l'e-mail n'existe pas déjà dans la bdd
 
   $reqmail = $bdd->prepare('SELECT email FROM clients WHERE email = ?');
-  $reqmail->execute([$_POST['email'])]);
+  $reqmail->execute([$_POST['email']]);
   $result_mail = $reqmail->fetch();
 
-  var_dump($result_mail);
+  // si le resultat est different de false (càd si l'e-mail existe déjà dans la bdd)
+  if ($result_mail != false) {
+    $reponse = array("reponse" => "email"); // alors personnaliser la reponse pour que le front l'interprete
+   } else { // sinon si le resultat vaut false,
+
+    $email = $_POST['email'];
+    $emailconf = $_POST['emailconf'];
+
+    $mdpconf = $_POST['mdpconf'];
+    $formation = $_POST['formation'];
 
 
-  $email = $_POST['email']; // il faudra factoriser une condition permettant de vérifier s'il n'existe pas déjà dans la bdd
-  $emailconf = $_POST['emailconf'];
+    $req = $bdd->prepare('INSERT INTO clients(nom, prenom, email, dateNaissance, mdp_hash, formation, statut, codeQR, confirmation_token, remember_token) VALUES(:nom,    :prenom, :email, :dateNaissance, :mdp_hash, :formation, :statut, :codeQR, :confirmation_token, :remember_token)'); // préparation de la requete
 
-  $mdpconf = $_POST['mdpconf'];
-  $formation = $_POST['formation'];
+    
+    $qrcode = checkCode(); // fabrication du qrcode alphanumérique //
 
+    $confToken = checkConfToken(); // fabrication du token de confirmation //
+    $remToken = checkRemToken(); // fabrication du token remember
 
-  $req = $bdd->prepare('INSERT INTO clients(nom, prenom, email, dateNaissance, mdp_hash, formation, statut, codeQR, confirmation_token) VALUES(:nom, :prenom, :email, :dateNaissance, :mdp_hash, :formation, :statut, :codeQR, :confirmation_token)'); // préparation de la requete
+    $statut = "on sait pas encore";
 
-  $qrcode = str_random(150); // fabrication du qrcode alphanumérique // il faudra factoriser une condition permettant de vérifier s'il n'existe pas déjà dans la bdd
+    $mdp = password_hash($_POST['mdpreg'], PASSWORD_BCRYPT); // hachage du mdp
 
-  $token = str_random(60); // fabrication du token de confirmation // il faudra factoriser une condition permettant de vérifier s'il n'existe pas déjà dans la bdd
+    $req->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'dateNaissance' => $bday, 'mdp_hash' => $mdp, 'formation' => $formation, 'statut' => $statut, 'codeQR' => $qrcode, 'confirmation_token' => $confToken, 'remember_token' => $remToken)); // exécution de la requete
 
-  $statut = "on sait pas encore";
+    $user_id = $bdd->lastInsertId();
 
-  $mdp = password_hash($_POST['mdpreg'], PASSWORD_BCRYPT); // hachage du mdp
-
-  $req->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'dateNaissance' => $bday, 'mdp_hash' => $mdp, 'formation' => $formation, 'statut' => $statut, 'codeQR' => $qrcode, 'confirmation_token' => $token ));
-  // exécution de la requete
-
-  $user_id = $bdd->lastInsertId();
-
-  // // mail de confirmation
-  // mail($email, 'Confirmation de votre compte', "Afin de valider votre compte, merci de cliquer sur ce lien\n\nhttp://localhost/prototype1/php/confirm_account.php?id=$user_id&token=$token");
+    // // mail de confirmation
+    // mail($email, 'Confirmation de votre compte', "Afin de valider votre compte, merci de cliquer sur ce lien\n\nhttp://localhost/prototype1/php/confirm_account.php?id=$user_id&token=$confToken");
 
 
-  $reponse = array("reponse" => true);
+    $reponse = array("reponse" => true);
 
+  }
 } else {
   $reponse = array("reponse" => false);
 }
