@@ -2,6 +2,7 @@
 
 header("Access-Control-Allow-Origin: *"); // pour que tout le monde puisse interroger ce script
 
+include  "inc/db.php";
 include "inc/functions.php";
 
 if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['prenom'])) {
@@ -32,10 +33,10 @@ if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_
     $req = $bdd->prepare('INSERT INTO clients(nom, prenom, email, dateNaissance, mdp_hash, formation, statut, codeQR, confirmation_token, remember_token) VALUES(:nom,    :prenom, :email, :dateNaissance, :mdp_hash, :formation, :statut, :codeQR, :confirmation_token, :remember_token)'); // préparation de la requete
 
     
-    $qrcode = checkCode(); // fabrication du qrcode alphanumérique //
+    $qrcode = checkCode($bdd); // fabrication du qrcode alphanumérique //
 
-    $confToken = checkConfToken(); // fabrication du token de confirmation //
-    $remToken = checkRemToken(); // fabrication du token remember
+    $confToken = checkConfToken($bdd); // fabrication du token de confirmation //
+    $remToken = checkRemToken($bdd); // fabrication du token remember
 
     $statut = "on sait pas encore";
 
