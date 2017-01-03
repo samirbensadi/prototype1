@@ -3,9 +3,9 @@
 $(document).on("pageinit", "#achat", function () {
 
     //NombreTicket
-    var nombreJaune = 0;
-    var nombreVert = 0;
-    var nombreRose = 0;
+    var nombreJaune = sessionStorage.getItem('ticketJaune');
+    var nombreVert = sessionStorage.getItem('ticketVert');
+    var nombreRose = sessionStorage.getItem('ticketRose');
 
     //PRIX (on récuperera plus tard les prix en ajax depuis le serveur)
     var prixJaune = 2.50;
@@ -18,61 +18,81 @@ $(document).on("pageinit", "#achat", function () {
     $('#prixVert').text(prixVert +' €');
     $('#prixRose').text(prixRose +' €');
 
+    // On affiche le nombre de ticket stoquer dans le sessionStorage
+
+    if (sessionStorage.ticketJaune == null) {
+        $('#numJaune').html('<p>0 ticket(s)</p>');
+    } else { // sinon
+        $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)");
+    }
+    if (sessionStorage.ticketVert == null) {
+        $('#numVert').html('<p>0 ticket(s)</p>');
+    } else { // sinon
+        $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
+    }
+    if (sessionStorage.ticketRose == null) {
+        $('#numRose').html('<p>0 ticket(s)</p>');
+    } else { // sinon
+        $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
+    }
+
     // ajout de ticket Jaune
     $('#addJaune').click(function () {
         nombreJaune++; // on incrémente son compteur
-        $('#numJaune').text(nombreJaune + " ticket(s)"); // on actualise le compteur sur la page
+        sessionStorage.setItem('ticketJaune', nombreJaune);
+        $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)"); // on actualise le compteur sur la page
     });
 
     // retrait de ticket jaune
     $('#removeJaune').click(function () {
-      nombreJaune--; // on décrémente le compteur
         if (nombreJaune<1) { // si le compteur est inférieur à 1
-          $('#numJaune').text(" "); // on supprime le compteur de la page
+            nombreJaune = 0;
         }
         else {
-            $('#numJaune').text(nombreJaune + " ticket(s)"); // sinon on l'actualise
+            nombreJaune--; // on décrémente le compteur
+            sessionStorage.setItem('ticketJaune', nombreJaune);
+            $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)"); // sinon on l'actualise
         }
     });
 
     //ajout de ticket Vert
     $('#addVert').click(function () {
         nombreVert++;
-        $('#numVert').text(nombreVert + " ticket(s)");
+        sessionStorage.setItem('ticketVert', nombreVert);
+        $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
     });
     // retrait de ticket vert
     $('#removeVert').click(function () {
-      nombreVert--;
         if (nombreVert<1) {
-          $('#numVert').text(" ");
+            nombreVert = 0;
         }
         else {
-            $('#numVert').text(nombreVert + " ticket(s)");
+            nombreVert--;
+            sessionStorage.setItem('ticketVert', nombreVert);
+            $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
         }
     });
 
     //ajout de ticket Violet
     $('#addRose').click(function () {
         nombreRose++;
-        $('#numRose').text(nombreRose + " ticket(s)");
+        sessionStorage.setItem('ticketRose', nombreRose);
+        $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
     });
     // retrait de ticket violet
     $('#removeRose').click(function () {
-      nombreRose--;
         if (nombreRose<1) {
-          $('#numRose').text(" ");
+            nombreRose = 0;
         }
         else {
-            $('#numRose').text(nombreRose + " ticket(s)");
+            nombreRose--;
+            sessionStorage.setItem('ticketRose', nombreRose);
+            $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
         }
     });
 
     // quand on va au panier
     $('.slot').click(function () {
-        //set sessionStorage
-        sessionStorage.setItem('ticketJaune', nombreJaune);
-        sessionStorage.setItem('ticketVert', nombreVert);
-        sessionStorage.setItem('ticketRose', nombreRose);
 
         //Calcule PrixTotal
         var totalJaune = nombreJaune * prixJaune;
@@ -81,16 +101,5 @@ $(document).on("pageinit", "#achat", function () {
         var prixTotal = totalJaune + totalVert + totalRose;
 
         sessionStorage.setItem('prixtotal', prixTotal);
-
-
     });
-
-    // quand on quitte la page achat, on supprime le sessionStorage
-    $('#resetTicket').click(function () {
-        sessionStorage.removeItem('ticketJaune');
-        sessionStorage.removeItem('ticketVert');
-        sessionStorage.removeItem('ticketRose');
-        sessionStorage.removeItem('prixtotal');
-    });
-
 });
