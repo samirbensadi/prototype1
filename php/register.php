@@ -2,8 +2,8 @@
 
 header("Access-Control-Allow-Origin: *"); // pour que tout le monde puisse interroger ce script
 
-include  "inc/db.php";
-include "inc/functions.php";
+require_once "inc/db.php";
+require_once "inc/functions.php";
 
 if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['prenom'])) {
 

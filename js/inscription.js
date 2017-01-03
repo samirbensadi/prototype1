@@ -41,7 +41,7 @@ $(document).on("pageinit", "#inscription", function () {
                   $.mobile.changePage($('#confInscription'),{transition : "slide", reverse: false}); // on bascule sur la page confInscription
                 }
                 else {
-                  alert("Cet adresse e-mail est déjà utilisée.");
+                  $("#alertMailExist").popup("open", "fade");
                 }
               },
               error: function () { // en cas d'erreur
