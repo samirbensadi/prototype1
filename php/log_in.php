@@ -2,19 +2,41 @@
   header("Access-Control-Allow-Origin : *"); // pour que tout le monde puisse interroger ce script
 
 
-  if (isset($_POST['login']) && isset($_POST['mdp'])) { // si le login et le mot de passe ont bien été envoyés
+  if (isset($_POST['login'], $_POST['mdp']) && !empty($_POST['login']) && !empty($_POST['mdp'])) { // si le login et le mot de passe ont bien été envoyés
     $login = $_POST['login']; // alors on les stocke dans des variables
     $mdp = $_POST['mdp'];
 
-    if ($login == "admin" && $mdp == "mickey") { // si le login et le mot de passe corresponde
-      $remembertoken = "sdfsd5f6s4d5fsd5fsdf"; // un token au hasard pour se reconnecter  (il sera stocké dans le localstorage)
-      $reponse = array('reponse' => true, 'token' => $remembertoken); // alors on enregistre une réponse positive dans un tableau
+    require_once 'inc/db.php';
+    require_once 'inc/functions.php';
 
-    } else { //sinon
+
+    $req=$bdd->prepare('SELECT * FROM clients WHERE email = ? AND confirmed_at IS NOT NULL ');
+    $req->execute([$login]);
+    $user = $req->fetch();
+
+    if ($user == null) { // si l'utilisateur n'existe pas où qu'il n'a pas confirmé son compte
+
+      $reponse = array('reponse' => false); // alors on enregistre une réponse négative dans un tableau
+    }
+    elseif (password_verify($mdp, $user->mdp_hash)) {
+        session_start(); //on démarre la session
+        $_SESSION['auth'] = $user; // on enregistre l'objet de l'utilisateur dans une variable de session
+
+        // on fabrique un cookie pour se reconnecter automatiquement
+        $remToken = checkRemToken($bdd); // fabrication du token remember
+        $req2 = $bdd->prepare('UPDATE clients SET remember_token = ?');
+        $req2->execute([$user->id_client]);
+
+        setcookie('remember', $user->id_client. '==' . $remToken . sha1($user->id_client.'palpatine'), time() + 60 * 60 * 24 * 30);
+        // le token est inséré dans le cookie en le concatenant avec l'id du client, et un hash de l'id et d'un mot clé // la durée du cookie est fixé à 30 jours
+
+        $reponse = array('reponse' => true); // on enregistre une réponse positive
+    }
+    else { //sinon
       $reponse = array("reponse" => false);  // on enregistre une réponse négative
     }
 
-  } else { // sinon
+  } else { // sinon c'est que les identifiants n'ont pas été envoyés
     // envoyer msg d'erreur :
     $reponse = false;
   }

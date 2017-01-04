@@ -62,3 +62,14 @@ function checkCode($base)
     return $code_string; // on renvoit le code généré
   }
 }
+
+// fonction pour limiter l'accès aux scripts aux seuls utilisateurs
+
+function logged_only(){
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+  if(!isset($_SESSION['auth'])) {
+    exit();
+  }
+}
