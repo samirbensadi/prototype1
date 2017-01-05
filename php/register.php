@@ -57,8 +57,7 @@ if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_
 }
 
 
-$reponsejs = json_encode($reponse);
-echo $reponsejs;
+send_json($reponse);
 
 
  ?>

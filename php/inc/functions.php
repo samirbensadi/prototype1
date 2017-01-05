@@ -73,3 +73,10 @@ function logged_only(){
     exit();
   }
 }
+
+// fonction pour envoyer la reponse tableau en json
+
+function send_json($tableau){
+  $reponsejs = json_encode($tableau);
+  echo $reponsejs;
+}

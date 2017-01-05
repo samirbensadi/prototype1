@@ -5,6 +5,8 @@ $(document).on("mobileinit", function () {
 
 $(document).on("pagecreate", "#first", function () {
 
+  var server = "localhost";
+
 setTimeout(function () { // je fixe un délai avant exécution de ma fonction anonyme
   if (localStorage.remembertoken) { // si le remembertoken est dans le localStorage
     $.mobile.changePage($('#mainmenu')); // alors je charge la page 2
@@ -22,7 +24,7 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
     if ($("#login").val().length > 0 && $("#mdp").val().length > 5) { // si le login et le mot de passe ont bien été entré
       $.ajax({
         method: "POST",
-        url : 'http://localhost/prototype1/php/log_in.php', // envoi vers ce script
+        url : 'http://' + server + '/prototype1/php/log_in.php', // envoi vers ce script
         data: $('#formConnexion').serialize(),
         success: function (data) { // en cas de succes
           var requete = JSON.parse(data); // parser la reponse json
@@ -49,7 +51,7 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
       window.sessionStorage.clear(); // effacer le localStorage
       $.ajax({
         method: "POST",
-        url: 'http://localhost/prototype1/php/log_out.php'
+        url: 'http://' + server + '/prototype1/php/log_out.php'
 
       });
       $.mobile.changePage($('#home'),{transition : "slide", reverse: true}); // retourner à la page home

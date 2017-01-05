@@ -27,7 +27,7 @@
         $req2 = $bdd->prepare('UPDATE clients SET remember_token = ?');
         $req2->execute([$user->id_client]);
 
-        setcookie('remember', $user->id_client. '==' . $remToken . sha1($user->id_client.'palpatine'), time() + 60 * 60 * 24 * 30);
+        setcookie('remember', $user->id_client . '==' . $remToken . sha1($user->id_client . 'palpatine'), time() + 60 * 60 * 24 * 30);
         // le token est inséré dans le cookie en le concatenant avec l'id du client, et un hash de l'id et d'un mot clé // la durée du cookie est fixé à 30 jours
 
         $reponse = array('reponse' => true); // on enregistre une réponse positive
@@ -41,8 +41,8 @@
     $reponse = false;
   }
 
-  $reponsejson = json_encode($reponse); // qu'on encode en json
-  echo $reponsejson; // et qu'on envoie
+send_json($reponse);
 
 
- ?>
+
+?>
