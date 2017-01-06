@@ -8,5 +8,7 @@ if (!empty($_POST)) { // si des choses ont été envoyées par post
 }
 else{
     // on affiche sinon les données du compte
-    $reponse = array("nom" => $_SESSION['auth']->nom, "prenom" => $_SESSION['auth']->prenom, "tel" => $_SESSION['auth']->);
+    $reponse = array("nom" => $_SESSION['auth']->nom, "prenom" => $_SESSION['auth']->prenom, "tel" => $_SESSION['auth']->tel);
 }
+
+send_json($reponse);

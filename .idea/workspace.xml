@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0803657a-4221-48bc-8716-47e4b763b4ab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/inscription.js" afterPath="$PROJECT_DIR$/js/inscription.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/confirm_account.html" afterPath="$PROJECT_DIR$/views/confirm_account.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/parametres.php" afterPath="$PROJECT_DIR$/php/parametres.php" />
     </list>
     <ignored path="prototype1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,25 +72,12 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="parametres.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="parametres.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/php/parametres.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="10" column="121" selection-start-line="10" selection-start-column="121" selection-end-line="10" selection-end-column="121" />
+                <state relative-caret-position="198">
+                  <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/register.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="720">
-                  <caret line="43" column="92" selection-start-line="43" selection-start-column="92" selection-end-line="43" selection-end-column="92" />
-                  <folding>
-                    <marker date="1483697043187" expanded="true" signature="517:558" placeholder="SELECT email... clients" />
-                    <marker date="1483697043187" expanded="true" signature="1082:1315" placeholder="INSERT INTO clients... " />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -109,22 +96,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="confirm_account.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/confirm_account.html">
+          <file leaf-file-name="inscription.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/inscription.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="97" selection-start-line="5" selection-start-column="97" selection-end-line="5" selection-end-column="97" />
+                <state relative-caret-position="198">
+                  <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="inscription.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/inscription.js">
+          <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/php/register.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="245">
-                  <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="70" selection-end-column="8" />
-                  <folding />
+                <state relative-caret-position="96">
+                  <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+                  <folding>
+                    <marker date="1483697043187" expanded="true" signature="517:558" placeholder="SELECT email... clients" />
+                    <marker date="1483697043187" expanded="true" signature="1082:1315" placeholder="INSERT INTO clients... " />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -152,10 +142,10 @@
         <option value="$PROJECT_DIR$/js/mainmenu.js" />
         <option value="$PROJECT_DIR$/js/parametres.js" />
         <option value="$PROJECT_DIR$/php/inc/functions.php" />
-        <option value="$PROJECT_DIR$/php/parametres.php" />
         <option value="$PROJECT_DIR$/php/register.php" />
-        <option value="$PROJECT_DIR$/js/inscription.js" />
         <option value="$PROJECT_DIR$/views/confirm_account.html" />
+        <option value="$PROJECT_DIR$/js/inscription.js" />
+        <option value="$PROJECT_DIR$/php/parametres.php" />
       </list>
     </option>
   </component>
@@ -364,12 +354,12 @@
       <workItem from="1483613060034" duration="87000" />
       <workItem from="1483618540008" duration="605000" />
       <workItem from="1483627755711" duration="3914000" />
-      <workItem from="1483688311334" duration="9025000" />
+      <workItem from="1483688311334" duration="9789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38790000" />
+    <option name="totallyTimeSpent" value="39554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -459,13 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/inc/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="72" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inscription.html" />
     <entry file="file://$PROJECT_DIR$/php/confirm.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -552,29 +535,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="43" column="92" selection-start-line="43" selection-start-column="92" selection-end-line="43" selection-end-column="92" />
-          <folding>
-            <marker date="1483697043187" expanded="true" signature="517:558" placeholder="SELECT email... clients" />
-            <marker date="1483697043187" expanded="true" signature="1082:1315" placeholder="INSERT INTO clients... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/parametres.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="121" selection-start-line="10" selection-start-column="121" selection-end-line="10" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/parametres.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/confirm_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="97" selection-start-line="5" selection-start-column="97" selection-end-line="5" selection-end-column="97" />
           <folding />
         </state>
       </provider>
@@ -591,26 +571,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/inscription.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="70" selection-end-column="8" />
+        <state relative-caret-position="198">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/confirm_account.html">
+    <entry file="file://$PROJECT_DIR$/php/inc/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="97" selection-start-line="5" selection-start-column="97" selection-end-line="5" selection-end-column="97" />
+        <state relative-caret-position="72">
+          <caret line="4" column="72" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <marker date="1483697043187" expanded="true" signature="517:558" placeholder="SELECT email... clients" />
+            <marker date="1483697043187" expanded="true" signature="1082:1315" placeholder="INSERT INTO clients... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/parametres.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding />
         </state>
       </provider>
