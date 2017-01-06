@@ -1,6 +1,6 @@
 $(document).on("pageinit", "#inscription", function () {
 
-  var server = "192.168.1.46";
+  var server = "localhost";
 
   $('#btninscription').on("tap",function (event) { // au tap du bouton d'inscription
     event.preventDefault(); // on empeche la transmission par defaut
@@ -40,7 +40,7 @@ $(document).on("pageinit", "#inscription", function () {
                 var requete = JSON.parse(data); // qu'on parse (puisque c'est du json)
                 console.log(requete.reponse);
                 if (requete.reponse == true) { // si l'enfant reponse de l'objet requete vaut true
-                  $.mobile.changePage($('#confInscription'),{transition : "slide", reverse: false}); // on bascule sur la page confInscription
+                  $.mobile.changePage("confirm_account.html",{transition : "slide", reverse: false}); // on bascule sur la page confInscription
                 }
                 else {
                   $("#alertMailExist").popup("open", "fade");
@@ -65,9 +65,9 @@ $(document).on("pageinit", "#inscription", function () {
   });
 
 
-  // AU TAP DU BOUTON SE CONNECTER, BASCULEMENT VERS LA PAGE HOME
-  $('#logIn').on("tap", function () { 
-    $.mobile.changePage($('#home'),{transition : "slide", reverse: true});
-  });
+  // // AU TAP DU BOUTON SE CONNECTER, BASCULEMENT VERS LA PAGE HOME
+  // $('#logIn').on("tap", function () {
+  //   $.mobile.changePage("../index.html",{transition : "slide", reverse: true});
+  // });
 
 });

@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0803657a-4221-48bc-8716-47e4b763b4ab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/parametres.js" afterPath="$PROJECT_DIR$/js/parametres.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/inc/functions.php" afterPath="$PROJECT_DIR$/php/inc/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/parametres.php" afterPath="$PROJECT_DIR$/php/parametres.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/register.php" afterPath="$PROJECT_DIR$/php/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/parametres.html" afterPath="$PROJECT_DIR$/views/parametres.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/inscription.js" afterPath="$PROJECT_DIR$/js/inscription.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/confirm_account.html" afterPath="$PROJECT_DIR$/views/confirm_account.html" />
     </list>
     <ignored path="prototype1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,7 +95,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/php/inc/functions.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="353">
@@ -112,6 +105,26 @@
                     <marker date="1483696346888" expanded="true" signature="967:1034" placeholder="SELECT confi... clients" />
                     <marker date="1483696346888" expanded="true" signature="1480:1523" placeholder="SELECT codeQ... clients" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="confirm_account.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/confirm_account.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="5" column="97" selection-start-line="5" selection-start-column="97" selection-end-line="5" selection-end-column="97" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="inscription.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/inscription.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="245">
+                  <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="70" selection-end-column="8" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -131,9 +144,7 @@
         <option value="$PROJECT_DIR$/php/confirm_account.php" />
         <option value="$PROJECT_DIR$/php/log_out.php" />
         <option value="$PROJECT_DIR$/php/test.php" />
-        <option value="$PROJECT_DIR$/js/inscription.js" />
         <option value="$PROJECT_DIR$/php/log_in.php" />
-        <option value="$PROJECT_DIR$/views/confirm_account.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/views/mainmenu.html" />
         <option value="$PROJECT_DIR$/js/index.js" />
@@ -143,6 +154,8 @@
         <option value="$PROJECT_DIR$/php/inc/functions.php" />
         <option value="$PROJECT_DIR$/php/parametres.php" />
         <option value="$PROJECT_DIR$/php/register.php" />
+        <option value="$PROJECT_DIR$/js/inscription.js" />
+        <option value="$PROJECT_DIR$/views/confirm_account.html" />
       </list>
     </option>
   </component>
@@ -222,6 +235,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="prototype1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prototype1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prototype1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -337,12 +364,12 @@
       <workItem from="1483613060034" duration="87000" />
       <workItem from="1483618540008" duration="605000" />
       <workItem from="1483627755711" duration="3914000" />
-      <workItem from="1483688311334" duration="7973000" />
+      <workItem from="1483688311334" duration="9025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37738000" />
+    <option name="totallyTimeSpent" value="38790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -454,33 +481,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/inscription.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/confirm_account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="114" selection-start-line="16" selection-start-column="114" selection-end-line="16" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/confirm_account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -584,6 +588,30 @@
             <marker date="1483696346888" expanded="true" signature="967:1034" placeholder="SELECT confi... clients" />
             <marker date="1483696346888" expanded="true" signature="1480:1523" placeholder="SELECT codeQ... clients" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/inscription.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="70" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/confirm_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="97" selection-start-line="5" selection-start-column="97" selection-end-line="5" selection-end-column="97" />
+          <folding />
         </state>
       </provider>
     </entry>
