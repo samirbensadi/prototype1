@@ -3,18 +3,9 @@ $(document).on("mobileinit", function () {
 });
 
 
-$(document).on("pagecreate", "#first", function () {
+$(document).on("pagecreate", "#home", function () {
 
   var server = "localhost";
-
-setTimeout(function () { // je fixe un délai avant exécution de ma fonction anonyme
-  if (localStorage.remembertoken) { // si le remembertoken est dans le localStorage
-    $.mobile.changePage($('#mainmenu')); // alors je charge la page 2
-  }
-  else {
-    $.mobile.changePage($('#home')); // sinon je charge la page home
-  }
-}, 1000); // temps d'attente : 1 sec
 
 
 // AU TAP DU BOUTON SE CONNECTER
@@ -30,7 +21,7 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
           var requete = JSON.parse(data); // parser la reponse json
           console.log(requete);
           if (requete.reponse == true) { // si la reponse vaut true
-            $.mobile.changePage($('#mainmenu'),{transition : "slide", reverse: false}); // je charge la page 2
+            $.mobile.changePage("views/mainmenu.html",{transition : "slide", reverse: false}); // je charge la page 2
           } else {
             $("#alertErreur").popup("open","fade"); // php n'a pas reçu les bonnes infos
           }
@@ -45,17 +36,6 @@ setTimeout(function () { // je fixe un délai avant exécution de ma fonction an
   });
 
 
-  // AU TAP DU BOUTON SE DECONNECTER
-
-    $('#logOut').on('tap', function () {
-      window.sessionStorage.clear(); // effacer le localStorage
-      $.ajax({
-        method: "POST",
-        url: 'http://' + server + '/prototype1/php/log_out.php'
-
-      });
-      $.mobile.changePage($('#home'),{transition : "slide", reverse: true}); // retourner à la page home
-    });
 
 
 });

@@ -30,7 +30,7 @@ if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_
     $formation = $_POST['formation'];
 
 
-    $req = $bdd->prepare('INSERT INTO clients(nom, prenom, email, dateNaissance, mdp_hash, formation, statut, codeQR, confirmation_token) VALUES(:nom,    :prenom, :email, :dateNaissance, :mdp_hash, :formation, :statut, :codeQR, :confirmation_token)'); // préparation de la requete
+    $req = $bdd->prepare('INSERT INTO clients(nom, prenom, email, tel, dateNaissance, mdp_hash, formation, statut, codeQR, confirmation_token) VALUES(:nom,    :prenom, :email, :tel, :dateNaissance, :mdp_hash, :formation, :statut, :codeQR, :confirmation_token)'); // préparation de la requete
 
     
     $qrcode = checkCode($bdd); // fabrication du qrcode alphanumérique //
@@ -41,7 +41,7 @@ if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_
 
     $mdp = password_hash($_POST['mdpreg'], PASSWORD_BCRYPT); // hachage du mdp
 
-    $req->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'dateNaissance' => $bday, 'mdp_hash' => $mdp, 'formation' => $formation, 'statut' => $statut, 'codeQR' => $qrcode, 'confirmation_token' => $confToken)); // exécution de la requete
+    $req->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'tel' => $tel,'dateNaissance' => $bday, 'mdp_hash' => $mdp, 'formation' => $formation, 'statut' => $statut, 'codeQR' => $qrcode, 'confirmation_token' => $confToken)); // exécution de la requete
 
     $user_id = $bdd->lastInsertId();
 

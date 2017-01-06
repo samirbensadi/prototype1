@@ -80,3 +80,9 @@ function send_json($tableau){
   $reponsejs = json_encode($tableau);
   echo $reponsejs;
 }
+
+// fonction pour reconnecter si la session a été perdue
+
+function reconnect() {
+  
+}
