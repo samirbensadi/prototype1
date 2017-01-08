@@ -6,6 +6,7 @@
 
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/mainmenu.js"></script>
     <script type="text/javascript" src="js/inscription.js"></script>
@@ -14,6 +15,7 @@
     <script type="text/javascript" src="js/paiement.js"></script>
     <script type="text/javascript" src="js/parametres.js"></script>
     <script type="text/javascript" src="js/menucantine.js"></script>
+    <script type="text/javascript" src="js/code.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -27,7 +29,7 @@
     <!-- PAGE D'ACCUEIL -->
 
     <div data-role="page" id="home">
-        <div data-role="header" id="headAccueil">
+        <div data-role="header" id="headAccueil" data-position="fixed">
             <h1>MiamApp</h1>
         </div>
         <div data-role="content" id="coForm" class="ui-content">
@@ -38,6 +40,7 @@
           </form>
 
             <a href="#" id="btnCo" class="ui-btn" data-transition="slide">Connexion</a>
+            <a href="views/forgot.html" data-transition="slide">Mot de passe oublié</a>
             <h3 style="text-align:center">OU</h3>
             <a href="views/inscription.html" class="ui-btn" data-transition="slide">Inscription</a>
 

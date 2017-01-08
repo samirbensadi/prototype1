@@ -64,10 +64,4 @@ $(document).on("pageinit", "#inscription", function () {
     }
   });
 
-
-  // // AU TAP DU BOUTON SE CONNECTER, BASCULEMENT VERS LA PAGE HOME
-  // $('#logIn').on("tap", function () {
-  //   $.mobile.changePage("../index.html",{transition : "slide", reverse: true});
-  // });
-
 });

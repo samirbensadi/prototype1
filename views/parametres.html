@@ -1,17 +1,17 @@
 <!-- PAGE PARAMETRES  -->
 
 <div data-role="page" id="parametres">
-  <div data-role="header">
+  <div data-role="header" data-position="fixed">
       <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
       <h1>Paramètres</h1>
   </div>
 
 
-  <div data-role="main" class="ui-content">
+  <div data-role="main" class="ui-content" id="parametres-content">
 
 
       <!-- début form -->
-    <form metod="POST" id="frminscription">
+    <form method="POST" id="formparametres">
 
       <label for="tel">Numéro de téléphone</label>
       <input type="text" name="tel" id="tel" class="required number" />

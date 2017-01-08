@@ -1,15 +1,11 @@
 <?php
-
-
 // cette fonction permet de générer une chaine de caractères alphanumérique, pseudo-aléatoire.
 
-  function str_random($length)
-  {
-    $alphabet = "0123456789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
-    return substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
-  }
-
-
+function str_random($length)
+{
+  $alphabet = "0123456789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
+  return substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
+}
 
 // verifier le token remember
 function checkRemToken($base)
@@ -83,6 +79,32 @@ function send_json($tableau){
 
 // fonction pour reconnecter si la session a été perdue
 
-function reconnect() {
-  
+function reconnect(){
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    if(isset($_COOKIE['remember']) && !isset($_SESSION['auth']) ){
+        require_once 'db.php';
+
+        $remember_token = $_COOKIE['remember'];
+        $parts = explode('==', $remember_token);
+        $user_id = $parts[0];
+        $req = $bdd->prepare('SELECT * FROM clients WHERE id = ?');
+        $req->execute([$user_id]);
+        $user = $req->fetch();
+        if($user){
+            $expected = $user_id . '==' . $user->remember_token . sha1($user_id . 'palpatine');
+            if($expected == $remember_token){
+                $_SESSION['auth'] = $user;
+                setcookie('remember', $remember_token, time() + 60 * 60 * 24 * 30);
+            } else{
+                setcookie('remember', null, -1);
+                exit();
+            }
+        }else{
+            setcookie('remember', null, -1);
+            exit();
+        }
+    }
 }
