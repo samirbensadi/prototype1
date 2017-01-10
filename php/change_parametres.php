@@ -3,6 +3,7 @@ require_once 'inc/functions.php';
 
 reconnect();
 logged_only();
+refreshSession();
 
 if (!empty($_POST['newEmail']) && !empty($_POST['newTel'])) { // si des choses ont été envoyées par post
     require_once 'inc/db.php';

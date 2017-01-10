@@ -16,29 +16,31 @@ $(document).on("pagecreate", "#mainmenu", function () {
     });
 
     $.ajax({
-        url: 'http://' + server + '/prototype1/php/mainmenu.php',
+        url: 'http://' + server + '/prototype1/php/solde.php',
         success: function (data) {
-            var ticketJaune = null;
-            var ticketVert = 8;
-            var ticketRose = null;
+            var requete = JSON.parse(data);
+            console.log(requete);
+            if (requete.reponse == "disconnect") {
+                $.mobile.changePage("index.html", {transition : "slide", reverse: true});
+            } else if (requete.reponse == true) {
 
-            if (ticketJaune!=null) {
-                $('#soldeJaune').text('Vous avait '+ticketJaune+' ticket jaune');
-            }
-            if (ticketVert!=null) {
-                $('#soldeVert').text('Vous avait '+ticketVert+' ticket vert');
-            }
-            if (ticketRose!=null) {
-                $('#soldeRose').text('Vous avait '+ticketRose+' ticket rose');
-            }
-            if (ticketJaune!=null || ticketVert!=null || ticketRose!=null) {
-                $('#confirm').html("<a id='confirmBtn' class='ui-btn' data-transition='slide' href='confirmation.html'>confirmé votre présence</a>");
-            }
+                $("#soldeDiv").html('<h3>Vous avez : </h3>');
 
-            if (ticketJaune==null && ticketVert==null && ticketRose==null) {
-                $('#soldeNull').text('vous avait pas de tickets');
-            }
+                if (requete.vert > 0) {
+                    $('#soldeDiv').append("<p>- " + requete.vert + " ticket(s) vert(s)</p>");
+                }
+                if (requete.rose > 0) {
+                    $('#soldeDiv').append("<p>- " + requete.rose + " ticket(s) rose(s)</p>");
+                }
+                if (requete.jaune > 0) {
+                    $('#soldeDiv').append("<p>- " + requete.jaune + " ticket(s) jaune(s)</p>");
+                }
 
+                $("#soldeDiv").append('<a class="ui-btn clr-btn-orange" data-transition="slide" href="confirmation.html">Je viens manger</a>');
+
+            } else {
+                $('#soldeDiv').text("Vous n'avez aucun ticket.");
+            }
 
         },
         error: function () {

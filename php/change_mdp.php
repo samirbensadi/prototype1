@@ -3,6 +3,7 @@ require_once 'inc/functions.php';
 
 reconnect();
 logged_only();
+refreshSession();
 
 
     if (!empty($_POST['oldMdp']) && !empty($_POST['newMdp']) ) { // si les mots de passe sont entrés
