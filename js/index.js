@@ -1,11 +1,30 @@
-$(document).on("mobileinit", function () {
+
+var server = "localhost";
+
+
+$(document).on("pagebeforecreate", "#home", function () {
   $.mobile.allowCrossDomainPages = true;
+
+    if (localStorage.remember) {
+        $.ajax({
+            url: "http://" + server + '/prototype1/php/reconnect.php',
+            success: function (data) {
+                if (!data) {
+                    $.mobile.changePage("views/mainmenu.html", {transition: "slide", reverse: false});
+                } else {
+                    localStorage.clear();
+                }
+            }
+        });
+    }
+
+  
+  
 });
 
 
 $(document).on("pagecreate", "#home", function () {
 
-  var server = "localhost";
 
 
 // AU TAP DU BOUTON SE CONNECTER
@@ -21,6 +40,7 @@ $(document).on("pagecreate", "#home", function () {
           var requete = JSON.parse(data); // parser la reponse json
           console.log(requete);
           if (requete.reponse == true) { // si la reponse vaut true
+            localStorage.setItem('remember', true);
             $.mobile.changePage("views/mainmenu.html",{transition : "slide", reverse: false}); // je charge la page 2
           } else {
             $("#alertErreur").popup("open","fade"); // php n'a pas reçu les bonnes infos

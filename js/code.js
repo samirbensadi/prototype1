@@ -7,6 +7,7 @@ $(document).on("pagebeforecreate", "#code", function () {
     success: function (data) {
       var requete = JSON.parse(data);
       console.log(requete);
+      
       $('#codeZone').qrcode(requete.qrcode);
     },
     error: function () {

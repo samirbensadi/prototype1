@@ -13,24 +13,18 @@
       <!-- début form -->
     <form method="POST" id="formparametres">
 
-      <label for="tel">Numéro de téléphone</label>
-      <input type="text" name="tel" id="tel" class="required number" />
+      <label for="newTel">Numéro de téléphone</label>
+      <input type="text" name="newTel" id="newTel" class="required number" />
 
 
       <label for="newEmail">Adresse e-mail:</label>
       <input type="email" name="newEmail" id="newEmail">
 
-
-      <label for="mdp">Ancien mot de passe</label>
-      <input type="password" name="mdp" id="mdp" value="" class="required password" />
-      <label for="newMdp">Nouveau mot de passe</label>
-      <input type="password" name="newMdp" id="newMdp" value="" class="required password" />
-      <label for="newMdpConf">Confirmer votre nouveau mot de passe</label>
-      <input type="password" name="newMdpConf" id="newMdpConf" value="" class="required password" />
+      <a class="ui-btn" data-transition="slide" href="param_mdp.html">Changer le mot de passe</a>
 
       <button type="submit" id="btnSave">Sauvegarder</button>
 
-      <button id="delAccount">Supprimer le compte</button>
+      <a class="ui-btn" id="delAccount">Supprimer le compte</a>
 
     </form>
 

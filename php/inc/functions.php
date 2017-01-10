@@ -66,6 +66,8 @@ function logged_only(){
     session_start();
   }
   if(!isset($_SESSION['auth'])) {
+      $reponse = array("reponse" => "disconnect");
+      send_json($reponse);
     exit();
   }
 }
@@ -77,7 +79,7 @@ function send_json($tableau){
   echo $reponsejs;
 }
 
-// fonction pour reconnecter si la session a été perdue
+// fonction pour se reconnecter automatiquement avec un cookie si la session a été perdue
 
 function reconnect(){
     if(session_status() == PHP_SESSION_NONE){
@@ -85,7 +87,7 @@ function reconnect(){
     }
 
     if(isset($_COOKIE['remember']) && !isset($_SESSION['auth']) ){
-        require_once 'db.php';
+        require_once 'inc/db.php';
 
         $remember_token = $_COOKIE['remember'];
         $parts = explode('==', $remember_token);
@@ -100,11 +102,23 @@ function reconnect(){
                 setcookie('remember', $remember_token, time() + 60 * 60 * 24 * 30);
             } else{
                 setcookie('remember', null, -1);
-                exit();
             }
         }else{
             setcookie('remember', null, -1);
-            exit();
         }
     }
+}
+
+//rafraichir les variables de session
+function refreshSession() {
+    require_once 'inc/db.php';
+
+    $req=$bdd->prepare('SELECT * FROM clients WHERE id_client = ?');
+    $req->execute([$_SESSION['auth']->id_client]);
+    $user = $req->fetch();
+
+    if ($user) {
+        $_SESSION['auth'] = $user;
+    }
+
 }

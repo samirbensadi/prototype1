@@ -2,7 +2,7 @@ $(document).on("pageinit", "#inscription", function () {
 
   var server = "localhost";
 
-  $('#btninscription').on("tap",function (event) { // au tap du bouton d'inscription
+  $('#forminscription').on("submit",function (event) { // au tap du bouton d'inscription
     event.preventDefault(); // on empeche la transmission par defaut
 
     // on enregistre le contenu des champs dans des variables
