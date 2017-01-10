@@ -36,7 +36,7 @@ $(document).on("pagecreate", "#mainmenu", function () {
                     $('#soldeDiv').append("<p>- " + requete.jaune + " ticket(s) jaune(s)</p>");
                 }
 
-                $("#soldeDiv").append('<a class="ui-btn ui-btn-raised clr-primary" data-transition="slide" href="confirmation.html">Je viens manger</a>');
+                $("#soldeDiv").append('<a id="confirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" href="confirmation.html">Je viens manger</a>');
 
             } else {
                 $('#soldeDiv').text("Vous n'avez aucun ticket.");
@@ -48,5 +48,10 @@ $(document).on("pagecreate", "#mainmenu", function () {
         }
     })
 
-    
+
+    // $('#confirmBtn').on("tap", function () {
+    //
+    // });
+
+
 });
