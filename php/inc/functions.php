@@ -111,7 +111,7 @@ function reconnect(){
 
 //rafraichir les variables de session
 function refreshSession() {
-    require_once 'inc/db.php';
+    require 'db.php';
 
     $req=$bdd->prepare('SELECT * FROM clients WHERE id_client = ?');
     $req->execute([$_SESSION['auth']->id_client]);
@@ -119,6 +119,9 @@ function refreshSession() {
 
     if ($user) {
         $_SESSION['auth'] = $user;
+    }
+    else{
+        exit();
     }
 
 }

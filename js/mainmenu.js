@@ -21,7 +21,7 @@ $(document).on("pagecreate", "#mainmenu", function () {
             var requete = JSON.parse(data);
             console.log(requete);
             if (requete.reponse == "disconnect") {
-                $.mobile.changePage("index.html", {transition : "slide", reverse: true});
+                $.mobile.changePage("../index.html", {transition : "slide", reverse: true});
             } else if (requete.reponse == true) {
 
                 $("#soldeDiv").html('<h3>Vous avez : </h3>');
@@ -36,7 +36,7 @@ $(document).on("pagecreate", "#mainmenu", function () {
                     $('#soldeDiv').append("<p>- " + requete.jaune + " ticket(s) jaune(s)</p>");
                 }
 
-                $("#soldeDiv").append('<a class="ui-btn clr-btn-orange" data-transition="slide" href="confirmation.html">Je viens manger</a>');
+                $("#soldeDiv").append('<a class="ui-btn ui-btn-raised clr-primary" data-transition="slide" href="confirmation.html">Je viens manger</a>');
 
             } else {
                 $('#soldeDiv').text("Vous n'avez aucun ticket.");

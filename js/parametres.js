@@ -8,9 +8,9 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
             var requete = JSON.parse(data);
             console.log(requete);
             if (requete.reponse == "disconnect") {
-                $.mobile.changePage("index.html", {transition: "slide", reverse: true});
+                $.mobile.changePage("../index.html", {transition: "slide", reverse: true});
             } else {
-                $('#parametres-content').prepend('<h3>Nom : ' + requete.nom + '</h3></br><h3>Prénom : ' + requete.prenom + "</h3>");
+                $('#parametres-content').prepend('<h4>Nom : ' + requete.nom + '</h4></br><h4>Prénom : ' + requete.prenom + "</h4>");
                 $('#newTel').val(requete.tel);
                 $('#newEmail').val(requete.email);
             }
@@ -19,6 +19,8 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
           alert('probleme de liaison'); // erreur de liaison avec le serveur
         }
     });
+
+
 
     $('#formparametres').on("submit", function (event) {
 
@@ -49,7 +51,7 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
                     var requete = JSON.parse(data);
                     console.log(requete);
                     if (requete.reponse == "disconnect") {
-                        $.mobile.changePage("index.html", {transition : "slide", reverse: true});
+                        $.mobile.changePage("../index.html", {transition : "slide", reverse: true});
                     } else if (requete.reponse == true) {
                         alert("Vos modifications ont bien été enregistrées !");
                     }

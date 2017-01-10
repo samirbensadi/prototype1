@@ -20,7 +20,7 @@ $(document).on("pagecreate", "#parametresmdp",  function () {
                     var requete = JSON.parse(data);
                     console.log(requete);
                     if (requete.reponse == "disconnect") {
-                        $.mobile.changePage("index.html", {transition : "slide", reverse: true});
+                        $.mobile.changePage("../index.html", {transition : "slide", reverse: true});
                     } else if (requete.reponse == "password") {
                         alert("L'ancien mot de passe n'est pas bon.");
                     } else {

@@ -15,7 +15,6 @@
     $user = $req->fetch();
 
     if ($user == null) { // si l'utilisateur n'existe pas où qu'il n'a pas confirmé son compte
-
       $reponse = array('reponse' => false); // alors on enregistre une réponse négative dans un tableau
     }
     elseif (password_verify($mdp, $user->mdp_hash)) {
