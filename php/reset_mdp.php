@@ -2,9 +2,18 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Yummy !</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
 </head>
 <body>
+
+<nav>
+    <div class="nav-wrapper" style="background-color: #FF5722">
+        <a href="#" class="brand-logo">YUMMY !</a>
+    </div>
+</nav>
 <?php
 
 if (isset($_GET['id'], $_GET['token'])) {
@@ -25,10 +34,10 @@ if (isset($_GET['id'], $_GET['token'])) {
 
 <form method="POST" action="">
     <label for="newMdp">Nouveau mot de passe</label>
-    <input type="password" name="newMdp" id="newMdp">
+    <input class="validate" type="password" name="newMdp" id="newMdp">
     <label for="newMdpConf">Confirmation nouveau mot de passe</label>
-    <input type="password" name="newMdpConf" id="newMdpConf">
-    <button type="submit">Confirmer</button>
+    <input class="validate" type="password" name="newMdpConf" id="newMdpConf">
+    <button class="waves-effect waves-light btn" type="submit">Confirmer</button>
 </form>
 
 

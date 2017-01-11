@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32dc2f29-4020-41a3-b0ef-8a8c3f8f29a9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/inc/functions.php" afterPath="$PROJECT_DIR$/php/inc/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/reset_mdp.php" afterPath="$PROJECT_DIR$/php/reset_mdp.php" />
     </list>
     <ignored path="prototype1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +35,22 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="reset_mdp.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/reset_mdp.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1484150172999" expanded="true" signature="593:742" placeholder="SELECT * FRO... clients" />
+                <marker date="1484150172999" expanded="true" signature="1029:1117" placeholder="UPDATE clien... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,13 +66,13 @@
         <option value="$PROJECT_DIR$/php/forgot.php" />
         <option value="$PROJECT_DIR$/js/forgot.js" />
         <option value="$PROJECT_DIR$/js/param_mdp.js" />
-        <option value="$PROJECT_DIR$/php/reset_mdp.php" />
         <option value="$PROJECT_DIR$/php/log_in.php" />
         <option value="$PROJECT_DIR$/js/code.js" />
         <option value="$PROJECT_DIR$/js/parametres.js" />
         <option value="$PROJECT_DIR$/php/change_mdp.php" />
         <option value="$PROJECT_DIR$/js/mainmenu.js" />
         <option value="$PROJECT_DIR$/php/inc/functions.php" />
+        <option value="$PROJECT_DIR$/php/reset_mdp.php" />
       </list>
     </option>
   </component>
@@ -137,24 +151,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="php" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prototype1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prototype1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -241,18 +237,18 @@
       <workItem from="1484040892209" duration="4747000" />
       <workItem from="1484049231101" duration="11909000" />
       <workItem from="1484064513339" duration="85000" />
-      <workItem from="1484130298630" duration="1414000" />
+      <workItem from="1484130298630" duration="2908000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19197000" />
+    <option name="totallyTimeSpent" value="20691000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17302378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15644002" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -365,13 +361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/reset_mdp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/forgot.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -404,13 +393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -480,6 +462,26 @@
             <marker date="1484130496352" expanded="true" signature="1466:1509" placeholder="SELECT codeQ... clients" />
             <marker date="1484130496352" expanded="true" signature="2717:2758" placeholder="SELECT * FRO... clients" />
             <marker date="1484130496352" expanded="true" signature="3391:3432" placeholder="SELECT * FRO... clients" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/reset_mdp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1484150172999" expanded="true" signature="593:742" placeholder="SELECT * FRO... clients" />
+            <marker date="1484150172999" expanded="true" signature="1029:1117" placeholder="UPDATE clien... " />
           </folding>
         </state>
       </provider>
