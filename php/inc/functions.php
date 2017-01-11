@@ -92,7 +92,7 @@ function reconnect(){
         $remember_token = $_COOKIE['remember'];
         $parts = explode('==', $remember_token);
         $user_id = $parts[0];
-        $req = $bdd->prepare('SELECT * FROM clients WHERE id = ?');
+        $req = $bdd->prepare('SELECT * FROM clients WHERE id_client = ?');
         $req->execute([$user_id]);
         $user = $req->fetch();
         if($user){
