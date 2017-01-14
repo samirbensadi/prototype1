@@ -12,15 +12,14 @@ $(document).on("pagebeforecreate", "#home", function () {
                 var requete = JSON.parse(data);
                 console.log(requete);
                 if (requete.reponse == true) {
-                    $.mobile.changePage("views/mainmenu.html", {transition: "slide", reverse: false});
+                  sessionStorage.setItem('qrcode', requete.qrcode);
+                  $.mobile.changePage("views/mainmenu.html", {transition: "slide", reverse: false});
                 } else {
                     localStorage.clear();
                 }
             }
         });
     }
-
-
 
 });
 

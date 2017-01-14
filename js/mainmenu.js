@@ -11,7 +11,7 @@ $(document).on("pagecreate", "#mainmenu", function () {
             url: 'http://' + server + '/prototype1/php/log_out.php'
 
         });
-        $.mobile.changePage($('#home'),{transition : "slide", reverse: true}); // retourner à la page home
+        $.mobile.changePage("../index.html",{transition : "slide", reverse: true}); // retourner à la page home
         localStorage.clear();
         sessionStorage.clear();
     });
