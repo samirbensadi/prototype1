@@ -66,8 +66,8 @@ function logged_only(){
     session_start();
   }
   if(!isset($_SESSION['auth'])) {
-      $reponse = array("reponse" => "disconnect");
-      send_json($reponse);
+    $reponse = array("reponse" => "disconnect");
+    send_json($reponse);
     exit();
   }
 }

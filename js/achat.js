@@ -18,22 +18,25 @@ $(document).on("pageinit", "#achat", function () {
     $('#prixVert').text(prixVert +' €');
     $('#prixRose').text(prixRose +' €');
 
-    // On affiche le nombre de ticket stoquer dans le sessionStorage
+    // REACTUALISATION DE LA PAGE : On affiche le nombre de ticket stockés dans le sessionStorage
 
-    if (sessionStorage.ticketJaune == null) {
+    if (sessionStorage.ticketJaune == 0 || !sessionStorage.ticketJaune) {
         $('#numJaune').html('<p>0 ticket(s)</p>');
     } else { // sinon
         $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)");
+        $("#removeJaune").prop('disabled', false);
     }
-    if (sessionStorage.ticketVert == null) {
+    if (sessionStorage.ticketVert == 0 || !sessionStorage.ticketVert) {
         $('#numVert').html('<p>0 ticket(s)</p>');
     } else { // sinon
         $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
+        $("#removeVert").prop('disabled', false);
     }
-    if (sessionStorage.ticketRose == null) {
+    if (sessionStorage.ticketRose == 0 || !sessionStorage.ticketRose) {
         $('#numRose').html('<p>0 ticket(s)</p>');
     } else { // sinon
         $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
+        $("#removeRose").prop('disabled', false);
     }
 
     // ajout de ticket Jaune
@@ -41,17 +44,20 @@ $(document).on("pageinit", "#achat", function () {
         nombreJaune++; // on incrémente son compteur
         sessionStorage.setItem('ticketJaune', nombreJaune);
         $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)"); // on actualise le compteur sur la page
+        $('#removeJaune').prop('disabled', false);
     });
 
     // retrait de ticket jaune
     $('#removeJaune').click(function () {
         if (nombreJaune<1) { // si le compteur est inférieur à 1
             nombreJaune = 0;
-        }
-        else {
+        } else {
             nombreJaune--; // on décrémente le compteur
             sessionStorage.setItem('ticketJaune', nombreJaune);
             $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)"); // sinon on l'actualise
+            if (nombreJaune == 0) {
+              $(this).prop('disabled', true);
+            }
         }
     });
 
@@ -60,16 +66,19 @@ $(document).on("pageinit", "#achat", function () {
         nombreVert++;
         sessionStorage.setItem('ticketVert', nombreVert);
         $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
+        $('#removeVert').prop('disabled', false);
     });
     // retrait de ticket vert
     $('#removeVert').click(function () {
         if (nombreVert<1) {
             nombreVert = 0;
-        }
-        else {
+        } else {
             nombreVert--;
             sessionStorage.setItem('ticketVert', nombreVert);
             $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
+            if (nombreVert == 0) {
+              $(this).prop('disabled', true);
+            }
         }
     });
 
@@ -78,16 +87,19 @@ $(document).on("pageinit", "#achat", function () {
         nombreRose++;
         sessionStorage.setItem('ticketRose', nombreRose);
         $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
+        $('#removeRose').prop('disabled', false);
     });
     // retrait de ticket violet
     $('#removeRose').click(function () {
         if (nombreRose<1) {
             nombreRose = 0;
-        }
-        else {
+        } else {
             nombreRose--;
             sessionStorage.setItem('ticketRose', nombreRose);
             $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
+            if (nombreRose == 0) {
+              $(this).prop('disabled', true);
+            }
         }
     });
 

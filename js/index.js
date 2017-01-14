@@ -9,7 +9,9 @@ $(document).on("pagebeforecreate", "#home", function () {
         $.ajax({
             url: "http://" + server + '/prototype1/php/reconnect.php',
             success: function (data) {
-                if (!data) {
+                var requete = JSON.parse(data);
+                console.log(requete);
+                if (requete.reponse == true) {
                     $.mobile.changePage("views/mainmenu.html", {transition: "slide", reverse: false});
                 } else {
                     localStorage.clear();
@@ -18,8 +20,8 @@ $(document).on("pagebeforecreate", "#home", function () {
         });
     }
 
-  
-  
+
+
 });
 
 
@@ -41,6 +43,7 @@ $(document).on("pagecreate", "#home", function () {
           console.log(requete);
           if (requete.reponse == true) { // si la reponse vaut true
             localStorage.setItem('remember', true);
+            sessionStorage.setItem('qrcode', requete.qrcode);
             $.mobile.changePage("views/mainmenu.html",{transition : "slide", reverse: false}); // je charge la page 2
           } else {
             $("#alertErreur").popup("open","fade"); // php n'a pas reçu les bonnes infos

@@ -13,6 +13,7 @@ $(document).on("pagecreate", "#mainmenu", function () {
         });
         $.mobile.changePage($('#home'),{transition : "slide", reverse: true}); // retourner à la page home
         localStorage.clear();
+        sessionStorage.clear();
     });
 
     $.ajax({

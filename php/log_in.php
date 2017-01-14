@@ -29,7 +29,7 @@
         setcookie('remember', $user->id_client . '==' . $remToken . sha1($user->id_client . 'palpatine'), time() + 60 * 60 * 24 * 30);
         // le token est inséré dans le cookie en le concatenant avec l'id du client, et un hash de l'id et d'un mot clé // la durée du cookie est fixé à 30 jours
 
-        $reponse = array('reponse' => true); // on enregistre une réponse positive
+        $reponse = array('reponse' => true, 'qrcode' => $_SESSION['auth']->codeQR); // on enregistre une réponse positive
     }
     else { //sinon
       $reponse = array("reponse" => false);  // on enregistre une réponse négative
