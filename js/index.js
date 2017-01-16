@@ -14,8 +14,12 @@ $(document).on("pagebeforecreate", "#home", function () {
                 if (requete.reponse == true) {
                   sessionStorage.setItem('qrcode', requete.qrcode);
                   $.mobile.changePage("views/mainmenu.html", {transition: "slide", reverse: false});
+                    sessionStorage.setItem('ticketJaune', 0);
+                    sessionStorage.setItem('ticketVert', 0);
+                    sessionStorage.setItem('ticketRose', 0);
                 } else {
                     localStorage.clear();
+                    sessionStorage.clear();
                 }
             }
         });
@@ -43,6 +47,9 @@ $(document).on("pagecreate", "#home", function () {
           if (requete.reponse == true) { // si la reponse vaut true
             localStorage.setItem('remember', true);
             sessionStorage.setItem('qrcode', requete.qrcode);
+              sessionStorage.setItem('ticketJaune', 0);
+              sessionStorage.setItem('ticketVert', 0);
+              sessionStorage.setItem('ticketRose', 0);
             $.mobile.changePage("views/mainmenu.html",{transition : "slide", reverse: false}); // je charge la page 2
           } else {
             $("#alertErreur").popup("open","fade"); // php n'a pas reçu les bonnes infos
