@@ -80,10 +80,10 @@ $(document).on("pageinit", "#panier", function () {
                         sessionStorage.clear();
                         $.mobile.changePage("../index.html", {transition: "slide", reverse: true});
                     } else if (requete.reponse == true) {
-                        sessionStorage.removeItem("ticketJaune");
-                        sessionStorage.removeItem("ticketRose");
-                        sessionStorage.removeItem("ticketVert");
-                        sessionStorage.removeItem("prixtotal");
+                        sessionStorage.ticketJaune = 0;
+                        sessionStorage.ticketRose = 0;
+                        sessionStorage.ticketVert = 0;
+                        sessionStorage.prixtotal = 0;
                         $.mobile.changePage("paiement.html", {transition: "slide", reverse: false});
                     } else {
                         alert("Ya de l'eau dans le gaz ... ");

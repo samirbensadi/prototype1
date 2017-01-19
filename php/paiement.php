@@ -11,6 +11,7 @@ if (isset($_POST) && !empty($_POST['achat'])) {
     require  'inc/db.php';
 
     $achat = json_decode($_POST['achat']);
+//    var_dump($achat);
 
     $achat->jaune = (float) $achat->jaune;
     $achat->vert = (float) $achat->vert;
@@ -18,7 +19,6 @@ if (isset($_POST) && !empty($_POST['achat'])) {
     $achat->total = (float) $achat->total;
 
 
-//    var_dump($achat);
 
     $req = $bdd->prepare('SELECT t.tarifJaune, t.tarifVert, t.tarifRose FROM clients c INNER JOIN tarifsStatut t ON c.id_statut = t.id_statut WHERE c.id_client = ?');
     $req->execute([$_SESSION['auth']->id_client]);
