@@ -1,17 +1,12 @@
 //ACHAT//
 $(document).on("pageinit", "#achat", function () {
 
-    var server = "localhost";
-
     //NombreTicket
     var nombreJaune = sessionStorage.getItem('ticketJaune');
     var nombreVert = sessionStorage.getItem('ticketVert');
     var nombreRose = sessionStorage.getItem('ticketRose');
 
-
-
-
-    //PRIX (on récuperera les prix en ajax depuis le serveur)
+  //PRIX (on récuperera les prix en ajax depuis le serveur)
     $.ajax({
         method: "POST",
         url: 'http://' + server + '/prototype1/php/get_fares.php',
@@ -19,14 +14,11 @@ $(document).on("pageinit", "#achat", function () {
             var requete = JSON.parse(data); // qu'on parse (puisque c'est du json)
             console.log(requete);
             if (requete.reponse == "disconnect") {
-                localStorage.clear();
-                sessionStorage.clear();
-                $.mobile.changePage("../index.html", {transition: "slide", reverse: true});
+                disconnect();
             } else if (requete.reponse == true) {
                 var prixJaune = requete.jaune;
                 var prixVert = requete.vert;
                 var prixRose = requete.rose;
-
                 achat(prixJaune, prixVert, prixRose);
                 
             } else {
@@ -144,6 +136,5 @@ function achat (prixJaune, prixVert, prixRose) {
 
         sessionStorage.setItem('prixtotal', prixTotal);
     });
-
-}
+    }
 });

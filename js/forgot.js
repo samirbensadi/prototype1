@@ -1,14 +1,12 @@
 $(document).on("pagecreate", "#forgot", function () {
 
-    var server = "localhost";
-
     $("#formForgot").on('submit', function (event) {
         event.preventDefault();
 
         var emailForgot = $('#emailForgot').val();
         var regexMailForgot = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
 
-        if (regexMailForgot.test(emailForgot) /*|| emailForgot.length == 0*/) {
+        if (regexMailForgot.test(emailForgot)) {
             $.ajax({
                 method: "POST",
                 url: 'http://' + server + '/prototype1/php/forgot.php',
@@ -22,7 +20,7 @@ $(document).on("pagecreate", "#forgot", function () {
                         alert("Ce compte n'existe pas.");
                     } else {
                         alert("Un lien de réinitialisation vous a été envoyé par e-mail. Vous avez 30 minutes pour changer de mot de passe");
-                        $.mobile.changePage("../index.html", {transition : "slide", reverse: true});
+                        $.mobile.back();
                     }
                 },
                 error: function () {

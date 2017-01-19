@@ -1,9 +1,7 @@
-
-var server = "localhost";
-
-
 $(document).on("pagebeforecreate", "#home", function () {
   $.mobile.allowCrossDomainPages = true;
+
+
 
     if (localStorage.remember) {
         $.ajax({
@@ -18,17 +16,14 @@ $(document).on("pagebeforecreate", "#home", function () {
                     sessionStorage.setItem('ticketVert', 0);
                     sessionStorage.setItem('ticketRose', 0);
                 } else {
-                    localStorage.clear();
-                    sessionStorage.clear();
+                    disconnect();
                 }
             }
         });
     }
 
-});
 
 
-$(document).on("pagecreate", "#home", function () {
 
 
 
