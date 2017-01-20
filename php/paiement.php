@@ -43,7 +43,12 @@ if (isset($_POST) && !empty($_POST['achat'])) {
 
             $req2 = $bdd->prepare('UPDATE clients SET ticket_jaune = ?, ticket_vert = ?, ticket_rose = ? WHERE id_client = ?');
             $req2->execute([$jaune, $vert, $rose, $_SESSION['auth']->id_client]);
-
+            $req2->closeCursor();
+            
+            $req3 = $bdd->prepare('INSERT INTO vente (ticket_vert, ticket_rose, ticket_jaune, id_client) VALUES (:ticket_vert, :ticket_rose, :ticket_jaune, :id_client)');
+            $req3->execute(["ticket_vert" => $achat->vert, "ticket_rose" => $achat->rose, "ticket_jaune" => $achat->jaune, "id_client" => $_SESSION['auth']->id_client ]);
+            $req3->closeCursor();
+            
             $reponse = array('reponse' => true);
 
         } else {
