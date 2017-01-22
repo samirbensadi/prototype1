@@ -1,8 +1,8 @@
 <?php
+require 'inc/functions.php';
 
 if (!empty($_POST['emailForgot'])) {
-    require_once "inc/db.php";
-    require_once 'inc/functions.php';
+    require "inc/db.php";
 
     $req = $bdd->prepare('SELECT * FROM clients WHERE email = ? AND confirmed_at IS NOT NULL ');
     $req->execute([$_POST['emailForgot']]);

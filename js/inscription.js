@@ -1,6 +1,6 @@
 $(document).on("pageinit", "#inscription", function () {
 
-  var server = "localhost";
+  majeur();
 
   $('#forminscription').on("submit",function (event) { // au tap du bouton d'inscription
     event.preventDefault(); // on empeche la transmission par defaut

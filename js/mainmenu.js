@@ -1,19 +1,13 @@
 $(document).on("pagecreate", "#mainmenu", function () {
 
-    var server = "localhost";
-
     // AU TAP DU BOUTON SE DECONNECTER
 
     $('#logOut').on('tap', function () {
-        window.sessionStorage.clear(); // effacer le localStorage
         $.ajax({
             method: "POST",
             url: 'http://' + server + '/prototype1/php/log_out.php'
-
         });
-        $.mobile.changePage("../index.html",{transition : "slide", reverse: true}); // retourner à la page home
-        localStorage.clear();
-        sessionStorage.clear();
+        disconnect();
     });
 
     $.ajax({
@@ -22,24 +16,37 @@ $(document).on("pagecreate", "#mainmenu", function () {
             var requete = JSON.parse(data);
             console.log(requete);
             if (requete.reponse == "disconnect") {
-                localStorage.clear();
-                sessionStorage.clear();
-                $.mobile.changePage("../index.html", {transition : "slide", reverse: true});
+              disconnect();
             } else if (requete.reponse == true) {
 
                 $("#soldeDiv").html('<h3>Vous avez : </h3>');
 
-                if (requete.vert > 0) {
-                    $('#soldeDiv').append("<p>- " + requete.vert + " ticket(s) vert(s)</p>");
-                }
-                if (requete.rose > 0) {
-                    $('#soldeDiv').append("<p>- " + requete.rose + " ticket(s) rose(s)</p>");
-                }
-                if (requete.jaune > 0) {
-                    $('#soldeDiv').append("<p>- " + requete.jaune + " ticket(s) jaune(s)</p>");
+                if (requete.vert == 1) {
+                    $('#soldeDiv').append("<p>- " + requete.vert + " ticket vert</p>");
+                } else if (requete.vert > 1) {
+                  $('#soldeDiv').append("<p>- " + requete.vert + " tickets verts</p>");
                 }
 
-                $("#soldeDiv").append('<a id="confirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" href="confirmation.html">Je viens manger</a>');
+                if (requete.rose == 1) {
+                    $('#soldeDiv').append("<p>- " + requete.rose + " ticket rose</p>");
+                } else if (requete.rose > 1) {
+                  $('#soldeDiv').append("<p>- " + requete.rose + " tickets roses</p>");
+                }
+
+                if (requete.jaune == 1) {
+                    $('#soldeDiv').append("<p>- " + requete.jaune + " ticket jaune</p>");
+                } else if (requete.jaune > 1) {
+                  $('#soldeDiv').append("<p>- " + requete.jaune + " tickets jaunes</p>");
+                }
+
+                if (requete.present == false ) {
+                  $("#soldeDiv").append('<button id="confirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" disabled>Je viens manger</button>');
+                  checkHour($('#confirmBtn'));
+                } else {
+                  $('#soldeDiv').append('Je suis dans la liste (ticket ' + requete.couleur + ')');
+                  $("#soldeDiv").append('<button id="cancelConfirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide">Je veux me décommander</button>');
+                  checkHour($('#cancelConfirmBtn'));
+                }
 
             } else {
                 $('#soldeDiv').text("Vous n'avez aucun ticket.");
@@ -49,12 +56,10 @@ $(document).on("pagecreate", "#mainmenu", function () {
         error: function () {
             alert('probleme de liaison'); // erreur de liaison avec le serveur
         }
-    })
+    });
 
 
-    // $('#confirmBtn').on("tap", function () {
-    //
-    // });
+    
 
 
 });
