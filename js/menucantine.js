@@ -5,7 +5,7 @@ $(document).on("pagebeforecreate", "#menucantine", function () {
         url: 'http://' + server + '/prototype1/php/menucantine.php',
         success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
             var requete = JSON.parse(data); // qu'on parse (puisque c'est du json)
-            console.log(requete[0]);
+            console.log(requete);
             if (requete.reponse == "disconnect") {
               disconnect();
             } else if (requete.length > 0) {
@@ -16,7 +16,8 @@ $(document).on("pagebeforecreate", "#menucantine", function () {
                 var jourSemaine = dateMenu.getDay();
                 var moisAnnee = dateMenu.getMonth();
                 var annee = dateMenu.getFullYear();
-                $('#cantineDiv').append('<h4>' + jours[jourSemaine] + " " + jourMois + " " + mois[moisAnnee] + " " + annee +  '</h4>');                                $('#cantineDiv').append('<h4>Entrée : ' + requete[i].entree + '</h4>');
+                $('#cantineDiv').append('<h4>' + jours[jourSemaine] + " " + jourMois + " " + mois[moisAnnee] + " " + annee +  '</h4>');
+                  $('#cantineDiv').append('<h4>Entrée : ' + requete[i].entree + '</h4>');
                 $('#cantineDiv').append('<h4>Plat : ' + requete[i].plat + '</h4>');
                 $('#cantineDiv').append('<h4>Dessert : ' + requete[i].dessert + '</h4>');
               }

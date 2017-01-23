@@ -44,8 +44,9 @@ $(document).on("pagecreate", "#mainmenu", function () {
                   checkHour($('#confirmBtn'));
                 } else {
                   $('#soldeDiv').append('Je suis dans la liste (ticket ' + requete.couleur + ')');
-                  $("#soldeDiv").append('<button id="cancelConfirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide">Je veux me décommander</button>');
-                  checkHour($('#cancelConfirmBtn'));
+                  $("#soldeDiv").append('<button id="unConfirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide">Je veux me décommander</button>');
+                  checkHour($('#unConfirmBtn'));
+                    unconfirm();
                 }
 
             } else {
@@ -57,6 +58,7 @@ $(document).on("pagecreate", "#mainmenu", function () {
             alert('probleme de liaison'); // erreur de liaison avec le serveur
         }
     });
+
 
 
     

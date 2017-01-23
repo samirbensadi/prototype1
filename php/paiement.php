@@ -39,9 +39,9 @@ if (isset($_POST) && !empty($_POST['achat'])) {
         // si les totaux correspondent
         if ($total == $achat->total)  {
             // on additionne le crédit au solde
-            $jaune = $_SESSION['auth']->ticket_jaune + $achat->jaune;
-            $vert = $_SESSION['auth']->ticket_vert + $achat->vert;
-            $rose = $_SESSION['auth']->ticket_rose + $achat->rose;
+            $jaune = (float) $_SESSION['auth']->ticket_jaune + $achat->jaune;
+            $vert = (float) $_SESSION['auth']->ticket_vert + $achat->vert;
+            $rose = (float) $_SESSION['auth']->ticket_rose + $achat->rose;
 
 
             // et on met à jour la table clients

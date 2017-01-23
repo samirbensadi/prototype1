@@ -6,18 +6,13 @@
       <h1>Confirmation</h1>
   </div>
   <div data-role="content" class="ui-content">
-    <form class="ui-body ui-body-a ui-corner-all" id="confirmZone">
+    <form method="POST" class="ui-body ui-body-a ui-corner-all" id="confirmZone">
 
         <h4>Quel ticket souhaitez-vous utiliser ?</h4>
         <fieldset data-role="controlgroup">
-                <input type="radio" name="radioCouleur" id="radioJaune"  value="" >
-                <label for="radioJaune">Jaune</label>
-                <input type="radio" name="radioCouleur" id="radioVert"  value="">
-                <label for="radioVert">Vert</label>
-                <input type="radio" name="radioCouleur" id="radioRose" value="">
-                <label for="radioRose">Rose</label>
-            </fieldset>
-        <button type="submit" id="confirmPresenceBtn" disabled class="ui-btn  ui-btn-raised clr-primary">Je confirme !</button>
+
+        </fieldset>
+        <button type="submit" id="confirmPresenceBtn"  class="ui-btn  ui-btn-raised clr-primary" disabled>Je confirme !</button>
     </form>
   </div>
 </div>

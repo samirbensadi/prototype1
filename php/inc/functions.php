@@ -15,6 +15,7 @@ function checkRemToken($base)
   $reqtoken = $base->prepare('SELECT remember_token FROM clients WHERE remember_token = ?');
   $reqtoken->execute([$token_string]);
   $result_token = $reqtoken->fetch();
+    $reqtoken->closeCursor();
 
   // si le resultat est different de false (càd si le token existe déjà dans la bdd)
   if ($result_token != false) {
@@ -33,8 +34,10 @@ function checkConfToken($base)
   $reqtoken = $base->prepare('SELECT confirmation_token FROM clients WHERE confirmation_token = ?');
   $reqtoken->execute([$token_string]);
   $result_token = $reqtoken->fetch();
+    $reqtoken->closeCursor();
 
-  // si le resultat est different de false (càd si le token existe déjà dans la bdd)
+
+    // si le resultat est different de false (càd si le token existe déjà dans la bdd)
   if ($result_token != false) {
     checkConfToken();
   } else { // sinon (si le resultat vaut false,
@@ -50,6 +53,7 @@ function checkCode($base)
   $reqcode = $base->prepare('SELECT codeQR FROM clients WHERE codeQR = ?');
   $reqcode->execute([$code_string]);
   $result_code = $reqcode->fetch();
+    $reqcode->closeCursor();
 
   // si le resultat est different de false (càd si le code existe déjà dans la bdd)
   if ($result_code != false) {
@@ -95,6 +99,7 @@ function reconnect(){
         $req = $bdd->prepare('SELECT * FROM clients WHERE id_client = ?');
         $req->execute([$user_id]);
         $user = $req->fetch();
+        $req->closeCursor();
         if($user){
             $expected = $user_id . '==' . $user->remember_token . sha1($user_id . 'palpatine');
             if($expected == $remember_token){
@@ -116,6 +121,7 @@ function refreshSession() {
     $req=$bdd->prepare('SELECT * FROM clients WHERE id_client = ?');
     $req->execute([$_SESSION['auth']->id_client]);
     $user = $req->fetch();
+    $req->closeCursor();
 
     if ($user) {
         $_SESSION['auth'] = $user;
@@ -124,4 +130,13 @@ function refreshSession() {
         exit();
     }
 
+}
+
+function checkTime() {
+    $heure_actuelle = date('H');
+    if ($heure_actuelle >= 0 && $heure_actuelle < 22 ) {
+        return true;
+    } else {
+        return false;
+    }
 }

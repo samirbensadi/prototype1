@@ -8,20 +8,20 @@ if (checkTime()) {
           if (requete.reponse == "disconnect") {
             disconnect();
           } else if (requete.reponse == true) {
-            if (requete.vert > 0) {
-              $('#radioVert').prop('disabled', false);
-                console.log(requete.vert);
-            }
 
             if (requete.jaune > 0) {
-              $('#radioJaune').prop('disabled', false);
-                $('#radioVert').css('background-color', "red");
-                console.log(requete.jaune);
+              $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioJaune' value='jaune' ><label for='radioJaune'>Jaune</label>");
+                chooseTicket();
+            }
+
+            if (requete.vert > 0) {
+                $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioVert' value='vert' ><label for='radioVert'>Vert</label>");
+                chooseTicket();
             }
 
             if (requete.rose > 0) {
-              $('#radioRose').prop('disabled', false);
-                console.log(requete.rose);
+                $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioRose' value='rose' ><label for='radioRose'>Rose</label>");
+                chooseTicket();
             }
 
           }
@@ -35,29 +35,37 @@ if (checkTime()) {
       }
   });
 
-  $("#radioJaune, #radioVert, #radioRose").on('tap', function () {
-    $('#confirmPresenceBtn').prop("disabled", false);
-  });
 
 
-  $("#confirmZone").on("submit", function () {
-    $.ajax({
-        url: 'http://' + server + '/prototype1/php/confirm.php',
-        data: $("#confirmZone").serialize() ,
-        success: function (data) {
-            var requete = JSON.parse(data);
-            console.log(requete);
-            if (requete.reponse == "disconnect") {
-              disconnect();
-            } else if (requete.reponse == true) {
+  $("#confirmZone").on("submit", function (event) {
+      event.preventDefault;
 
-            }
-          },
+      if (checkTime()) {
+          $.ajax({
+              method: "POST",
+              url: 'http://' + server + '/prototype1/php/confirm.php',
+              data: $("#confirmZone").serialize(),
+              success: function (data) {
+                  var requete = JSON.parse(data);
+                  console.log(requete);
+                  if (requete.reponse == "disconnect") {
+                      disconnect();
+                  } else if (requete.reponse == true) {
+                      alert("Vous êtes confirmé !");
+                      $.mobile.back();
+                  } else if (requete.reponse == "time") {
+                      alert("It's too late !");
+                      $.mobile.back();
+                  } else {
+                      alert("Vous n'avez pas choisi de ticket !");
+                  }
+              },
 
-        error: function () {
-            alert('probleme de liaison'); // erreur de liaison avec le serveur
-        }
-    });
+              error: function () {
+                  alert('probleme de liaison'); // erreur de liaison avec le serveur
+              }
+          });
+      }
   });
 
 
