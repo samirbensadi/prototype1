@@ -1,26 +1,27 @@
 $(document).on("pagecreate", "#confirmation", function () {
 
 if (checkTime()) {
-  console.log("hello");
   $.ajax({
       url: 'http://' + server + '/prototype1/php/solde.php',
       success: function (data) {
           var requete = JSON.parse(data);
-          console.log(requete);
           if (requete.reponse == "disconnect") {
             disconnect();
           } else if (requete.reponse == true) {
-
             if (requete.vert > 0) {
               $('#radioVert').prop('disabled', false);
+                console.log(requete.vert);
             }
 
             if (requete.jaune > 0) {
               $('#radioJaune').prop('disabled', false);
+                $('#radioVert').css('background-color', "red");
+                console.log(requete.jaune);
             }
 
             if (requete.rose > 0) {
               $('#radioRose').prop('disabled', false);
+                console.log(requete.rose);
             }
 
           }

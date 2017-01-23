@@ -5,9 +5,9 @@ reconnect();
 logged_only();
 refreshSession();
 
-$vert = $_SESSION['auth']->ticket_vert;
-$rose = $_SESSION['auth']->ticket_rose;
-$jaune = $_SESSION['auth']->ticket_jaune;
+$vert = (int) $_SESSION['auth']->ticket_vert;
+$rose = (int) $_SESSION['auth']->ticket_rose;
+$jaune = (int) $_SESSION['auth']->ticket_jaune;
 
 if ($vert == 0 && $rose == 0 && $jaune == 0) {
     $reponse = array("reponse" => "noticket");
