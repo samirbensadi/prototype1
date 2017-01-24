@@ -1,8 +1,7 @@
 //PANIER
 $(document).on("pageinit", "#panier", function () {
 
-    var server = "localhost";
-    
+
 
 //PRIX (on récuperera les prix en ajax depuis le serveur)
     $.ajax({

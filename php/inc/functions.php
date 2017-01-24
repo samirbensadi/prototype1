@@ -19,7 +19,7 @@ function checkRemToken($base)
 
   // si le resultat est different de false (càd si le token existe déjà dans la bdd)
   if ($result_token != false) {
-    checkRemToken();
+    checkRemToken($base);
   } else { // sinon (si le resultat vaut false,
     return $token_string; // on renvoit le token généré
   }
