@@ -1,52 +1,48 @@
 <!-- PAGE PARAMETRES  -->
 
 <div data-role="page" id="parametres">
-  <div data-role="header" data-position="fixed">
+  <div data-role="header" data-position="fixed" data-tap-toggle="false">
       <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back"></a>
       <h1>Paramètres</h1>
   </div>
 
-
   <div data-role="main" class="ui-content" id="parametres-content">
-
-
       <!-- début form -->
     <form method="POST" id="formparametres">
 
-      <label for="newTel">Numéro de téléphone</label>
-      <input type="text" name="newTel" id="newTel" class="required number" />
+      <label for="paramNom">Votre nom</label>
+      <input type="text" name="paramNom" id="paramNom" disabled>
 
+      <label for="paramPrenom">Votre prénom</label>
+      <input type="text" name="paramPrenom" id="paramPrenom" disabled>
+
+      <label for="newTel">Numéro de téléphone</label>
+      <input type="text" name="newTel" id="newTel">
 
       <label for="newEmail">Adresse e-mail:</label>
       <input type="email" name="newEmail" id="newEmail">
 
-
-
-      <button type="submit" id="btnSave">Sauvegarder</button>
-
-
+      <button type="submit" id="btnSave" class="ui-btn ui-btn-raised clr-primary">Sauvegarder</button>
     </form>
-      <a class="ui-btn" data-transition="slide" href="param_mdp.html">Changer le mot de passe</a>
-      <a class="ui-btn" id="btnDelAccountPop">Supprimer le compte</a>
+
+      <a class="ui-btn" data-transition="slide" href="param_mdp.html" class="ui-btn ui-btn-raised">Changer le mot de passe</a>
+      <a class="ui-btn" id="btnDelAccountPop" class="ui-btn ui-btn-raised clr-warning" data-rel="dialog" data-transition="pop" data-position-to="window" data-role="button">Supprimer le compte</a>
 
     <!-- POP-UPS  -->
 
     <!-- supprimer le compte -->
 
-
-    <div data-role="popup" id="delAccountPop" data-overlay-theme="b">
+    <div data-role="popup" id="delAccountPop" style="background-color:white;">
       <div data-role="content" class="ui-content">
         <form method="POST" id="delAccountForm">
             <p>La suppression de compte est définitive.</p>
           <label>Merci d'entrer votre mot de passe.</label>
           <input id="mdpDel" type="password" placeholder="Votre mot de passe">
-          <button id="delAccount" type="submit" class="ui-btn" disabled>Supprimer le compte</button>
-            <a href="#" data-rel="back" class="ui-btn" >Annuler</a>
+          <button id="delAccount" type="submit" class="ui-btn ui-btn-raised clr-primary" disabled>Supprimer le compte</button>
+            <a href="#" data-rel="back" class="ui-btn ui-btn-raised" >Annuler</a>
         </form>
       </div>
     </div>
-
-
 
   </div>
 </div>

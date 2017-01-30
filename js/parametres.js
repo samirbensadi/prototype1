@@ -9,7 +9,8 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
             if (requete.reponse == "disconnect") {
                 disconnect();
             } else if (requete.reponse == true) {
-                $('#parametres-content').prepend('<h4>Nom : ' + requete.nom + '</h4></br><h4>Prénom : ' + requete.prenom + "</h4>");
+                $('#paramNom').val(requete.nom);
+                $('#paramPrenom').val(requete.prenom);
                 $('#newTel').val(requete.tel);
                 $('#newEmail').val(requete.email);
             }
@@ -24,7 +25,7 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
     $('#formparametres').on("submit", function (event) {
 
         event.preventDefault();
-            
+
       var regexParamTel = /[0-9]/;
       var regexParamMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
 

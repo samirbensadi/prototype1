@@ -1,7 +1,7 @@
 <!-- PAGE PARAMETRES MOT DE PASSE  -->
 
 <div data-role="page" id="parametresmdp">
-    <div data-role="header" data-position="fixed">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
         <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Retour</a>
         <h1>Changer le mot de passe</h1>
     </div>
@@ -13,13 +13,13 @@
         <!-- début form -->
         <form method="POST" id="formparametresmdp">
             <label for="mdp">Ancien mot de passe</label>
-            <input type="password" name="oldMdp" id="oldMdp" value="" class="required password" />
+            <input type="password" name="oldMdp" id="oldMdp" value="">
             <label for="newMdp">Nouveau mot de passe</label>
-            <input type="password" name="newMdp" id="newMdp" value="" class="required password" />
+            <input type="password" name="newMdp" id="newMdp" value="">
             <label for="newMdpConf">Confirmer votre nouveau mot de passe</label>
-            <input type="password" name="newMdpConf" id="newMdpConf" value="" class="required password" />
+            <input type="password" name="newMdpConf" id="newMdpConf" value="">
 
-            <button type="submit" id="btnSaveMdp" disabled>Sauvegarder</button>
+            <button type="submit" id="btnSaveMdp" class="ui-btn ui-btn-raised clr-primary" disabled>Sauvegarder</button>
          </form>
 
     </div>

@@ -20,7 +20,7 @@ $(document).on("pageinit", "#achat", function () {
                 var prixVert = requete.vert;
                 var prixRose = requete.rose;
                 achat(prixJaune, prixVert, prixRose);
-                
+
             } else {
                 alert("Ya de l'eau dans le gaz ... ");
             }
@@ -126,7 +126,7 @@ function achat (prixJaune, prixVert, prixRose) {
     });
 
     // quand on va au panier
-    $('.slot').click(function () {
+    $('.panierBtn').on("tap", function () {
 
         //Calcule PrixTotal
         var totalJaune = nombreJaune * prixJaune;

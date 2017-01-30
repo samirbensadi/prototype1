@@ -1,46 +1,57 @@
 <!-- PAGE ACHAT TICKETS -->
 
 <div data-role="page" id="achat" >
-    <div data-role="header" data-position="fixed">
-        <a href="#" id="resetTicket" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back"></a>
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a href="#" id="resetTicket" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back"></a>
         <h1>Achat de tickets</h1>
-        <a href="panier.html" class="slot ui-btn ui-icon-shop ui-btn-icon-left" data-transition="slide"></a>
+        <a href="panier.html" class="panierBtn ui-btn ui-icon-shop ui-btn-icon-left" data-transition="slide"></a>
     </div>
-
-    <!-- ui-btn ui-btn-raised clr-primary waves-effect waves-button waves-effect waves-button -->
 
     <div data-role="content" class="ui-content">
-          <!-- ID ticket jaune:1 vert:2 violet:3     -->
 
-    <div class="ui-body ui-body-a ui-corner-all">
-        <h2>Ticket Jaune</h2>
-        <h4>Plat uniquement</h4>
-        <p id="prixJaune"><!--Prix--></p>
-        <p id="numJaune"> </p>
-        <button id="addJaune" class="ui-btn  ui-btn-raised clr-primary"> Ajouter un ticket</button>
-        <button id="removeJaune" class="ui-btn clr-primary waves-effect waves-button waves-effect waves-button" disabled>Supprimer un ticket</button>
-    </div>
-    <br> <!-- br code de crado -->
-    <div class="ui-body ui-body-a ui-corner-all">
-        <h2>Ticket Vert</h2>
-        <h4>Entrée + plat ou plat + dessert</h4>
-        <p id="prixVert"><!--Prix--></p>
-        <p id="numVert"> </p>
-        <button id="addVert" class="ui-btn  ui-btn-raised clr-primary">Ajouter un ticket</button>
-        <button id="removeVert" class="ui-btn clr-warning waves-effect waves-button waves-effect waves-button" disabled>Supprimer un ticket</button >
-    </div>
-    <br> <!-- br code de crado -->
-    <div class="ui-body ui-body-a ui-corner-all">
-        <h2>Ticket Rose</h2>
-        <h4>Entrée + plat + dessert</h4>
-        <p id="prixRose"><!--Prix--></p>
-        <p id="numRose"> </p>
-        <button id="addRose" class="ui-btn  ui-btn-raised clr-primary">Ajouter un ticket</a>
-        <button id="removeRose" class="ui-btn clr-warning waves-effect waves-button waves-effect waves-button" disabled>Supprimer un ticket</button>
-    </div>
+      <div class="nd2-card">
+        <div class="card-title">
+          <h2 class="card-primary-title">Ticket Jaune</h2>
+          <h4 class="card-subtitle">Plat uniquement</h4>
+          <h4 class="card-subtitle" id="prixJaune"></h4>
+        </div>
 
-     <!-- BOUTON -->
-    <a href="panier.html" class="slot ui-btn  ui-btn-raised clr-primary" data-transition="slide">Aller au panier</a>
+        <div class="card-supporting-text">
+          <p id="numJaune"> </p>
+          <button id="addJaune" class="ui-btn ui-btn-raised clr-primary"><i class='zmdi zmdi-plus'></i> Ajouter un ticket</button>
+          <button id="removeJaune" class="ui-btn clr-warning waves-effect waves-button waves-effect waves-button ui-disabled" disabled><i class="zmdi zmdi-delete ui-pull-left"></i> Supprimer un ticket</button>
+        </div>
+      </div>
+
+      <div class="nd2-card">
+        <div class="card-title">
+          <h2 class="card-primary-title">Ticket Vert</h2>
+          <h4 class="card-subtitle">Entrée + plat ou plat + dessert</h4>
+          <h4 class="card-subtitle" id="prixVert"></h4>
+        </div>
+        <div class="card-supporting-text">
+          <p id="numVert"> </p>
+          <button id="addVert" class="ui-btn  ui-btn-raised clr-primary">Ajouter un ticket</button>
+          <button id="removeVert" class="ui-btn clr-warning waves-effect waves-button waves-effect waves-button ui-disabled" disabled><i class="zmdi zmdi-delete ui-pull-left"></i> Supprimer un ticket</button >
+        </div>
+      </div>
+
+      <div class="nd2-card">
+        <div class="card-title">
+          <h2 class="card-primary-title">Ticket Rose</h2>
+          <h4 class="card-subtitle">Entrée + plat + dessert</h4>
+          <h4 class="card-subtitle" id="prixRose"></h4>
+        </div>
+        <div class="card-supporting-text">
+
+          <p id="numRose"> </p>
+          <button id="addRose" class="ui-btn  ui-btn-raised clr-primary"><i class='zmdi zmdi-plus'></i> Ajouter un ticket</a>
+          <button id="removeRose" class="ui-btn clr-warning waves-effect waves-button waves-effect waves-button" disabled><i class="zmdi zmdi-delete ui-pull-left"></i> Supprimer un ticket</button>
+        </div>
+      </div>
+
+       <!-- BOUTON -->
+      <a href="panier.html" class="panierBtn ui-btn  ui-btn-raised clr-primary" data-transition="slide"><i class='zmdi zmdi-shopping-basket'></i> Aller au panier</a>
 
 
   </div>
