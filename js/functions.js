@@ -3,8 +3,8 @@ var heureDebut = 0; // heure à partir de laquelle on peut confirmer
 var heureFin = 22; // heure à partir de laquelle on ne peut plus
 
 // tableaux qui contiennent la liste des jours de la semaine et des mois de l'année pour que ecrire les dates en français
-var jours = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
-var mois = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"];
+var jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+var mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 
 // fonction qui permet d'activer ou désactiver le bouton pour changer le mot de passe en fonction des champs
 function checkChangeMdp() {

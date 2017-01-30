@@ -91,7 +91,7 @@ function reconnect(){
     }
 
     if(isset($_COOKIE['remember']) && !isset($_SESSION['auth']) ){
-        require_once 'inc/db.php';
+        require_once 'db.php';
 
         $remember_token = $_COOKIE['remember'];
         $parts = explode('==', $remember_token);
