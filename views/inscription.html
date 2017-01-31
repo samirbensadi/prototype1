@@ -13,36 +13,36 @@
     <form method="POST" id="forminscription">
 
         <label for="nom">Nom </label>
-        <input type="text" name="nom" id="nom" value="" />
+        <input type="text" name="nom" id="nom" value="" placeholder="2 caractères minimum et aucun chiffre"/>
 
         <label for="prenom">Prénom</label>
-        <input type="text" name="prenom" id="prenom" value="" />
+        <input type="text" name="prenom" id="prenom" value="" placeholder="2 caractères minimum et aucun chiffre"/>
 
         <label for="bday">Date de naissance:</label>
-        <input type="date" name="bday" id="bday">
+        <input type="date" name="bday" id="bday"">
 
         <label for="tel">Téléphone</label>
-        <input type="tel" name="tel" id="tel" value="" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" />
+        <input type="tel" name="tel" id="tel" value="" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" placeholder="10 chiffres (sans espaces) au minimum" />
 
 
         <label for="email">Adresse e-mail:</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" placeholder="personne@exemple.com">
 
         <label for="emailconf">Confirmez votre adresse e-mail:</label>
-        <input type="email" name="emailconf" id="emailconf">
+        <input type="email" name="emailconf" id="emailconf" >
 
 
         <label for="mdpreg">Mot de passe</label>
-        <input type="password" name="mdpreg" id="mdpreg" value=""/>
+        <input type="password" name="mdpreg" id="mdpreg" value="" placeholder="6 caractères au minimum">
 
         <label for="mdpconf">Confirmez votre mot de passe</label>
-        <input type="password" name="mdpconf" id="mdpconf" value=""/>
+        <input type="password" name="mdpconf" id="mdpconf" value="">
 
 
-        <legend>Indiquez votre Formation</legend>
+        <label for="formationSel" class="select">Indiquez votre Formation</label>
 
 
-        <select name="formation" id="formationSel" data-mini="true" data-native-menu="false">
+        <select name="formation" id="formationSel" data-mini="true" data-native-menu="true">
           <option value="dev">Développeur web</option>
           <option value="chaud">Chaudronnier</option>
           <option value="soud">Soudeur</option>
@@ -53,60 +53,6 @@
         <button id="btninscription" class="ui-btn ui-btn-raised clr-primary">Je m'inscris</button>
     </form>
 
-    <!-- POP-UPS D'ALERTE -->
 
-      <!-- champ nom ou prenom incomplet -->
-      <div data-role="popup" id="alertNom" data-overlay-theme="b">
-        <div data-role="content" class="ui-content">
-          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-          <p>Vos nom et prénom ne doivent comporter aucun chiffre et 2 caractères au minimum.
-          </p>
-        </div>
-      </div>
-
-      <!-- champ numero incomplet -->
-      <div data-role="popup" id="alertNum" data-overlay-theme="b">
-        <div data-role="content" class="ui-content">
-          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-          <p>Votre numéro doit contenir au minimum 10 chiffres (sans espaces).
-          </p>
-        </div>
-      </div>
-
-      <!-- champ email incomplet -->
-      <div data-role="popup" id="alertMail" data-overlay-theme="b">
-        <div data-role="content" class="ui-content">
-          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-          <p>Merci d'entrer une adresse e-mail valide (personne@exemple.com).
-          </p>
-        </div>
-      </div>
-
-      <!-- champ mdp incomplet -->
-      <div data-role="popup" id="alertMdpReg" data-overlay-theme="b">
-        <div data-role="content" class="ui-content">
-          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-          <p>Votre mot de passe doit contenir au minimum 6 caractères.
-          </p>
-        </div>
-      </div>
-
-      <!-- adresse e-mail déjà existante-->
-      <div data-role="popup" id="alertMailExist" data-overlay-theme="b">
-          <div data-role="content" class="ui-content">
-              <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-              <p> <b>Erreur</b> : cette adresse e-mail est déjà utilisée.
-              </p>
-          </div>
-      </div>
-
-      <!-- impossible de se connecter -->
-      <div data-role="popup" id="alertCoReg" data-overlay-theme="b">
-        <div data-role="content" class="ui-content">
-          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-          <p> <b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.
-          </p>
-        </div>
-      </div>
   </div>
 </div>

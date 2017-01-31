@@ -50,7 +50,7 @@ $(document).on("pagecreate", "#mainmenu", function () {
                   }
 
               } else {
-                  $('#soldeDiv div:last-child').text("Vous n'avez aucun ticket.");
+                  $('#soldeDiv div div h3').text("Vous n'avez aucun ticket.");
               }
 
           },

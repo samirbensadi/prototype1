@@ -6,6 +6,14 @@ var heureFin = 22; // heure à partir de laquelle on ne peut plus
 var jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 var mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 
+function toast(msg, time) {
+    new $.nd2Toast({ // The 'new' keyword is important, otherwise you would overwrite the current toast instance
+        message : msg , // Required
+        ttl : time // optional, time-to-live in ms (default: 3000)
+    });
+}
+
+
 // fonction qui permet d'activer ou désactiver le bouton pour changer le mot de passe en fonction des champs
 function checkChangeMdp() {
     var oldMdp = $("#oldMdp").val();
@@ -24,6 +32,7 @@ function disconnect() {
         localStorage.clear();
         sessionStorage.clear();
         $.mobile.changePage("../index.html", {transition : "slide", reverse: true});
+        toast("Vous êtes déconnecté.", 5000);
 }
 
 // fonction pour verifier l'heure
@@ -58,7 +67,6 @@ function majeur() {
 
   var hihi = date_actuelle.toISOString();
   var newdate = hihi.substring(0,10);
-  console.log(newdate);
 
   var champ = document.getElementById('bday');
   champ.max = newdate;

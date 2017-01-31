@@ -85,12 +85,12 @@ $(document).on("pageinit", "#panier", function () {
                         sessionStorage.prixtotal = 0;
                         $.mobile.changePage("paiement.html", {transition: "slide", reverse: false});
                     } else {
-                        alert("Ya de l'eau dans le gaz ... ");
+                        toast("<b>Erreur</b> : l'achat a échoué.", 5000);
                     }
                 },
 
                 error: function () { // en cas d'erreur
-                    alert('Problème de connexion');
+                    toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
                 }
             });
         });

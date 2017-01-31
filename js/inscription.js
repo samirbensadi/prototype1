@@ -43,24 +43,24 @@ $(document).on("pageinit", "#inscription", function () {
                   $.mobile.changePage("confirm_account.html",{transition : "slide", reverse: false}); // on bascule sur la page confInscription
                 }
                 else {
-                  $("#alertMailExist").popup("open", "fade");
+                  toast("<b>Erreur</b> : cette adresse e-mail est déjà utilisée.", 5000);
                 }
               },
               error: function () { // en cas d'erreur
-                $("#alertCoReg").popup("open","fade"); // on fait apparaitre la pop up d'erreur de connexion
+                toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // on fait apparaitre la pop up d'erreur de connexion
               }
             });
           } else {
-            $("#alertMdpReg").popup("open","fade"); // sinon on fait apparaitre la pop up alertMdpReg
+            toast("Votre mot de passe doit contenir au minimum 6 caractères.", 5000);
           }
         } else {
-          $("#alertMail").popup("open","fade"); // sinon on fait apparaitre la pop up alertMail
+          toast("Merci d'entrer une adresse e-mail valide.", 5000);
         }
       } else {
-        $("#alertNum").popup("open","fade"); // sinon on fait apparaitre la pop up alertNum
+        toast("Votre numéro doit contenir au minimum 10 chiffres.", 5000);
       }
     } else {
-      $("#alertNom").popup("open","fade"); // sinon on fait apparaitre la pop up alertNom
+      toast("Vos nom et/ou prénom ne sont pas valides.", 5000);
     }
   });
 

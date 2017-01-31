@@ -22,13 +22,11 @@ $(document).on("pageinit", "#achat", function () {
                 achat(prixJaune, prixVert, prixRose);
 
             } else {
-                alert("Ya de l'eau dans le gaz ... ");
-            }
+                toast("<b>Erreur</b> : les tarifs n'ont pu être actualisés.", 5000);            }
         },
 
         error: function () { // en cas d'erreur
-            alert('Problème de connexion');
-        }
+            toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000);        }
     });
 
 

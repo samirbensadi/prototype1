@@ -43,7 +43,7 @@ $(document).on("pagebeforecreate", "#menucantine", function () {
         },
 
         error: function () { // en cas d'erreur
-          alert('Problème de connexion');
+            toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
         }
     });
 
