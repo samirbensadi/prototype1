@@ -17,11 +17,7 @@ $(document).on("pageinit", "#inscription", function () {
     var mdpconf = $('#mdpconf').val();
 
 
-    // on crée nos regex
-    var regexNom = /[a-zA-Z]/;
-    var regexDate = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
-    var regexTel = /[0-9]/;
-    var regexMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+
 
     // si les nom et prénoms correspondent au regexNom et qu'ils font entre 2 et 250 caracteres
     if (regexNom.test(nom) && regexNom.test(prenom) && nom.length > 2 && nom.length < 250 && prenom.length > 2 && prenom.length < 250) {
@@ -51,7 +47,7 @@ $(document).on("pageinit", "#inscription", function () {
               }
             });
           } else {
-            toast("Votre mot de passe doit contenir au minimum 6 caractères.", 5000);
+            toast("Mot de passe : 6 caractères au minimum.", 5000);
           }
         } else {
           toast("Merci d'entrer une adresse e-mail valide.", 5000);

@@ -41,11 +41,11 @@ $(document).on("pagecreate", "#mainmenu", function () {
                   }
 
                   if (requete.present == false ) {
-                    $('#soldeAction').append('<button id="confirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" disabled>Je viens manger</button>');
+                    $('#soldeAction').append('<button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je viens manger</button>');
                     checkHour($('#confirmBtn'));
                   } else {
                     soldeText.append('Je suis dans la liste (ticket ' + requete.couleur + ')');
-                    soldeText.append('<button id="unConfirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" disabled>Je veux me décommander</button>');
+                    $('#soldeAction').append('<button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je veux me décommander</button>');
                     checkHour($('#unConfirmBtn'));
                     unconfirm();
                   }

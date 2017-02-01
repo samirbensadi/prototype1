@@ -1,8 +1,6 @@
 $(document).on("pagebeforecreate", "#home", function () {
   $.mobile.allowCrossDomainPages = true;
 
-
-
     if (localStorage.remember) {
         $.ajax({
             url: "http://" + server + '/prototype1/php/reconnect.php',
@@ -21,10 +19,6 @@ $(document).on("pagebeforecreate", "#home", function () {
             }
         });
     }
-
-
-
-
 
 
 // AU TAP DU BOUTON SE CONNECTER

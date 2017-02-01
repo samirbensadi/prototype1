@@ -1,13 +1,20 @@
 var server = "localhost";
 var heureDebut = 0; // heure à partir de laquelle on peut confirmer
-var heureFin = 22; // heure à partir de laquelle on ne peut plus
+var heureFin = 24; // heure à partir de laquelle on ne peut plus
 
 // tableaux qui contiennent la liste des jours de la semaine et des mois de l'année pour que ecrire les dates en français
 var jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 var mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 
+// on crée nos regex
+var regexNom = /[a-zA-Z]/;
+var regexDate = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+var regexTel = /[0-9]/;
+var regexMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+
+// fonction pour créer un toast
 function toast(msg, time) {
-    new $.nd2Toast({ // The 'new' keyword is important, otherwise you would overwrite the current toast instance
+    new $.nd2Toast({
         message : msg , // Required
         ttl : time // optional, time-to-live in ms (default: 3000)
     });

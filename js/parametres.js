@@ -26,16 +26,15 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
 
         event.preventDefault();
 
-      var regexParamTel = /[0-9]/;
-      var regexParamMail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+
 
       var telParam = $('#newTel').val();
       var emailParam = $('#newEmail').val();
 
       // si le numero correspond au regexTel et qu'il ne depasse pas 10 caracteres
-      if (regexParamTel.test(telParam) && telParam.length >= 10 ) {
+      if (regexTel.test(telParam) && telParam.length >= 10 ) {
         // si l'adresse e-mail correspond au regex et que la confirmation corresponde
-        if (regexParamMail.test(emailParam)) {
+        if (regexMail.test(emailParam)) {
           // si le mot de passe fait au minimum 6 caracteres et que la confirmation corresponde
 
             $.ajax({
