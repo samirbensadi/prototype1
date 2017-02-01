@@ -18,14 +18,14 @@ $(document).on("pagecreate", "#parametresmdp",  function () {
                     if (requete.reponse == "disconnect") {
                         disconnect();
                     } else if (requete.reponse == "password") {
-                        alert("L'ancien mot de passe n'est pas bon.");
+                        toast("Le mot de passe actuel est incorrect.", 5000);
                     } else {
-                        alert("Mot de passe changé !");
+                        toast("Mot de passe changé !", 5000);
                         $.mobile.back();
                     }
                 },
                 error: function () {
-                    alert('probleme de liaison'); // erreur de liaison avec le serveur
+                    toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
                 }
             });
     });

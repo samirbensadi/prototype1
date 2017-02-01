@@ -4,7 +4,7 @@
     <div data-role="header" data-position="fixed" data-tap-toggle="false">
         <a href="#" id="resetTicket" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back"></a>
         <h1>Achat de tickets</h1>
-        <a href="panier.html" class="panierBtn ui-btn ui-icon-shop ui-btn-icon-left" data-transition="slide"></a>
+        <a href="panier.html" class="panierBtn ui-btn ui-icon-shop ui-btn-icon-right" data-transition="slide"></a>
     </div>
 
     <div data-role="content" class="ui-content">
@@ -14,12 +14,13 @@
           <h2 class="card-primary-title">Ticket Jaune</h2>
           <h4 class="card-subtitle">Plat uniquement</h4>
           <h4 class="card-subtitle" id="prixJaune"></h4>
+          <p id="numJaune"> </p>
+
         </div>
 
-        <div class="card-supporting-text">
-          <p id="numJaune"> </p>
-          <button id="addJaune" class="ui-btn ui-btn-raised clr-primary"><i class='zmdi zmdi-plus'></i> Ajouter un ticket</button>
-          <button id="removeJaune" class="ui-btn clr-warning waves-effect waves-button waves-effect waves-button ui-disabled" disabled><i class="zmdi zmdi-delete ui-pull-left"></i> Supprimer un ticket</button>
+        <div class="card-action">
+          <button id="addJaune" class="ui-btn ui-btn-inline clr-primary"><i class='zmdi zmdi-plus'></i> Ajouter</button>
+          <button id="removeJaune" class="ui-btn ui-btn-inline clr-warning ui-disabled" disabled><i class="zmdi zmdi-delete ui-pull-left"></i> Supprimer</button>
         </div>
       </div>
 

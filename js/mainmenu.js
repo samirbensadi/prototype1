@@ -20,42 +20,43 @@ $(document).on("pagecreate", "#mainmenu", function () {
                 disconnect();
               } else if (requete.reponse == true) {
 
+                var soldeText = $('#soldeText');
 
                   if (requete.vert == 1) {
-                      $('#soldeDiv div:last-child').append("<p>- " + requete.vert + " ticket vert</p>");
+                      soldeText.append("<p>- " + requete.vert + " ticket vert</p>");
                   } else if (requete.vert > 1) {
-                    $('#soldeDiv div:last-child').append("<p>- " + requete.vert + " tickets verts</p>");
+                    soldeText.append("<p>- " + requete.vert + " tickets verts</p>");
                   }
 
                   if (requete.rose == 1) {
-                      $('#soldeDiv div:last-child').append("<p>- " + requete.rose + " ticket rose</p>");
+                      soldeText.append("<p>- " + requete.rose + " ticket rose</p>");
                   } else if (requete.rose > 1) {
-                    $('#soldeDiv div:last-child').append("<p>- " + requete.rose + " tickets roses</p>");
+                    soldeText.append("<p>- " + requete.rose + " tickets roses</p>");
                   }
 
                   if (requete.jaune == 1) {
-                      $('#soldeDiv div:last-child').append("<p>- " + requete.jaune + " ticket jaune</p>");
+                      soldeText.append("<p>- " + requete.jaune + " ticket jaune</p>");
                   } else if (requete.jaune > 1) {
-                    $('#soldeDiv div:last-child').append("<p>- " + requete.jaune + " tickets jaunes</p>");
+                    soldeText.append("<p>- " + requete.jaune + " tickets jaunes</p>");
                   }
 
                   if (requete.present == false ) {
-                    $("#soldeDiv div:last-child").append('<button id="confirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" disabled>Je viens manger</button>');
+                    $('#soldeAction').append('<button id="confirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" disabled>Je viens manger</button>');
                     checkHour($('#confirmBtn'));
                   } else {
-                    $('#soldeDiv div:last-child').append('Je suis dans la liste (ticket ' + requete.couleur + ')');
-                    $("#soldeDiv div:last-child").append('<button id="unConfirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" disabled>Je veux me décommander</button>');
+                    soldeText.append('Je suis dans la liste (ticket ' + requete.couleur + ')');
+                    soldeText.append('<button id="unConfirmBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" disabled>Je veux me décommander</button>');
                     checkHour($('#unConfirmBtn'));
-                      unconfirm();
+                    unconfirm();
                   }
 
               } else {
-                  $('#soldeDiv div div h3').text("Vous n'avez aucun ticket.");
+                  $('#soldeText h3').text("Vous n'avez aucun ticket.");
               }
 
           },
           error: function () {
-              alert('probleme de liaison'); // erreur de liaison avec le serveur
+              toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
           }
       });
     }

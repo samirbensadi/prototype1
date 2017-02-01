@@ -3,16 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="32dc2f29-4020-41a3-b0ef-8a8c3f8f29a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/achat.js" afterPath="$PROJECT_DIR$/js/achat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions.js" afterPath="$PROJECT_DIR$/js/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/inscription.js" afterPath="$PROJECT_DIR$/js/inscription.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/mainmenu.js" afterPath="$PROJECT_DIR$/js/mainmenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/menucantine.js" afterPath="$PROJECT_DIR$/js/menucantine.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/panier.js" afterPath="$PROJECT_DIR$/js/panier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/inscription.html" afterPath="$PROJECT_DIR$/views/inscription.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/param_mdp.js" afterPath="$PROJECT_DIR$/js/param_mdp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/parametres.js" afterPath="$PROJECT_DIR$/js/parametres.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/unconfirm.js" afterPath="$PROJECT_DIR$/js/unconfirm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/achat.html" afterPath="$PROJECT_DIR$/views/achat.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mainmenu.html" afterPath="$PROJECT_DIR$/views/mainmenu.html" />
     </list>
     <ignored path="prototype1.iws" />
@@ -52,48 +48,8 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="522">
-                  <caret line="53" column="28" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="panier.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/panier.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="301">
-                  <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="param_mdp.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/param_mdp.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="parametres.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/parametres.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="413">
-                  <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="unconfirm.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/unconfirm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+                <state relative-caret-position="197">
+                  <caret line="53" column="24" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -102,7 +58,7 @@
           <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
+                <state relative-caret-position="-630">
                   <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
                   <folding />
                 </state>
@@ -112,8 +68,8 @@
           <file leaf-file-name="mainmenu.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/mainmenu.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+                <state relative-caret-position="319">
+                  <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -122,7 +78,7 @@
           <file leaf-file-name="forgot.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/forgot.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="413">
+                <state relative-caret-position="432">
                   <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
                   <folding />
                 </state>
@@ -132,22 +88,22 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index.html">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="mainmenu.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/mainmenu.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+                <state relative-caret-position="135">
+                  <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mainmenu.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/mainmenu.html">
+          <file leaf-file-name="achat.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/achat.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="15" column="90" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
+                <state relative-caret-position="144">
+                  <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -186,9 +142,7 @@
         <option value="$PROJECT_DIR$/views/parametres.html" />
         <option value="$PROJECT_DIR$/php/get_parametres.php" />
         <option value="$PROJECT_DIR$/php/delete_account.php" />
-        <option value="$PROJECT_DIR$/js/parametres.js" />
         <option value="$PROJECT_DIR$/js/forgot.js" />
-        <option value="$PROJECT_DIR$/js/param_mdp.js" />
         <option value="$PROJECT_DIR$/php/solde.php" />
         <option value="$PROJECT_DIR$/views/confirmation.html" />
         <option value="$PROJECT_DIR$/php/paiement.php" />
@@ -196,7 +150,6 @@
         <option value="$PROJECT_DIR$/php/confirm.php" />
         <option value="$PROJECT_DIR$/views/deconfirmation.html" />
         <option value="$PROJECT_DIR$/js/confirmation.js" />
-        <option value="$PROJECT_DIR$/js/unconfirm.js" />
         <option value="$PROJECT_DIR$/php/unconfirm.php" />
         <option value="$PROJECT_DIR$/php/inc/functions.php" />
         <option value="$PROJECT_DIR$/views/menucantine.html" />
@@ -206,11 +159,15 @@
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/js/achat.js" />
         <option value="$PROJECT_DIR$/js/menucantine.js" />
-        <option value="$PROJECT_DIR$/js/panier.js" />
         <option value="$PROJECT_DIR$/views/inscription.html" />
         <option value="$PROJECT_DIR$/js/functions.js" />
-        <option value="$PROJECT_DIR$/js/mainmenu.js" />
+        <option value="$PROJECT_DIR$/js/panier.js" />
+        <option value="$PROJECT_DIR$/js/param_mdp.js" />
+        <option value="$PROJECT_DIR$/js/parametres.js" />
+        <option value="$PROJECT_DIR$/js/unconfirm.js" />
+        <option value="$PROJECT_DIR$/views/achat.html" />
         <option value="$PROJECT_DIR$/views/mainmenu.html" />
+        <option value="$PROJECT_DIR$/js/mainmenu.js" />
       </list>
     </option>
   </component>
@@ -254,6 +211,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Extensions" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.intellij.database" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Changed Files" />
+        <subPane subId="Project Files" />
+        <subPane subId="Default" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,30 +282,6 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="Scratches">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Extensions" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.intellij.database" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Changed Files" />
-        <subPane subId="Project Files" />
-        <subPane subId="Default" />
       </pane>
     </panes>
   </component>
@@ -401,18 +358,19 @@
       <workItem from="1485243167105" duration="3814000" />
       <workItem from="1485340428631" duration="36000" />
       <workItem from="1485772926577" duration="10711000" />
-      <workItem from="1485849934166" duration="11103000" />
+      <workItem from="1485849934166" duration="11217000" />
+      <workItem from="1485937248974" duration="4521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119942000" />
+    <option name="totallyTimeSpent" value="124577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17302378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14262024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21282476" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -480,20 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/panier.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/achat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="107" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="110" />
         </state>
       </provider>
     </entry>
@@ -666,7 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,19 +637,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/achat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/code.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,32 +654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/forgot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
+        <state relative-caret-position="432">
           <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/param_mdp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/parametres.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/unconfirm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -762,15 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/panier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
           <caret line="44" column="90" selection-start-line="44" selection-start-column="90" selection-end-line="44" selection-end-column="90" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,34 +690,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/panier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-828">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/achat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="24" column="70" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/param_mdp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/parametres.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-601">
+          <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/unconfirm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-302">
+          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="53" column="28" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state relative-caret-position="197">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/panier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/achat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="-630">
           <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/mainmenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mainmenu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="90" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
+        <state relative-caret-position="135">
+          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mainmenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
           <folding />
         </state>
       </provider>

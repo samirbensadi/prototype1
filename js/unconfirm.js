@@ -1,5 +1,4 @@
 $(document).on('pagecreate', "#deconfirmation", function () {
-    if (checkTime()) {
         $('#unconfirmPresenceBtn').on('tap', function () {
             if (checkTime()) {
                 $.ajax({
@@ -11,30 +10,27 @@ $(document).on('pagecreate', "#deconfirmation", function () {
                         if (requete.reponse == "disconnect") {
                             disconnect();
                         } else if (requete.reponse == true) {
-                            alert("Vous êtes dé-confirmé !");
+                            toast("Vous êtes dé-confirmé !", 5000);
                             $.mobile.back();
                         } else if (requete.reponse == "time") {
-                            alert("It's too late !");
+                            toast("Vous ne pouvez plus annuler votre présence", 5000);
                             $.mobile.back();
                         } else if (requete.reponse == "nopresent") {
-                            alert("Vous n'êtes pas présent !");
+                            toast("Vous n'êtes pas présent !", 5000);
                             $.mobile.back();
                         } else {
-                            alert("Vous n'avez pas de tickets !");
+                            toast("Vous n'avez pas de tickets !", 5000);
                             $.mobile.back();
                         }
                     },
                     error: function () {
-                        alert('probleme de liaison'); // erreur de liaison avec le serveur
+                        toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
                     }
                 });
             } else {
-                alert("too late");
+                toast("Vous ne pouvez plus annuler votre présence", 5000);
                 $.mobile.back();
             }
         });
-    } else {
-        alert("too late");
-        $.mobile.back();
-    }
+
 });

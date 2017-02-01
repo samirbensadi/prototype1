@@ -16,7 +16,7 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
             }
         },
         error: function () {
-          alert('probleme de liaison'); // erreur de liaison avec le serveur
+            toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
         }
     });
 
@@ -48,22 +48,22 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
                     if (requete.reponse == "disconnect") {
                         disconnect();
                     } else if (requete.reponse == true) {
-                        alert("Vos modifications ont bien été enregistrées !");
+                        toast("Vos paramètres ont été mis à jour !", 5000);
                     }
                     else {
-                        alert("Le serveur n'a pas reçu vos modifications.");
+                        toast("<b>Erreur</b> : le serveur n'a pas reçu vos modifications.", 5000);
                     }
                 },
                 error: function () {
-                  alert('probleme de liaison'); // erreur de liaison avec le serveur
+                    toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
                 }
             });
 
         } else {
-          alert("L'email n'est pas valide.");
+          toast("L'email n'est pas valide.", 5000);
         }
       } else {
-        alert("Le numéro n'est pas valide");
+        toast("Le numéro de téléphone n'est pas valide", 5000);
       }
     });
 
@@ -98,17 +98,17 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
                 if (requete.reponse == "disconnect") {
                     disconnect();
                 } else if (requete.reponse == true) {
-                    alert("Votre compte a bien été supprimé !");
+                    toast("Votre compte a bien été supprimé !", 5000);
                     disconnect();
                 } else if (requete.reponse == "mdp") {
-                    alert("Le mot de passe n'est pas correct");
+                    toast("Le mot de passe est incorrect", 5000);
                 }
                 else {
-                    alert("Le serveur n'a pas reçu vos modifications.");
+                    toast("<b>Erreur</b> : l'action n'a pas pu être réalisée.", 5000);
                 }
             },
             error: function () {
-                alert('probleme de liaison'); // erreur de liaison avec le serveur
+                toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
             }
         });
     });
