@@ -19,8 +19,9 @@ $(document).on("pagecreate", "#mainmenu", function () {
               if (requete.reponse == "disconnect") {
                 disconnect();
               } else if (requete.reponse == true) {
-
+                $("#soldeText h3").text("Votre solde : ");
                 var soldeText = $('#soldeText');
+
 
                   if (requete.vert == 1) {
                       soldeText.append("<p>- " + requete.vert + " ticket vert</p>");
@@ -41,12 +42,12 @@ $(document).on("pagecreate", "#mainmenu", function () {
                   }
 
                   if (requete.present == false ) {
-                    $('#soldeAction').append('<button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je viens manger</button>');
+                    $('#soldeAction').prepend('<button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je viens manger</button>');
                     checkHour($('#confirmBtn'));
                       confirm();
                   } else {
                     soldeText.append('Je suis dans la liste (ticket ' + requete.couleur + ')');
-                    $('#soldeAction').append('<button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je veux me décommander</button>');
+                    $('#soldeAction').prepend('<button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je veux me décommander</button>');
                     checkHour($('#unConfirmBtn'));
                     unconfirm();
                   }
