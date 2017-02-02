@@ -38,7 +38,7 @@ if (checkTime()) {
 
 
   $("#confirmZone").on("submit", function (event) {
-      event.preventDefault;
+      event.preventDefault();
 
       if (checkTime()) {
           $.ajax({
@@ -51,18 +51,18 @@ if (checkTime()) {
                   if (requete.reponse == "disconnect") {
                       disconnect();
                   } else if (requete.reponse == true) {
-                      alert("Vous êtes confirmé !");
+                      toast("Vous êtes confirmé !", 5000);
                       $.mobile.back();
                   } else if (requete.reponse == "time") {
-                      alert("It's too late !");
+                      toast("Vous ne pouvez plus annuler confirmer.", 5000);
                       $.mobile.back();
                   } else {
-                      alert("Vous n'avez pas choisi de ticket !");
+                      toast("Vous n'avez pas choisi de ticket !",5000);
                   }
               },
 
               error: function () {
-                  alert('probleme de liaison'); // erreur de liaison avec le serveur
+                  toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
               }
           });
       }
@@ -70,8 +70,8 @@ if (checkTime()) {
 
 
 } else {
-  alert("It's too late !");
-  $.mobile.back();
+    toast("Vous ne pouvez plus annuler confirmer.", 5000);
+    $.mobile.back();
 }
 
 

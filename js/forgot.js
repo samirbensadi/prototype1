@@ -15,20 +15,20 @@ $(document).on("pagecreate", "#forgot", function () {
                     var requete = JSON.parse(data);
                     console.log(requete);
                     if (requete.reponse == false) {
-                        alert("Le serveur n'a rien reçu.");
+                        toast("<b>Erreur</b> : Le serveur n'a reçu aucune donnée.", 5000);
                     } else if (requete.reponse == "email") {
-                        alert("Ce compte n'existe pas.");
+                        toast("<b>Erreur</b> : ce compte n'existe pas.", 5000);
                     } else {
-                        alert("Un lien de réinitialisation vous a été envoyé par e-mail. Vous avez 30 minutes pour changer de mot de passe");
+                        toast("Un lien de réinitialisation vous a été envoyé par e-mail. Vous avez 30 minutes pour changer de mot de passe");
                         $.mobile.back();
                     }
                 },
                 error: function () {
-                    alert('Problème de liaison');
+                    toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
                 }
             });
         } else {
-            alert("L'adresse e-mail n'est pas valide.");
+            toast("L'adresse e-mail n'est pas valide.", 5000);
         }
         });
 

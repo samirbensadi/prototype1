@@ -58,9 +58,6 @@ function checkTime() {
 function checkHour(cible) {
   if (checkTime()) {
     cible.prop("disabled", false);
-    $('#confirmBtn').on("tap", function () {
-      $.mobile.changePage('confirmation.html',{transition : "slide", reverse: false});
-    });
   } else {
     cible.prop("disabled", true);
   }
@@ -85,6 +82,12 @@ function majeur() {
 function chooseTicket() {
     $("#confirmZone fieldset input").on('tap', function () {
         $('#confirmPresenceBtn').prop("disabled", false);
+    });
+}
+
+function confirm() {
+    $('#confirmBtn').on("tap", function () {
+        $.mobile.changePage('confirmation.html',{transition : "slide", reverse: false});
     });
 }
 

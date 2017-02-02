@@ -1,4 +1,4 @@
-$(document).on("pagecreate", "#parametresmdp",  function () {
+$(document).on("pagecreate", "#parametres",  function () {
     
     $('#formparametresmdp input').on('keyup', function () {
         checkChangeMdp();
@@ -21,7 +21,7 @@ $(document).on("pagecreate", "#parametresmdp",  function () {
                         toast("Le mot de passe actuel est incorrect.", 5000);
                     } else {
                         toast("Mot de passe changé !", 5000);
-                        $.mobile.back();
+                        $('#parametresmdp').popup('close');
                     }
                 },
                 error: function () {

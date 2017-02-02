@@ -69,9 +69,9 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
 
     // SUPPRIMER LE COMPTE
 
-    $('#btnDelAccountPop').on('click', function () {
-        $('#delAccountPop').popup("open", "fade");
-    });
+    // $('#btnDelAccountPop').on('click', function () {
+    //     $('#delAccountPop').popup("open", "fade");
+    // });
 
     //  verifier que le mot de passe fait bien 6 caracteres
     $('#delAccountForm input').on('keyup', function () {

@@ -43,6 +43,7 @@ $(document).on("pagecreate", "#mainmenu", function () {
                   if (requete.present == false ) {
                     $('#soldeAction').append('<button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je viens manger</button>');
                     checkHour($('#confirmBtn'));
+                      confirm();
                   } else {
                     soldeText.append('Je suis dans la liste (ticket ' + requete.couleur + ')');
                     $('#soldeAction').append('<button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je veux me décommander</button>');
@@ -60,14 +61,6 @@ $(document).on("pagecreate", "#mainmenu", function () {
           }
       });
     }
-
     updateSolde();
-
-
-
-
-
-
-
 
 });
