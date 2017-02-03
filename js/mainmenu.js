@@ -42,12 +42,12 @@ $(document).on("pagecreate", "#mainmenu", function () {
                   }
 
                   if (requete.present == false ) {
-                    $('#soldeAction').prepend('<button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je viens manger</button>');
+                    $('#soldeAction').prepend('<button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" disabled>Je viens manger</button>');
                     checkHour($('#confirmBtn'));
-                      confirm();
+                    confirm();
                   } else {
                     soldeText.append('Je suis dans la liste (ticket ' + requete.couleur + ')');
-                    $('#soldeAction').prepend('<button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary" data-transition="slide" disabled>Je veux me décommander</button>');
+                    $('#soldeAction').prepend('<button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary"  disabled>Je veux me décommander</button>');
                     checkHour($('#unConfirmBtn'));
                     unconfirm();
                   }
