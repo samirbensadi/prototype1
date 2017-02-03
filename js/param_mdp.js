@@ -1,5 +1,5 @@
-$(document).on("pagecreate", "#parametres",  function () {
-    
+$(document).on(pageEvent, "#parametres",  function () {
+
     $('#formparametresmdp input').on('keyup', function () {
         checkChangeMdp();
     });
@@ -7,17 +7,16 @@ $(document).on("pagecreate", "#parametres",  function () {
 
     $("#formparametresmdp").on("submit", function (event) {
         event.preventDefault();
-        
+
             $.ajax({
                 method: "POST",
                 url: "http://" + server + '/prototype1/php/change_mdp.php',
                 data: $('#formparametresmdp').serialize(),
                 success: function (data) {
-                    var requete = JSON.parse(data);
-                    console.log(requete);
-                    if (requete.reponse == "disconnect") {
+                    console.log(data);
+                    if (data.reponse == "disconnect") {
                         disconnect();
-                    } else if (requete.reponse == "password") {
+                    } else if (data.reponse == "password") {
                         toast("Le mot de passe actuel est incorrect.", 5000);
                     } else {
                         toast("Mot de passe changé !", 5000);

@@ -1,25 +1,24 @@
-$(document).on("pagecreate", "#confirmation", function () {
+$(document).on(pageEvent, "#confirmation", function () {
 
 if (checkTime()) {
   $.ajax({
       url: 'http://' + server + '/prototype1/php/solde.php',
       success: function (data) {
-          var requete = JSON.parse(data);
-          if (requete.reponse == "disconnect") {
+          if (data.reponse == "disconnect") {
             disconnect();
-          } else if (requete.reponse == true) {
+          } else if (data.reponse == true) {
 
-            if (requete.jaune > 0) {
+            if (data.jaune > 0) {
               $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioJaune' value='jaune' ><label for='radioJaune'>Jaune</label>");
                 chooseTicket();
             }
 
-            if (requete.vert > 0) {
+            if (data.vert > 0) {
                 $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioVert' value='vert' ><label for='radioVert'>Vert</label>");
                 chooseTicket();
             }
 
-            if (requete.rose > 0) {
+            if (data.rose > 0) {
                 $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioRose' value='rose' ><label for='radioRose'>Rose</label>");
                 chooseTicket();
             }
@@ -46,14 +45,13 @@ if (checkTime()) {
               url: 'http://' + server + '/prototype1/php/confirm.php',
               data: $("#confirmZone").serialize(),
               success: function (data) {
-                  var requete = JSON.parse(data);
-                  console.log(requete);
-                  if (requete.reponse == "disconnect") {
+                  console.log(data);
+                  if (data.reponse == "disconnect") {
                       disconnect();
-                  } else if (requete.reponse == true) {
+                  } else if (data.reponse == true) {
                       toast("Vous êtes confirmé !", 5000);
                       $.mobile.back();
-                  } else if (requete.reponse == "time") {
+                  } else if (data.reponse == "time") {
                       toast("Vous ne pouvez plus annuler confirmer.", 5000);
                       $.mobile.back();
                   } else {

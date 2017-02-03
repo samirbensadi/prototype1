@@ -5,8 +5,8 @@
       <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back"></a>
       <h1>Paramètres</h1>
   </div>
-
-  <div data-role="main" class="ui-content" id="parametres-content">
+  <h3 class="loader">Loading</h3>
+  <div data-role="main" class="ui-content" id="parametres-content" style="display:none">
       <!-- début form -->
     <form method="POST" id="formparametres">
 
@@ -37,7 +37,7 @@
         <form method="POST" id="delAccountForm">
             <p>La suppression de compte est définitive.</p>
           <label>Merci d'entrer votre mot de passe.</label>
-          <input id="mdpDel" type="password" placeholder="Votre mot de passe">
+          <input id="mdpDel" type="password">
           <button id="delAccount" type="submit" class="ui-btn ui-btn-raised clr-primary" disabled>Supprimer le compte</button>
           <a href="#" data-rel="back" class="ui-btn ui-btn-raised" >Annuler</a>
         </form>

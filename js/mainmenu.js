@@ -1,4 +1,4 @@
-$(document).on("pagecreate", "#mainmenu", function () {
+$(document).on(pageEvent, "#mainmenu", function () {
 
     // AU TAP DU BOUTON SE DECONNECTER
 
@@ -11,57 +11,60 @@ $(document).on("pagecreate", "#mainmenu", function () {
     });
 
     function updateSolde() {
+      $('#soldeDiv').html('<div class="card-supporting-text" id="soldeText"><h3 class="card-primary-title">Loading</h3></div>');
+      var soldeText = $('#soldeText');
+
       $.ajax({
           url: 'http://' + server + '/prototype1/php/solde.php',
           success: function (data) {
-              var requete = JSON.parse(data);
-              console.log(requete);
-              if (requete.reponse == "disconnect") {
+              console.log(data);
+              if (data.reponse == "disconnect") {
                 disconnect();
-              } else if (requete.reponse == true) {
+              } else if (data.reponse == true) {
                 $("#soldeText h3").text("Votre solde : ");
-                var soldeText = $('#soldeText');
-
-
-                  if (requete.vert == 1) {
-                      soldeText.append("<p>- " + requete.vert + " ticket vert</p>");
-                  } else if (requete.vert > 1) {
-                    soldeText.append("<p>- " + requete.vert + " tickets verts</p>");
+                  if (data.vert == 1) {
+                      soldeText.append("<p>- " + data.vert + " ticket vert</p>");
+                  } else if (data.vert > 1) {
+                    soldeText.append("<p>- " + data.vert + " tickets verts</p>");
                   }
 
-                  if (requete.rose == 1) {
-                      soldeText.append("<p>- " + requete.rose + " ticket rose</p>");
-                  } else if (requete.rose > 1) {
-                    soldeText.append("<p>- " + requete.rose + " tickets roses</p>");
+                  if (data.rose == 1) {
+                      soldeText.append("<p>- " + data.rose + " ticket rose</p>");
+                  } else if (data.rose > 1) {
+                    soldeText.append("<p>- " + data.rose + " tickets roses</p>");
                   }
 
-                  if (requete.jaune == 1) {
-                      soldeText.append("<p>- " + requete.jaune + " ticket jaune</p>");
-                  } else if (requete.jaune > 1) {
-                    soldeText.append("<p>- " + requete.jaune + " tickets jaunes</p>");
+                  if (data.jaune == 1) {
+                      soldeText.append("<p>- " + data.jaune + " ticket jaune</p>");
+                  } else if (data.jaune > 1) {
+                    soldeText.append("<p>- " + data.jaune + " tickets jaunes</p>");
                   }
-
-                  if (requete.present == false ) {
-                    $('#soldeAction').prepend('<button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" disabled>Je viens manger</button>');
-                    checkHour($('#confirmBtn'));
-                    confirm();
-                  } else {
-                    soldeText.append('Je suis dans la liste (ticket ' + requete.couleur + ')');
-                    $('#soldeAction').prepend('<button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary"  disabled>Je veux me décommander</button>');
-                    checkHour($('#unConfirmBtn'));
-                    unconfirm();
-                  }
-
               } else {
                   $('#soldeText h3').text("Vous n'avez aucun ticket.");
+              }
+
+              if (data.present == false ) {
+                $('#soldeDiv').append('<div class="card-action"><button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" disabled>Je viens manger</button></div>');
+                checkHour($('#confirmBtn'));
+                confirm();
+              } else {
+                soldeText.append('Je suis dans la liste (ticket ' + data.couleur + ')');
+                $('#soldeDiv').append('<div class="card-action"><button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary"  disabled>Je veux me décommander</button></div>');
+                checkHour($('#unConfirmBtn'));
+                unconfirm();
               }
 
           },
           error: function () {
               toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
+              $("#soldeText h3").text("Erreur de chargement.");
           }
       });
     }
     updateSolde();
+
+    $("#refreshBtn").on('tap', function () {
+      updateSolde();
+    });
 
 });

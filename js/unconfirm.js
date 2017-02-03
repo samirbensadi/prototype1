@@ -1,4 +1,4 @@
-$(document).on('pagecreate', "#deconfirmation", function () {
+$(document).on(pageEvent, "#deconfirmation", function () {
         $('#unconfirmPresenceBtn').on('tap', function () {
             if (checkTime()) {
                 $.ajax({
@@ -6,16 +6,15 @@ $(document).on('pagecreate', "#deconfirmation", function () {
                     data: { unconfirm: true },
                     url: 'http://' + server + '/prototype1/php/unconfirm.php',
                     success: function (data) {
-                        var requete = JSON.parse(data);
-                        if (requete.reponse == "disconnect") {
+                        if (data.reponse == "disconnect") {
                             disconnect();
-                        } else if (requete.reponse == true) {
+                        } else if (data.reponse == true) {
                             toast("Vous êtes dé-confirmé !", 5000);
                             $.mobile.back();
-                        } else if (requete.reponse == "time") {
+                        } else if (data.reponse == "time") {
                             toast("Vous ne pouvez plus annuler votre présence", 5000);
                             $.mobile.back();
-                        } else if (requete.reponse == "nopresent") {
+                        } else if (data.reponse == "nopresent") {
                             toast("Vous n'êtes pas présent !", 5000);
                             $.mobile.back();
                         } else {

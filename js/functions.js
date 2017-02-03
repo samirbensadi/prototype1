@@ -2,6 +2,8 @@ var server = "localhost";
 var heureDebut = 0; // heure à partir de laquelle on peut confirmer
 var heureFin = 24; // heure à partir de laquelle on ne peut plus
 
+var pageEvent = "pagebeforecreate";
+
 // tableaux qui contiennent la liste des jours de la semaine et des mois de l'année pour que ecrire les dates en français
 var jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 var mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
@@ -74,26 +76,29 @@ function majeur() {
 
   var champ = document.getElementById('bday');
   champ.max = newdate;
-
 }
-
 
 // fonction pour re-activer le bouton de confirmation si un ticket a eté choisi
 function chooseTicket() {
-    $("#confirmZone fieldset input").on('tap', function () {
-        $('#confirmPresenceBtn').prop("disabled", false);
-    });
+  $("#confirmZone fieldset input").on('tap', function () {
+    $('#confirmPresenceBtn').prop("disabled", false);
+  });
 }
 
 function confirm() {
-    $('#confirmBtn').on("tap", function () {
-        $.mobile.changePage('confirmation.html',{transition : "slide", reverse: false});
-    });
+  $('#confirmBtn').on("tap", function () {
+    $.mobile.changePage('confirmation.html',{transition : "slide", reverse: false});
+  });
 }
 
 // fonction pour deconfirmer
 function unconfirm() {
-    $("#unConfirmBtn").on('tap', function () {
-        $.mobile.changePage('deconfirmation.html',{transition : "slide", reverse: false});
-    });
+  $("#unConfirmBtn").on('tap', function () {
+    $.mobile.changePage('deconfirmation.html',{transition : "slide", reverse: false});
+  });
+}
+
+function loading() {
+  $('.loader').hide();
+  $('.ui-content').fadeIn('slow');
 }

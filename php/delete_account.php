@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 require 'inc/functions.php';
 reconnect();
 logged_only();
@@ -19,7 +20,7 @@ if (isset($_POST) && !empty($_POST['mdp'])) {
         unset($_SESSION['auth']);
         setcookie('remember', NULL, -1);
         session_destroy();
-        
+
     } else{
         $reponse = ['reponse' => "mdp"];
     }

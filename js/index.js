@@ -5,10 +5,9 @@ $(document).on("pagebeforecreate", "#home", function () {
         $.ajax({
             url: "http://" + server + '/prototype1/php/reconnect.php',
             success: function (data) {
-                var requete = JSON.parse(data);
-                console.log(requete);
-                if (requete.reponse == true) {
-                  sessionStorage.setItem('qrcode', requete.qrcode);
+                console.log(data);
+                if (data.reponse == true) {
+                  sessionStorage.setItem('qrcode', data.qrcode);
                   $.mobile.changePage("views/mainmenu.html", {transition: "slide", reverse: false});
                     sessionStorage.setItem('ticketJaune', 0);
                     sessionStorage.setItem('ticketVert', 0);
@@ -31,11 +30,10 @@ $(document).on("pagebeforecreate", "#home", function () {
         url : 'http://' + server + '/prototype1/php/log_in.php', // envoi vers ce script
         data: $('#formConnexion').serialize(),
         success: function (data) { // en cas de succes
-          var requete = JSON.parse(data); // parser la reponse json
-          console.log(requete);
-          if (requete.reponse == true) { // si la reponse vaut true
+          console.log(data);
+          if (data.reponse == true) { // si la reponse vaut true
             localStorage.setItem('remember', true);
-            sessionStorage.setItem('qrcode', requete.qrcode);
+            sessionStorage.setItem('qrcode', data.qrcode);
               sessionStorage.setItem('ticketJaune', 0);
               sessionStorage.setItem('ticketVert', 0);
               sessionStorage.setItem('ticketRose', 0);

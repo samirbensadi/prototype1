@@ -1,23 +1,18 @@
 //PANIER
-$(document).on("pageinit", "#panier", function () {
-
-
+$(document).on(pageEvent, "#panier", function () {
 
 //PRIX (on récuperera les prix en ajax depuis le serveur)
     $.ajax({
         method: "POST",
         url: 'http://' + server + '/prototype1/php/get_fares.php',
         success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
-            var requete = JSON.parse(data); // qu'on parse (puisque c'est du json)
-            console.log(requete);
-            if (requete.reponse == "disconnect") {
-                localStorage.clear();
-                sessionStorage.clear();
-                $.mobile.changePage("../index.html", {transition: "slide", reverse: true});
-            } else if (requete.reponse == true) {
-                var prixJaune = requete.jaune;
-                var prixVert = requete.vert;
-                var prixRose = requete.rose;
+            console.log(data);
+            if (data.reponse == "disconnect") {
+              disconnect();
+            } else if (data.reponse == true) {
+                var prixJaune = data.jaune;
+                var prixVert = data.vert;
+                var prixRose = data.rose;
 
                 panier(prixJaune, prixVert, prixRose);
             } else {
@@ -72,13 +67,12 @@ $(document).on("pageinit", "#panier", function () {
                 url: 'http://' + server + '/prototype1/php/paiement.php',
                 data: { achat : JSON.stringify(string) },
                 success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
-                    var requete = JSON.parse(data); // qu'on parse (puisque c'est du json)
-                    console.log(requete);
-                    if (requete.reponse == "disconnect") {
+                    console.log(data);
+                    if (data.reponse == "disconnect") {
                         localStorage.clear();
                         sessionStorage.clear();
                         $.mobile.changePage("../index.html", {transition: "slide", reverse: true});
-                    } else if (requete.reponse == true) {
+                    } else if (data.reponse == true) {
                         sessionStorage.ticketJaune = 0;
                         sessionStorage.ticketRose = 0;
                         sessionStorage.ticketVert = 0;

@@ -2,31 +2,24 @@
 <div data-role="page" id="mainmenu">
 
     <!-- Header de la page -->
-    <section data-role="header" id="headMenu" data-position="fixed" data-tap-toggle="false">
+    <div data-role="header" id="headMenu" data-position="fixed" data-tap-toggle="false">
         <h1>Menu principal</h1>
         <a id="logOut" class="ui-btn ui-corner-all ui-btn-inline ui-mini header-button-left ui-btn-icon-left ui-icon-power"></a>
+        <a id="refreshBtn" class="ui-btn ui-corner-all ui-btn-inline ui-mini header-button-left ui-btn-icon-right ui-icon-refresh"></a>
 
-    </section>
+    </div>
 
     <!-- corps de page, menu -->
-    <section role="main" class="ui-content">
+    <div role="main" class="ui-content">
 
-      <div id="soldeDiv" class="nd2-card">
+      <div id="soldeDiv" class="nd2-card"></div>
 
-        <div class="card-supporting-text" id="soldeText">
-            <h3 class="card-primary-title"></h3>
-        </div>
-        <div class="card-action" id="soldeAction"><button id="refreshBtn" class="ui-btn ui-btn-inline clr-primary align-right" disabled>Actualiser</button></div>
-
-      </div>
-
-
-        <a id="achatBtn" class="ui-btn  ui-btn-raised clr-primary" data-transition="slide" href="achat.html">Achat de tickets</a>
-        <a id="menuBtn" class="ui-btn  ui-btn-raised clr-primary" data-transition="slide" href="menucantine.html">Menu de la semaine</a>
-        <a id="paramBtn" class="ui-btn  ui-btn-raised clr-primary" data-transition="slide" href="parametres.html">Paramètres</a>
+        <a id="achatBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" href="achat.html">Achat de tickets</a>
+        <a id="menuBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" href="menucantine.html">Menu de la semaine</a>
         <a id="qrCodeBtn" class="ui-btn  ui-btn-raised clr-primary" data-transition="slide" href="code.html">QR CODE</a>
         <a href="help.html" id="helpBtn" class="ui-btn  ui-btn-raised clr-primary" data-transition="slide">Aide</a>
+        <a id="paramBtn" class="ui-btn ui-btn-raised clr-primary" data-transition="slide" href="parametres.html">Paramètres</a>
 
-    </section>
+    </div>
 
 </div>

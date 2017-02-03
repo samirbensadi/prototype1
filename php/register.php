@@ -1,6 +1,7 @@
 <?php
 
 header("Access-Control-Allow-Origin: *"); // pour que tout le monde puisse interroger ce script
+header('Content-Type: application/json');
 
 require_once "inc/db.php";
 require_once "inc/functions.php";
@@ -32,7 +33,7 @@ if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_
 
     $req = $bdd->prepare('INSERT INTO clients(nom, prenom, email, tel, dateNaissance, mdp_hash, formation, id_statut, codeQR, confirmation_token) VALUES(:nom,    :prenom, :email, :tel, :dateNaissance, :mdp_hash, :formation, :id_statut, :codeQR, :confirmation_token)'); // préparation de la requete
 
-    
+
     $qrcode = checkCode($bdd); // fabrication du qrcode alphanumérique //
 
     $confToken = checkConfToken($bdd); // fabrication du token de confirmation //

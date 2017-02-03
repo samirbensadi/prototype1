@@ -1,5 +1,5 @@
 //ACHAT//
-$(document).on("pageinit", "#achat", function () {
+$(document).on(pageEvent, "#achat", function () {
 
     //NombreTicket
     var nombreJaune = sessionStorage.getItem('ticketJaune');
@@ -11,14 +11,13 @@ $(document).on("pageinit", "#achat", function () {
         method: "POST",
         url: 'http://' + server + '/prototype1/php/get_fares.php',
         success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
-            var requete = JSON.parse(data); // qu'on parse (puisque c'est du json)
-            console.log(requete);
-            if (requete.reponse == "disconnect") {
+            console.log(data);
+            if (data.reponse == "disconnect") {
                 disconnect();
-            } else if (requete.reponse == true) {
-                var prixJaune = requete.jaune;
-                var prixVert = requete.vert;
-                var prixRose = requete.rose;
+            } else if (data.reponse == true) {
+                var prixJaune = data.jaune;
+                var prixVert = data.vert;
+                var prixRose = data.rose;
                 achat(prixJaune, prixVert, prixRose);
 
             } else {

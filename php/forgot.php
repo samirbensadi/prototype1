@@ -1,5 +1,6 @@
 <?php
 require 'inc/functions.php';
+header('Content-Type: application/json');
 
 if (!empty($_POST['emailForgot'])) {
     require "inc/db.php";

@@ -1,4 +1,4 @@
-$(document).on("pagebeforecreate", "#code", function () {
+$(document).on(pageEvent, "#code", function () {
 
   if (sessionStorage.qrcode) {
     $('#codeZone').qrcode({

@@ -1,18 +1,18 @@
-$(document).on("pagebeforecreate", "#parametres",  function () {
+$(document).on(pageEvent, "#parametres",  function () {
 
     // RÉCUPÉRER LES PARAMETRES
     $.ajax({
         url: "http://" + server + '/prototype1/php/get_parametres.php',
         success: function (data) {
-            var requete = JSON.parse(data);
-            console.log(requete);
-            if (requete.reponse == "disconnect") {
+            console.log(data);
+            if (data.reponse == "disconnect") {
                 disconnect();
-            } else if (requete.reponse == true) {
-                $('#paramNom').val(requete.nom);
-                $('#paramPrenom').val(requete.prenom);
-                $('#newTel').val(requete.tel);
-                $('#newEmail').val(requete.email);
+            } else if (data.reponse == true) {
+                $('#paramNom').val(data.nom);
+                $('#paramPrenom').val(data.prenom);
+                $('#newTel').val(data.tel);
+                $('#newEmail').val(data.email);
+                loading();
             }
         },
         error: function () {
@@ -23,10 +23,7 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
     // MODIFIER LES PARAMETRES
 
     $('#formparametres').on("submit", function (event) {
-
-        event.preventDefault();
-
-
+      event.preventDefault();
 
       var telParam = $('#newTel').val();
       var emailParam = $('#newEmail').val();
@@ -36,17 +33,15 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
         // si l'adresse e-mail correspond au regex et que la confirmation corresponde
         if (regexMail.test(emailParam)) {
           // si le mot de passe fait au minimum 6 caracteres et que la confirmation corresponde
-
             $.ajax({
                 method: "POST",
                 url: "http://" + server + '/prototype1/php/change_parametres.php',
                 data: $('#formparametres').serialize() ,
                 success: function (data) {
-                    var requete = JSON.parse(data);
-                    console.log(requete);
-                    if (requete.reponse == "disconnect") {
+                    console.log(data);
+                    if (data.reponse == "disconnect") {
                         disconnect();
-                    } else if (requete.reponse == true) {
+                    } else if (data.reponse == true) {
                         toast("Vos paramètres ont été mis à jour !", 5000);
                     }
                     else {
@@ -92,14 +87,13 @@ $(document).on("pagebeforecreate", "#parametres",  function () {
             url: "http://" + server + '/prototype1/php/delete_account.php',
             data: { mdp : mdpDel},
             success: function (data) {
-                var requete = JSON.parse(data);
-                console.log(requete);
-                if (requete.reponse == "disconnect") {
+                console.log(data);
+                if (data.reponse == "disconnect") {
                     disconnect();
-                } else if (requete.reponse == true) {
+                } else if (data.reponse == true) {
                     toast("Votre compte a bien été supprimé !", 5000);
                     disconnect();
-                } else if (requete.reponse == "mdp") {
+                } else if (data.reponse == "mdp") {
                     toast("Le mot de passe est incorrect", 5000);
                 }
                 else {

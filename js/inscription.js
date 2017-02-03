@@ -33,9 +33,8 @@ $(document).on("pageinit", "#inscription", function () {
               url: 'http://' + server + '/prototype1/php/register.php',
               data: $('#forminscription').serialize(), // on serialise le formulaire et on envoie
               success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
-                var requete = JSON.parse(data); // qu'on parse (puisque c'est du json)
-                console.log(requete.reponse);
-                if (requete.reponse == true) { // si l'enfant reponse de l'objet requete vaut true
+                console.log(data);
+                if (data.reponse == true) { // si l'enfant reponse de l'objet data vaut true
                   $.mobile.changePage("confirm_account.html",{transition : "slide", reverse: false}); // on bascule sur la page confInscription
                 }
                 else {
