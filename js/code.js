@@ -1,5 +1,5 @@
-$(document).on(pageEvent, "#code", function () {
-
+$(document).on("pagebeforecreate", "#code", function () {
+  loading();
   if (sessionStorage.qrcode) {
     $('#codeZone').qrcode({
       ecLevel : 'L',

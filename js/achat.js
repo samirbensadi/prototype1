@@ -1,6 +1,6 @@
 //ACHAT//
 $(document).on(pageEvent, "#achat", function () {
-
+ajaxLoader($('.loadArea'));
 
   //PRIX (on récupere les prix en ajax depuis le serveur)
     if (!sessionStorage.tarifJaune && !sessionStorage.tarifVert && !sessionStorage.tarifRose) {

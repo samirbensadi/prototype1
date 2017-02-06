@@ -2,7 +2,7 @@ var server = "localhost";
 var heureDebut = 0; // heure à partir de laquelle on peut confirmer
 var heureFin = 24; // heure à partir de laquelle on ne peut plus
 
-var pageEvent = "pagebeforecreate";
+var pageEvent = "pageshow";
 
 // tableaux qui contiennent la liste des jours de la semaine et des mois de l'année pour que ecrire les dates en français
 var jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
@@ -101,8 +101,7 @@ function unconfirm() {
 
 // fonction pour cacher le loader et faire apparaitre le contenu de la page
 function loading() {
-  $('.loader').hide();
-  $('.hiddenContent').fadeIn('slow');
+  $('.hiddenContent').fadeIn('fast');
 }
 
 // fonction anonyme en cas d'erreur d'une requete ajax spécifique
@@ -111,19 +110,16 @@ var loadingError = function () {
     $('.ui-content').html('<h3>Erreur de chargement</h3>');
 };
 
-var loader = '<svg class="loader" width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring-alt"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><circle cx="50" cy="50" r="40" stroke="#afafb7" fill="none" stroke-width="10" stroke-linecap="round"></circle><circle cx="50" cy="50" r="40" stroke="#5cffd6" fill="none" stroke-width="6" stroke-linecap="round"><animate attributeName="stroke-dashoffset" dur="2s" repeatCount="indefinite" from="0" to="502"></animate><animate attributeName="stroke-dasharray" dur="2s" repeatCount="indefinite" values="150.6 100.4;1 250;150.6 100.4"></animate></circle></svg>';
+var loader = '<svg class="loaderJS" width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring-alt"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><circle cx="50" cy="50" r="40" stroke="#afafb7" fill="none" stroke-width="10" stroke-linecap="round"></circle><circle cx="50" cy="50" r="40" stroke="#5cffd6" fill="none" stroke-width="6" stroke-linecap="round"><animate attributeName="stroke-dashoffset" dur="2s" repeatCount="indefinite" from="0" to="502"></animate><animate attributeName="stroke-dasharray" dur="2s" repeatCount="indefinite" values="150.6 100.4;1 250;150.6 100.4"></animate></circle></svg>';
 
 function ajaxLoader(cible) {
 
    $(document).ajaxStart(function () {
-      cible.append(loader);
+      cible.html(loader);
    });
 
-    $(document).ajaxComplete(function () {
-       $('.loader').remove();
+    $(document).ajaxStop(function () {
+       $('.loaderJS').remove();
     });
 
 }
-
-ajaxLoader($('.ui-content'));
-

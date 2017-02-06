@@ -1,5 +1,5 @@
 $(document).on(pageEvent, "#confirmation", function () {
-
+ajaxLoader($('.loadArea'));
 if (checkTime()) {
   $.ajax({
       url: 'http://' + server + '/prototype1/php/solde.php',
@@ -37,7 +37,6 @@ if (checkTime()) {
 
   $("#confirmZone").on("submit", function (event) {
       event.preventDefault();
-
       if (checkTime()) {
           $.ajax({
               method: "POST",

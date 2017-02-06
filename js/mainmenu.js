@@ -1,5 +1,4 @@
 $(document).on(pageEvent, "#mainmenu", function () {
-
     // AU TAP DU BOUTON SE DECONNECTER
 
     $('#logOut').on('tap', function () {
@@ -11,8 +10,8 @@ $(document).on(pageEvent, "#mainmenu", function () {
     });
 
     function updateSolde() {
-      $('#soldeDiv').html('<div class="card-supporting-text" id="soldeText"><h3 class="card-primary-title"></h3></div>');
-        
+      $('#soldeDiv').html('<div class="card-supporting-text" id="soldeText">' + loader + '<h3 class="card-primary-title"></h3></div>');
+
       var soldeText = $('#soldeText');
 
 

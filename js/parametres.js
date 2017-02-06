@@ -1,4 +1,5 @@
 $(document).on(pageEvent, "#parametres",  function () {
+ajaxLoader($('.loadArea'));
 
     // RÉCUPÉRER LES PARAMETRES
     $.ajax({
@@ -19,8 +20,8 @@ $(document).on(pageEvent, "#parametres",  function () {
 
     });
 
-    
-    
+
+
     // MODIFIER LES PARAMETRES
 
     $('#formparametres').on("submit", function (event) {
