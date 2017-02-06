@@ -1,36 +1,35 @@
 //ACHAT//
 $(document).on(pageEvent, "#achat", function () {
 
-    //NombreTicket
-    var nombreJaune = sessionStorage.getItem('ticketJaune');
-    var nombreVert = sessionStorage.getItem('ticketVert');
-    var nombreRose = sessionStorage.getItem('ticketRose');
 
-  //PRIX (on récuperera les prix en ajax depuis le serveur)
-    $.ajax({
-        method: "POST",
-        url: 'http://' + server + '/prototype1/php/get_fares.php',
-        success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
-            console.log(data);
-            if (data.reponse == "disconnect") {
-                disconnect();
-            } else if (data.reponse == true) {
-                var prixJaune = data.jaune;
-                var prixVert = data.vert;
-                var prixRose = data.rose;
-                achat(prixJaune, prixVert, prixRose);
+  //PRIX (on récupere les prix en ajax depuis le serveur)
+    if (!sessionStorage.tarifJaune && !sessionStorage.tarifVert && !sessionStorage.tarifRose) {
+        $.ajax({
+            method: "POST",
+            url: 'http://' + server + '/prototype1/php/get_fares.php',
+            success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
+                console.log(data);
+                if (data.reponse == "disconnect") {
+                    disconnect();
+                } else if (data.reponse == true) {
+                    sessionStorage.setItem("tarifJaune",data.jaune);
+                    sessionStorage.setItem("tarifVert", data.vert);
+                    sessionStorage.setItem("tarifRose", data.rose);
+                    achat(sessionStorage.tarifJaune, sessionStorage.tarifVert, sessionStorage.tarifRose);
+                    loading();
+                } else {
+                    toast("<b>Erreur</b> : les tarifs n'ont pu être actualisés.", 5000);            }
+            },
 
-            } else {
-                toast("<b>Erreur</b> : les tarifs n'ont pu être actualisés.", 5000);            }
-        },
+            error: loadingError
+        });
+    } else {
+        achat(sessionStorage.tarifJaune, sessionStorage.tarifVert, sessionStorage.tarifRose);
+        loading();
+    }
 
-        error: function () { // en cas d'erreur
-            toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000);        }
-    });
 
-
-function achat (prixJaune, prixVert, prixRose) {
-
+    function achat (prixJaune, prixVert, prixRose) {
 
     // On indique par défaut le prix de chaque type de ticket
     $('#prixJaune').text(prixJaune + ' €');
@@ -40,98 +39,142 @@ function achat (prixJaune, prixVert, prixRose) {
     // REACTUALISATION DE LA PAGE : On affiche le nombre de ticket stockés dans le sessionStorage
 
     if (sessionStorage.ticketJaune == 0 || !sessionStorage.ticketJaune) {
-        $('#numJaune').html('<p>0 ticket(s)</p>');
+        $('#numJaune').html('<p>0 ticket</p>');
     } else { // sinon
-        $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)");
+        if (sessionStorage.ticketJaune == 1) {
+            $('#numJaune').text(sessionStorage.ticketJaune + " ticket");
+        } else {
+            $('#numJaune').text(sessionStorage.ticketJaune + " tickets");
+        }
         $("#removeJaune").prop('disabled', false);
     }
+
     if (sessionStorage.ticketVert == 0 || !sessionStorage.ticketVert) {
-        $('#numVert').html('<p>0 ticket(s)</p>');
+        $('#numVert').html('<p>0 ticket</p>');
     } else { // sinon
-        $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
+        if (sessionStorage.ticketVert == 1) {
+            $('#numVert').text(sessionStorage.ticketVert + " ticket");
+        } else {
+            $('#numVert').text(sessionStorage.ticketVert + " tickets");
+        }
         $("#removeVert").prop('disabled', false);
     }
+
     if (sessionStorage.ticketRose == 0 || !sessionStorage.ticketRose) {
-        $('#numRose').html('<p>0 ticket(s)</p>');
+        $('#numRose').html('<p>0 ticket</p>');
     } else { // sinon
-        $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
+        if (sessionStorage.ticketRose == 1) {
+            $('#numRose').text(sessionStorage.ticketRose + " ticket");
+        } else {
+            $('#numRose').text(sessionStorage.ticketRose + " tickets");
+        }
         $("#removeRose").prop('disabled', false);
     }
 
+
+
+
     // ajout de ticket Jaune
     $('#addJaune').click(function () {
-        nombreJaune++; // on incrémente son compteur
-        sessionStorage.setItem('ticketJaune', nombreJaune);
-        $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)"); // on actualise le compteur sur la page
+        sessionStorage.ticketJaune++;
         $('#removeJaune').prop('disabled', false);
+        if (sessionStorage.ticketJaune == 1) {
+            $('#numJaune').text(sessionStorage.ticketJaune + " ticket");
+        } else {
+            $('#numJaune').text(sessionStorage.ticketJaune + " tickets");
+        }
     });
+
+     //ajout de ticket Vert
+     $('#addVert').click(function () {
+       sessionStorage.ticketVert++;
+       $('#removeVert').prop('disabled', false);
+         if (sessionStorage.ticketVert == 1) {
+             $('#numVert').text(sessionStorage.ticketVert + " ticket");
+         } else {
+             $('#numVert').text(sessionStorage.ticketVert + " tickets");
+         }
+     });
+
+     //ajout de ticket rose
+     $('#addRose').click(function () {
+       sessionStorage.ticketRose++;
+       $('#removeRose').prop('disabled', false);
+         if (sessionStorage.ticketRose == 1) {
+             $('#numRose').text(sessionStorage.ticketRose + " ticket");
+         } else {
+             $('#numRose').text(sessionStorage.ticketRose + " tickets");
+         }
+     });
+
 
     // retrait de ticket jaune
     $('#removeJaune').click(function () {
-        if (nombreJaune < 1) { // si le compteur est inférieur à 1
-            nombreJaune = 0;
+        if (sessionStorage.ticketJaune < 1) { // si le compteur est inférieur à 1
+            sessionStorage.ticketJaune = 0;
         } else {
-            nombreJaune--; // on décrémente le compteur
-            sessionStorage.setItem('ticketJaune', nombreJaune);
-            $('#numJaune').text(sessionStorage.getItem('ticketJaune') + " ticket(s)"); // sinon on l'actualise
-            if (nombreJaune == 0) {
+            sessionStorage.ticketJaune--; // on décrémente le compteur
+            if (sessionStorage.ticketJaune == 0) {
                 $(this).prop('disabled', true);
+                $('#numJaune').text(sessionStorage.ticketJaune + " ticket");
+            } else if (sessionStorage.ticketJaune == 1) {
+                $('#numJaune').text(sessionStorage.ticketJaune + " ticket");
+            } else {
+                $('#numJaune').text(sessionStorage.ticketJaune + " tickets");
             }
         }
     });
 
-    //ajout de ticket Vert
-    $('#addVert').click(function () {
-        nombreVert++;
-        sessionStorage.setItem('ticketVert', nombreVert);
-        $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
-        $('#removeVert').prop('disabled', false);
-    });
+
     // retrait de ticket vert
     $('#removeVert').click(function () {
-        if (nombreVert < 1) {
-            nombreVert = 0;
+        if (sessionStorage.ticketVert < 1) {
+            sessionStorage.ticketVert = 0;
         } else {
-            nombreVert--;
-            sessionStorage.setItem('ticketVert', nombreVert);
-            $('#numVert').text(sessionStorage.getItem('ticketVert') + " ticket(s)");
-            if (nombreVert == 0) {
+            sessionStorage.ticketVert--;
+            $('#numVert').text(sessionStorage.ticketVert + " ticket(s)");
+            if (sessionStorage.ticketVert == 0) {
                 $(this).prop('disabled', true);
+                $('#numVert').text(sessionStorage.ticketJaune + " ticket");
+            } else if (sessionStorage.ticketVert == 1) {
+                $('#numVert').text(sessionStorage.ticketVert + " ticket");
+            } else {
+                $('#numVert').text(sessionStorage.ticketVert + " tickets");
             }
         }
     });
 
-    //ajout de ticket Violet
-    $('#addRose').click(function () {
-        nombreRose++;
-        sessionStorage.setItem('ticketRose', nombreRose);
-        $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
-        $('#removeRose').prop('disabled', false);
-    });
+
     // retrait de ticket violet
     $('#removeRose').click(function () {
-        if (nombreRose < 1) {
-            nombreRose = 0;
+        if (sessionStorage.ticketRose < 1) {
+            sessionStorage.ticketRose = 0;
         } else {
-            nombreRose--;
-            sessionStorage.setItem('ticketRose', nombreRose);
-            $('#numRose').text(sessionStorage.getItem('ticketRose') + " ticket(s)");
-            if (nombreRose == 0) {
+            sessionStorage.ticketRose--;
+            if (sessionStorage.ticketRose == 0) {
                 $(this).prop('disabled', true);
+                $('#numRose').text(sessionStorage.ticketRose + " ticket");
+            } else if (sessionStorage.ticketRose == 1) {
+                $('#numRose').text(sessionStorage.ticketRose + " ticket");
+            } else {
+                $('#numRose').text(sessionStorage.ticketRose + " tickets");
             }
+
         }
     });
+
+
 
     // quand on va au panier
     $('.panierBtn').on("tap", function () {
 
         //Calcule PrixTotal
-        var totalJaune = nombreJaune * prixJaune;
-        var totalVert = nombreVert * prixVert;
-        var totalRose = nombreRose * prixRose;
-        var prixTotal = totalJaune + totalVert + totalRose;
+        var totalJaune = sessionStorage.ticketJaune * prixJaune;
+        var totalVert = sessionStorage.ticketVert * prixVert;
+        var totalRose = sessionStorage.ticketRose * prixRose;
+        var coutTotal = totalJaune + totalVert + totalRose;
 
-        sessionStorage.setItem('prixtotal', prixTotal);
+        sessionStorage.setItem('coutTotal', coutTotal);
     });
     }
 });

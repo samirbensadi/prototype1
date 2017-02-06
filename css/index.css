@@ -9,3 +9,7 @@ a {
 button:focus{
   outline: none;
 }
+
+.hiddenContent{
+  display: none;
+}

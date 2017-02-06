@@ -5,62 +5,65 @@
       <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back"></a>
       <h1>Paramètres</h1>
   </div>
-  <h3 class="loader">Loading</h3>
-  <div data-role="main" class="ui-content" id="parametres-content" style="display:none">
-      <!-- début form -->
-    <form method="POST" id="formparametres">
+  <div data-role="main" class="ui-content" id="parametres-content">
 
-      <label for="paramNom">Votre nom</label>
-      <input type="text" name="paramNom" id="paramNom" disabled>
 
-      <label for="paramPrenom">Votre prénom</label>
-      <input type="text" name="paramPrenom" id="paramPrenom" disabled>
+      <div class="hiddenContent">
+          <!-- début form -->
+        <form method="POST" id="formparametres">
 
-      <label for="newTel">Numéro de téléphone</label>
-      <input type="text" name="newTel" id="newTel">
+          <label for="paramNom">Votre nom</label>
+          <input type="text" name="paramNom" id="paramNom" disabled>
 
-      <label for="newEmail">Adresse e-mail:</label>
-      <input type="email" name="newEmail" id="newEmail" placeholder="personne@exemple.com">
+          <label for="paramPrenom">Votre prénom</label>
+          <input type="text" name="paramPrenom" id="paramPrenom" disabled>
 
-      <button type="submit" id="btnSave" class="ui-btn ui-btn-raised clr-primary">Sauvegarder</button>
-    </form>
+          <label for="newTel">Numéro de téléphone</label>
+          <input type="text" name="newTel" id="newTel">
 
-      <a href="#parametresmdp" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-raised">Changer le mot de passe</a>
-      <a href="#delAccountPop" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-raised clr-warning" >Supprimer le compte</a>
+          <label for="newEmail">Adresse e-mail:</label>
+          <input type="email" name="newEmail" id="newEmail" placeholder="personne@exemple.com">
 
-    <!-- POP-UPS  -->
-
-    <!-- supprimer le compte -->
-
-    <div data-role="popup" id="delAccountPop" style="background-color:white">
-      <div data-role="content" class="ui-content">
-        <form method="POST" id="delAccountForm">
-            <p>La suppression de compte est définitive.</p>
-          <label>Merci d'entrer votre mot de passe.</label>
-          <input id="mdpDel" type="password">
-          <button id="delAccount" type="submit" class="ui-btn ui-btn-raised clr-primary" disabled>Supprimer le compte</button>
-          <a href="#" data-rel="back" class="ui-btn ui-btn-raised" >Annuler</a>
+          <button type="submit" id="btnSave" class="ui-btn ui-btn-raised clr-primary">Sauvegarder</button>
         </form>
-      </div>
-    </div>
 
-    <!-- changer mdp -->
+          <a href="#parametresmdp" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-raised">Changer le mot de passe</a>
+          <a href="#delAccountPop" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-raised clr-warning" >Supprimer le compte</a>
 
-    <div data-role="popup" id="parametresmdp" style="background-color:white">
-      <div data-role="content" class="ui-content">
-          <form method="POST" id="formparametresmdp">
-              <label for="oldMdp">Ancien mot de passe</label>
-              <input type="password" name="oldMdp" id="oldMdp" value="">
-              <label for="newMdp">Nouveau mot de passe</label>
-              <input type="password" name="newMdp" id="newMdp" value="">
-              <label for="newMdpConf">Confirmer votre nouveau mot de passe</label>
-              <input type="password" name="newMdpConf" id="newMdpConf" value="">
+        <!-- POP-UPS  -->
 
-              <button type="submit" id="btnSaveMdp" class="ui-btn ui-btn-raised clr-primary" disabled>Sauvegarder</button>
+        <!-- supprimer le compte -->
+
+        <div data-role="popup" id="delAccountPop" style="background-color:white">
+          <div data-role="content" class="ui-content">
+            <form method="POST" id="delAccountForm">
+                <p>La suppression de compte est définitive.</p>
+              <label>Merci d'entrer votre mot de passe.</label>
+              <input id="mdpDel" type="password">
+              <button id="delAccount" type="submit" class="ui-btn ui-btn-raised clr-primary" disabled>Supprimer le compte</button>
               <a href="#" data-rel="back" class="ui-btn ui-btn-raised" >Annuler</a>
-          </form>
+            </form>
+          </div>
+        </div>
+
+        <!-- changer mdp -->
+
+        <div data-role="popup" id="parametresmdp" style="background-color:white">
+          <div data-role="content" class="ui-content">
+              <form method="POST" id="formparametresmdp">
+                  <label for="oldMdp">Ancien mot de passe</label>
+                  <input type="password" name="oldMdp" id="oldMdp" value="">
+                  <label for="newMdp">Nouveau mot de passe</label>
+                  <input type="password" name="newMdp" id="newMdp" value="">
+                  <label for="newMdpConf">Confirmer votre nouveau mot de passe</label>
+                  <input type="password" name="newMdpConf" id="newMdpConf" value="">
+
+                  <button type="submit" id="btnSaveMdp" class="ui-btn ui-btn-raised clr-primary" disabled>Sauvegarder</button>
+                  <a href="#" data-rel="back" class="ui-btn ui-btn-raised" >Annuler</a>
+              </form>
+          </div>
+        </div>
       </div>
-    </div>
 
   </div>
 </div>

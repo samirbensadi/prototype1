@@ -28,10 +28,9 @@ if (checkTime()) {
             alert("Vous n'avez pas de tickets !");
             $.mobile.back();
           }
+          loading();
         },
-      error: function () {
-          alert('probleme de liaison'); // erreur de liaison avec le serveur
-      }
+      error: loadingError
   });
 
 

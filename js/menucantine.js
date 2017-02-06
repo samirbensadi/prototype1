@@ -22,15 +22,13 @@ $(document).on(pageEvent, "#menucantine", function () {
                 var titre = jours[jourSemaine] + " " + jourMois + " " + mois[moisAnnee];
                 $('#coSet').append('<li><div class="collapsible-header"><h3>' + titre + '</h3></div><div class="collapsible-body"><h4>Entrée</h4><h5>' + data[i].entree + '</h5><h4>Plat</h4><h5>' + data[i].plat + '</h5><h4>Dessert</h4><h5>' + data[i].dessert + '</h5></div></li>');
               }
-                $('#coSet').collapsible();
+                loading();
             } else {
               $('#cantineContent').text('<p>Aucun menu enregistré.</p>');
             }
         },
 
-        error: function () { // en cas d'erreur
-            toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
-        }
+        error: loadingError
     });
 
 

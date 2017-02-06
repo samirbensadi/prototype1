@@ -15,11 +15,12 @@ $(document).on(pageEvent, "#parametres",  function () {
                 loading();
             }
         },
-        error: function () {
-            toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
-        }
+        error: loadingError
+
     });
 
+    
+    
     // MODIFIER LES PARAMETRES
 
     $('#formparametres').on("submit", function (event) {

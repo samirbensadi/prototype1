@@ -11,8 +11,10 @@ $(document).on(pageEvent, "#mainmenu", function () {
     });
 
     function updateSolde() {
-      $('#soldeDiv').html('<div class="card-supporting-text" id="soldeText"><h3 class="card-primary-title">Loading</h3></div>');
+      $('#soldeDiv').html('<div class="card-supporting-text" id="soldeText"><h3 class="card-primary-title"></h3></div>');
+        
       var soldeText = $('#soldeText');
+
 
       $.ajax({
           url: 'http://' + server + '/prototype1/php/solde.php',
