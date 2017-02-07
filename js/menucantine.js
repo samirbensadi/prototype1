@@ -10,7 +10,7 @@ $(document).on(pageEvent, "#menucantine", function () {
               disconnect();
             } else if (data.length > 0) {
 
-              $('#cantineContent').append('<ul data-collapsible="accordion" id="coSet" class="collapsible"></ul>');
+              $('#cantineContent').append('<div id="coSet"></div>');
               var longueur = data.length - 1;
 
               for (var i = longueur ; i >= 0; i--) { // on fait une boucle pour lister les menus (je décremente pour remettre la liste dans le bon ordre)
@@ -21,7 +21,7 @@ $(document).on(pageEvent, "#menucantine", function () {
                 var annee = dateMenu.getFullYear();
 
                 var titre = jours[jourSemaine] + " " + jourMois + " " + mois[moisAnnee];
-                $('#coSet').append('<li><div class="collapsible-header"><h3>' + titre + '</h3></div><div class="collapsible-body"><h4>Entrée</h4><h5>' + data[i].entree + '</h5><h4>Plat</h4><h5>' + data[i].plat + '</h5><h4>Dessert</h4><h5>' + data[i].dessert + '</h5></div></li>');
+                $('#coSet').append('<h3>' + titre + '</h3><div><h4>Entrée</h4><h5>' + data[i].entree + '</h5><h4>Plat</h4><h5>' + data[i].plat + '</h5><h4>Dessert</h4><h5>' + data[i].dessert + '</h5></div>');
               }
                 loading();
             } else {
