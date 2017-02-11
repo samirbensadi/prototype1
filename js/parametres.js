@@ -37,7 +37,7 @@ ajaxLoader($('.loadArea'));
           // si le mot de passe fait au minimum 6 caracteres et que la confirmation corresponde
             $.ajax({
                 method: "POST",
-                url: "http://" + server + 'change_parametres.php',
+                url: "http://" + server + 'set_parametres.php',
                 data: $('#formparametres').serialize() ,
                 success: function (data) {
                     console.log(data);

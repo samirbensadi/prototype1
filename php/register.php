@@ -31,7 +31,7 @@ if (isset($_POST['nom'], $_POST['prenom']) && !empty($_POST['nom']) && !empty($_
     $formation = $_POST['formation'];
 
 
-    $req = $bdd->prepare('INSERT INTO clients(nom, prenom, email, tel, dateNaissance, mdp_hash, formation, id_statut, codeQR, confirmation_token) VALUES(:nom,    :prenom, :email, :tel, :dateNaissance, :mdp_hash, :formation, :id_statut, :codeQR, :confirmation_token)'); // préparation de la requete
+    $req = $bdd->prepare('INSERT INTO clients(nom, prenom, email, tel, dateNaissance, mdp_hash, formation, id_statut, codeQR, confirmation_token) VALUES(:nom, :prenom, :email, :tel, :dateNaissance, :mdp_hash, :formation, :id_statut, :codeQR, :confirmation_token)'); // préparation de la requete
 
 
     $qrcode = checkCode($bdd); // fabrication du qrcode alphanumérique //

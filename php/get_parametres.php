@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-require_once 'inc/functions.php';
+require 'inc/functions.php';
 
 reconnect();
 logged_only();

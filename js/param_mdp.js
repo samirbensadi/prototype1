@@ -10,7 +10,7 @@ $(document).on(pageEvent, "#parametres",  function () {
 
             $.ajax({
                 method: "POST",
-                url: "http://" + server + 'change_mdp.php',
+                url: "http://" + server + 'set_new_mdp.php',
                 data: $('#formparametresmdp').serialize(),
                 success: function (data) {
                     console.log(data);
