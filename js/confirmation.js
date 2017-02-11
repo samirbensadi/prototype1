@@ -2,7 +2,7 @@ $(document).on(pageEvent, "#confirmation", function () {
 ajaxLoader($('.loadArea'));
 if (checkTime()) {
   $.ajax({
-      url: 'http://' + server + '/prototype1/php/solde.php',
+      url: 'http://' + server + 'solde.php',
       success: function (data) {
           if (data.reponse == "disconnect") {
             disconnect();
@@ -40,7 +40,7 @@ if (checkTime()) {
       if (checkTime()) {
           $.ajax({
               method: "POST",
-              url: 'http://' + server + '/prototype1/php/confirm.php',
+              url: 'http://' + server + 'confirm.php',
               data: $("#confirmZone").serialize(),
               success: function (data) {
                   console.log(data);

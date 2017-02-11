@@ -3,7 +3,7 @@ $(document).on(pageEvent, "#menucantine", function () {
 
     $.ajax({
         method: "POST",
-        url: 'http://' + server + '/prototype1/php/menucantine.php',
+        url: 'http://' + server + 'menucantine.php',
         success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
             console.log(data);
             if (data.reponse == "disconnect") {

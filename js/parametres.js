@@ -3,7 +3,7 @@ ajaxLoader($('.loadArea'));
 
     // RÉCUPÉRER LES PARAMETRES
     $.ajax({
-        url: "http://" + server + '/prototype1/php/get_parametres.php',
+        url: "http://" + server + 'get_parametres.php',
         success: function (data) {
             console.log(data);
             if (data.reponse == "disconnect") {
@@ -37,7 +37,7 @@ ajaxLoader($('.loadArea'));
           // si le mot de passe fait au minimum 6 caracteres et que la confirmation corresponde
             $.ajax({
                 method: "POST",
-                url: "http://" + server + '/prototype1/php/change_parametres.php',
+                url: "http://" + server + 'change_parametres.php',
                 data: $('#formparametres').serialize() ,
                 success: function (data) {
                     console.log(data);
@@ -86,7 +86,7 @@ ajaxLoader($('.loadArea'));
         var mdpDel = $("#mdpDel").val();
         $.ajax({
             method: "POST",
-            url: "http://" + server + '/prototype1/php/delete_account.php',
+            url: "http://" + server + 'delete_account.php',
             data: { mdp : mdpDel},
             success: function (data) {
                 console.log(data);

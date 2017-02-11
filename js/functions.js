@@ -1,4 +1,4 @@
-var server = "localhost";
+var server = "localhost/prototype1/php/";
 var heureDebut = 0; // heure à partir de laquelle on peut confirmer
 var heureFin = 24; // heure à partir de laquelle on ne peut plus
 

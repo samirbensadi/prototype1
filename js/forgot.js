@@ -9,14 +9,13 @@ $(document).on("pagecreate", "#forgot", function () {
         if (regexMailForgot.test(emailForgot)) {
             $.ajax({
                 method: "POST",
-                url: 'http://' + server + '/prototype1/php/forgot.php',
+                url: 'http://' + server + 'forgot.php',
                 data: $('#formForgot').serialize(),
                 success: function (data) {
-                    var requete = JSON.parse(data);
-                    console.log(requete);
-                    if (requete.reponse == false) {
+                    console.log(data);
+                    if (data.reponse == false) {
                         toast("<b>Erreur</b> : Le serveur n'a reçu aucune donnée.", 5000);
-                    } else if (requete.reponse == "email") {
+                    } else if (data.reponse == "email") {
                         toast("<b>Erreur</b> : ce compte n'existe pas.", 5000);
                     } else {
                         toast("Un lien de réinitialisation vous a été envoyé par e-mail. Vous avez 30 minutes pour changer de mot de passe");

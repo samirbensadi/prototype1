@@ -31,7 +31,7 @@ $(document).on("pageinit", "#inscription", function () {
             // requete ajax vers la script php d'inscription
             $.ajax({
               method: "POST",
-              url: 'http://' + server + '/prototype1/php/register.php',
+              url: 'http://' + server + 'register.php',
               data: $('#forminscription').serialize(), // on serialise le formulaire et on envoie
               success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
                 console.log(data);

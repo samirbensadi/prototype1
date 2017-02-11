@@ -6,7 +6,7 @@ $(document).on(pageEvent, "#deconfirmation", function () {
                 $.ajax({
                     method: "POST",
                     data: { unconfirm: true },
-                    url: 'http://' + server + '/prototype1/php/unconfirm.php',
+                    url: 'http://' + server + 'unconfirm.php',
                     success: function (data) {
                         if (data.reponse == "disconnect") {
                             disconnect();

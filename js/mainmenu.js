@@ -4,7 +4,7 @@ $(document).on(pageEvent, "#mainmenu", function () {
     $('#logOut').on('tap', function () {
         $.ajax({
             method: "POST",
-            url: 'http://' + server + '/prototype1/php/log_out.php'
+            url: 'http://' + server + 'log_out.php'
         });
         disconnect();
     });
@@ -16,7 +16,7 @@ $(document).on(pageEvent, "#mainmenu", function () {
 
 
       $.ajax({
-          url: 'http://' + server + '/prototype1/php/solde.php',
+          url: 'http://' + server + 'solde.php',
           success: function (data) {
               console.log(data);
               if (data.reponse == "disconnect") {

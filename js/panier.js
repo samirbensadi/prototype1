@@ -1,11 +1,11 @@
 //PANIER
 $(document).on(pageEvent, "#panier", function () {
-ajaxLoader($('.loadArea'));
+  ajaxLoader($('.loadArea'));
 //PRIX (on récuperera les prix en ajax depuis le serveur)
     if (!sessionStorage.tarifJaune && !sessionStorage.tarifVert && !sessionStorage.tarifRose) {
         $.ajax({
             method: "POST",
-            url: 'http://' + server + '/prototype1/php/get_fares.php',
+            url: 'http://' + server + 'get_fares.php',
             success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
                 console.log(data);
                 if (data.reponse == "disconnect") {
@@ -14,7 +14,6 @@ ajaxLoader($('.loadArea'));
                     sessionStorage.setItem("tarifJaune",data.jaune);
                     sessionStorage.setItem("tarifVert", data.vert);
                     sessionStorage.setItem("tarifRose", data.rose);
-
                     panier(sessionStorage.tarifJaune, sessionStorage.tarifVert, sessionStorage.tarifRose);
                     loading();
 
@@ -30,15 +29,12 @@ ajaxLoader($('.loadArea'));
     }
 
     function panier(prixJaune, prixVert, prixRose) {
-
-
         var total = 0;
 
         if (sessionStorage.coutTotal == 0) {   // si le total dans le sessionStorage est égal à 0
             $('#panierContent').html('<p>Votre panier est vide.</p>'); // on indique que le panier est vide
         } else { // sinon
             $('#panierContent').html('<ul data-role="listview"></ul>'); // on crée une liste dans laquelle
-
             if (sessionStorage.ticketJaune > 0) { // je vérifie par type de ticket sa valeur
                 var totalJaune = sessionStorage.ticketJaune * prixJaune; // je recalcule les sous totaux en fonction du tarifs du serveur
                 if (sessionStorage.ticketJaune == 1) {
@@ -78,12 +74,12 @@ ajaxLoader($('.loadArea'));
 
 
         $('#payBtn').on('tap', function () {
-ajaxLoader($('.loadArea'));
+          ajaxLoader($('.loadArea'));
             var string = {jaune: sessionStorage.ticketJaune, vert: sessionStorage.ticketVert, rose: sessionStorage.ticketRose, total: sessionStorage.coutTotal};
 
             $.ajax({
                 method: "POST",
-                url: 'http://' + server + '/prototype1/php/paiement.php',
+                url: 'http://' + server + 'paiement.php',
                 data: { achat : JSON.stringify(string) },
                 success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
                     console.log(data);

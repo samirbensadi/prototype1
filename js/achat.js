@@ -1,12 +1,12 @@
 //ACHAT//
 $(document).on(pageEvent, "#achat", function () {
-ajaxLoader($('.loadArea'));
+  ajaxLoader($('.loadArea'));
 
   //PRIX (on récupere les prix en ajax depuis le serveur)
     if (!sessionStorage.tarifJaune && !sessionStorage.tarifVert && !sessionStorage.tarifRose) {
         $.ajax({
             method: "POST",
-            url: 'http://' + server + '/prototype1/php/get_fares.php',
+            url: 'http://' + server + 'get_fares.php',
             success: function (data) { // en cas de succes, on recupere la retour en parametre d'une fonction anonyme
                 console.log(data);
                 if (data.reponse == "disconnect") {
