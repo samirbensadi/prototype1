@@ -13,3 +13,22 @@ button:focus{
 .hiddenContent{
   display: none;
 }
+
+.rotation{
+  animation: spin 1s infinite linear;
+  /*display: none;*/
+}
+
+.rotationBtn{
+  animation: spin 1s infinite linear;
+  /*display: none;*/
+}
+
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

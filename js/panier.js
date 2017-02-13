@@ -1,6 +1,6 @@
 //PANIER
 $(document).on(pageEvent, "#panier", function () {
-  ajaxLoader($('.loadArea'));
+    ajaxLoader($('.header'));
 //PRIX (on récuperera les prix en ajax depuis le serveur)
     if (!sessionStorage.tarifJaune && !sessionStorage.tarifVert && !sessionStorage.tarifRose) {
         $.ajax({

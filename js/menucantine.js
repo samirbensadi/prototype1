@@ -1,5 +1,5 @@
 $(document).on(pageEvent, "#menucantine", function () {
-  ajaxLoader($('.loadArea'));
+    ajaxLoader($('.header'));
 
     $.ajax({
         method: "POST",

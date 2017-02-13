@@ -1,5 +1,5 @@
 $(document).on(pageEvent, "#confirmation", function () {
-ajaxLoader($('.loadArea'));
+    ajaxLoader($('.header'));
 if (checkTime()) {
   $.ajax({
       url: 'http://' + server + 'solde.php',

@@ -1,5 +1,5 @@
 $(document).on("pageinit", "#inscription", function () {
-  ajaxLoader($('.loadArea'));
+  ajaxLoader($('.header'));
 
   majeur();
 

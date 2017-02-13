@@ -1,5 +1,5 @@
 $(document).on(pageEvent, "#parametres",  function () {
-ajaxLoader($('.loadArea'));
+    ajaxLoader();
 
     // RÉCUPÉRER LES PARAMETRES
     $.ajax({

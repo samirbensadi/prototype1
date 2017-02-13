@@ -10,14 +10,16 @@ $(document).on(pageEvent, "#mainmenu", function () {
     });
 
     function updateSolde() {
-      $('#soldeDiv').html('<div class="card-supporting-text" id="soldeText">' + loader + '<h3 class="card-primary-title"></h3></div>');
+      $('#soldeDiv').html('<div class="card-supporting-text" id="soldeText"><h3 class="card-primary-title"></h3></div>');
 
       var soldeText = $('#soldeText');
 
+        $('#refreshBtn').addClass('rotationBtn');
 
       $.ajax({
           url: 'http://' + server + 'solde.php',
           success: function (data) {
+              $('#refreshBtn').addClass('rotation');
               console.log(data);
               if (data.reponse == "disconnect") {
                 disconnect();
@@ -59,6 +61,7 @@ $(document).on(pageEvent, "#mainmenu", function () {
           error: function () {
               toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
               $("#soldeText h3").text("Erreur de chargement.");
+              $('#refreshBtn').removeClass('rotationBtn');
           }
       });
     }

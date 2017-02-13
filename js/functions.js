@@ -110,16 +110,15 @@ var loadingError = function () {
     $('.ui-content').html('<h3>Erreur de chargement</h3>');
 };
 
-var loader = '<svg class="loaderJS" width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring-alt"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><circle cx="50" cy="50" r="40" stroke="#afafb7" fill="none" stroke-width="10" stroke-linecap="round"></circle><circle cx="50" cy="50" r="40" stroke="#5cffd6" fill="none" stroke-width="6" stroke-linecap="round"><animate attributeName="stroke-dashoffset" dur="2s" repeatCount="indefinite" from="0" to="502"></animate><animate attributeName="stroke-dasharray" dur="2s" repeatCount="indefinite" values="150.6 100.4;1 250;150.6 100.4"></animate></circle></svg>';
+// var loader = '<a class="ui-btn ui-corner-all ui-btn-inline ui-mini header-button-left ui-btn-icon-right zmdi zmdi-refresh rotation"></a>';
 
-function ajaxLoader(cible) {
+function ajaxLoader() {
+   // $(document).ajaxStart(function () {
+   //    // cible.append(loader);
+   //     $('.rotation').show();
+   // });
 
-   $(document).ajaxStart(function () {
-      cible.html(loader);
-   });
-
-    $(document).ajaxStop(function () {
-       $('.loaderJS').remove();
+    $(document).ajaxComplete(function () {
+       $('.rotation').remove();
     });
-
 }
