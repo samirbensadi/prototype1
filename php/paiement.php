@@ -53,8 +53,8 @@ if (isset($_POST) && !empty($_POST['achat'])) {
 
             // et la table vente
 
-            $req3 = $bdd->prepare('INSERT INTO vente (ticket_vert, ticket_rose, ticket_jaune, date_vente ,id_client) VALUES (:ticket_vert, :ticket_rose, :ticket_jaune, NOW() ,:id_client)');
-            $req3->execute(["ticket_vert" => $achat->vert, "ticket_rose" => $achat->rose, "ticket_jaune" => $achat->jaune, "id_client" => $_SESSION['auth']->id_client ]);
+            $req3 = $bdd->prepare('INSERT INTO vente (ticket_vert, ticket_rose, ticket_jaune, coutVente, date_vente ,id_client) VALUES (:ticket_vert, :ticket_rose, :ticket_jaune, :coutVente, NOW() ,:id_client)');
+            $req3->execute(["ticket_vert" => $achat->vert, "ticket_rose" => $achat->rose, "ticket_jaune" => $achat->jaune, "coutVente" => $total,"id_client" => $_SESSION['auth']->id_client ]);
             $req3->closeCursor();
 
             $reponse = array('reponse' => true);

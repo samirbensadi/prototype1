@@ -113,10 +113,10 @@ var loadingError = function () {
 // var loader = '<a class="ui-btn ui-corner-all ui-btn-inline ui-mini header-button-left ui-btn-icon-right zmdi zmdi-refresh rotation"></a>';
 
 function ajaxLoader() {
-   // $(document).ajaxStart(function () {
-   //    // cible.append(loader);
-   //     $('.rotation').show();
-   // });
+   $(document).ajaxStart(function () {
+       $('.ui-page-theme-a .ui-header').addClass('ajaxLoading');
+
+   });
 
     $(document).ajaxComplete(function () {
        $('.rotation').remove();

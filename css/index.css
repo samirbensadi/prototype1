@@ -14,21 +14,20 @@ button:focus{
   display: none;
 }
 
-.rotation{
-  animation: spin 1s infinite linear;
-  /*display: none;*/
+
+
+.ajaxloading{
+  animation: coloranim 1s infinite;
 }
 
-.rotationBtn{
-  animation: spin 1s infinite linear;
-  /*display: none;*/
-}
-
-@keyframes spin {
+@keyframes  {
   from{
-    transform: rotate(0deg);
+    background-color: #009688;
+  }
+  50%{
+    background-color: green;
   }
   to{
-    transform: rotate(360deg);
+    background-color: #009688;
   }
 }
