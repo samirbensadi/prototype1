@@ -428,7 +428,7 @@ $.widget( "ui.autocomplete", {
 
 	_search: function( value ) {
 		this.pending++;
-		this.element.addClass( "ui-autocomplete-loading" );
+		this.element.addClass( "ui-autocomplete-fadingContent" );
 		this.cancelSearch = false;
 
 		this.source( { term: value }, this._response() );
@@ -444,7 +444,7 @@ $.widget( "ui.autocomplete", {
 
 			this.pending--;
 			if ( !this.pending ) {
-				this.element.removeClass( "ui-autocomplete-loading" );
+				this.element.removeClass( "ui-autocomplete-fadingContent" );
 			}
 		}, this );
 	},

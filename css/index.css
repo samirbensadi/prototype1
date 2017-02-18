@@ -15,12 +15,7 @@ button:focus{
 }
 
 
-
-.ajaxloading{
-  animation: coloranim 1s infinite;
-}
-
-@keyframes  {
+@keyframes coloranim {
   from{
     background-color: #009688;
   }

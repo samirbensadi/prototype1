@@ -22,7 +22,6 @@ $(document).on("pagebeforecreate", "#home", function () {
 // AU TAP DU BOUTON SE CONNECTER
   $('#formConnexion').on("submit",function (event) {
     event.preventDefault();
-      ajaxLoader($('.header'));
 
     if ($("#login").val().length > 0 && $("#mdp").val().length > 5) { // si le login et le mot de passe ont bien été entré
       $.ajax({

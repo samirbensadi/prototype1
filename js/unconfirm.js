@@ -1,5 +1,4 @@
 $(document).on(pageEvent, "#deconfirmation", function () {
-    ajaxLoader($('.header'));
 
         $('#unconfirmPresenceBtn').on('tap', function () {
             if (checkTime()) {

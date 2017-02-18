@@ -1,5 +1,4 @@
 $(document).on(pageEvent, "#confirmation", function () {
-    ajaxLoader($('.header'));
 if (checkTime()) {
   $.ajax({
       url: 'http://' + server + 'solde.php',
@@ -28,7 +27,7 @@ if (checkTime()) {
             alert("Vous n'avez pas de tickets !");
             $.mobile.back();
           }
-          loading();
+          fadingContent();
         },
       error: loadingError
   });

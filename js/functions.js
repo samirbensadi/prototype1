@@ -100,7 +100,7 @@ function unconfirm() {
 
 
 // fonction pour cacher le loader et faire apparaitre le contenu de la page
-function loading() {
+function fadingContent() {
   $('.hiddenContent').fadeIn('fast');
 }
 
@@ -110,15 +110,15 @@ var loadingError = function () {
     $('.ui-content').html('<h3>Erreur de chargement</h3>');
 };
 
-// var loader = '<a class="ui-btn ui-corner-all ui-btn-inline ui-mini header-button-left ui-btn-icon-right zmdi zmdi-refresh rotation"></a>';
-
 function ajaxLoader() {
    $(document).ajaxStart(function () {
-       $('.ui-page-theme-a .ui-header').addClass('ajaxLoading');
+       $('.ui-page-theme-a .ui-header').css('animation', 'coloranim 1s infinite');
 
    });
 
     $(document).ajaxComplete(function () {
-       $('.rotation').remove();
+        $('.ui-page-theme-a .ui-header').css('animation', 'none');
     });
 }
+
+ajaxLoader();

@@ -1,5 +1,4 @@
 $(document).on(pageEvent, "#menucantine", function () {
-    ajaxLoader($('.header'));
 
     $.ajax({
         method: "POST",
@@ -23,7 +22,7 @@ $(document).on(pageEvent, "#menucantine", function () {
                 var titre = jours[jourSemaine] + " " + jourMois + " " + mois[moisAnnee];
                 $('#liste').append('<h3>' + titre + '</h3><div><h4>Entrée</h4><h5>' + data[i].entree + '</h5><h4>Plat</h4><h5>' + data[i].plat + '</h5><h4>Dessert</h4><h5>' + data[i].dessert + '</h5></div>');
               }
-                loading();
+                fadingContent();
             } else {
               $('#cantineContent').html('<p>Aucun menu enregistré.</p>');
             }

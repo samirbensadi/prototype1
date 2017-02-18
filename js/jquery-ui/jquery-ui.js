@@ -3170,7 +3170,7 @@ $.widget( "ui.autocomplete", {
 
 	_search: function( value ) {
 		this.pending++;
-		this.element.addClass( "ui-autocomplete-loading" );
+		this.element.addClass( "ui-autocomplete-fadingContent" );
 		this.cancelSearch = false;
 
 		this.source( { term: value }, this._response() );
@@ -3186,7 +3186,7 @@ $.widget( "ui.autocomplete", {
 
 			this.pending--;
 			if ( !this.pending ) {
-				this.element.removeClass( "ui-autocomplete-loading" );
+				this.element.removeClass( "ui-autocomplete-fadingContent" );
 			}
 		}, this );
 	},
@@ -15854,8 +15854,8 @@ var tabs = $.widget( "ui.tabs", {
 		event.preventDefault();
 
 		if ( tab.hasClass( "ui-state-disabled" ) ||
-				// tab is already loading
-				tab.hasClass( "ui-tabs-loading" ) ||
+				// tab is already fadingContent
+				tab.hasClass( "ui-tabs-fadingContent" ) ||
 				// can't switch durning an animation
 				this.running ||
 				// click on active header, but not collapsible
@@ -16094,7 +16094,7 @@ var tabs = $.widget( "ui.tabs", {
 					that.panels.stop( false, true );
 				}
 
-				tab.removeClass( "ui-tabs-loading" );
+				tab.removeClass( "ui-tabs-fadingContent" );
 				panel.removeAttr( "aria-busy" );
 
 				if ( jqXHR === that.xhr ) {
@@ -16113,7 +16113,7 @@ var tabs = $.widget( "ui.tabs", {
 		// jQuery <1.8 returns false if the request is canceled in beforeSend,
 		// but as of 1.8, $.ajax() always returns a jqXHR object.
 		if ( this.xhr && this.xhr.statusText !== "canceled" ) {
-			tab.addClass( "ui-tabs-loading" );
+			tab.addClass( "ui-tabs-fadingContent" );
 			panel.attr( "aria-busy", "true" );
 
 			this.xhr

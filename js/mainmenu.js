@@ -14,12 +14,10 @@ $(document).on(pageEvent, "#mainmenu", function () {
 
       var soldeText = $('#soldeText');
 
-        $('#refreshBtn').addClass('rotationBtn');
 
       $.ajax({
           url: 'http://' + server + 'solde.php',
           success: function (data) {
-              $('#refreshBtn').addClass('rotation');
               console.log(data);
               if (data.reponse == "disconnect") {
                 disconnect();

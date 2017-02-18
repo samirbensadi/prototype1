@@ -1,6 +1,5 @@
 //ACHAT//
 $(document).on(pageEvent, "#achat", function () {
-  ajaxLoader($('.header'));
 
   //PRIX (on récupere les prix en ajax depuis le serveur)
     if (!sessionStorage.tarifJaune && !sessionStorage.tarifVert && !sessionStorage.tarifRose) {
@@ -16,7 +15,7 @@ $(document).on(pageEvent, "#achat", function () {
                     sessionStorage.setItem("tarifVert", data.vert);
                     sessionStorage.setItem("tarifRose", data.rose);
                     achat(sessionStorage.tarifJaune, sessionStorage.tarifVert, sessionStorage.tarifRose);
-                    loading();
+                    fadingContent();
                 } else {
                     toast("<b>Erreur</b> : les tarifs n'ont pu être actualisés.", 5000);            }
             },
@@ -25,7 +24,7 @@ $(document).on(pageEvent, "#achat", function () {
         });
     } else {
         achat(sessionStorage.tarifJaune, sessionStorage.tarifVert, sessionStorage.tarifRose);
-        loading();
+        fadingContent();
     }
 
 

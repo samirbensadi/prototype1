@@ -1,5 +1,4 @@
 $(document).on(pageEvent, "#parametres",  function () {
-    ajaxLoader();
 
     // RÉCUPÉRER LES PARAMETRES
     $.ajax({
@@ -13,7 +12,7 @@ $(document).on(pageEvent, "#parametres",  function () {
                 $('#paramPrenom').val(data.prenom);
                 $('#newTel').val(data.tel);
                 $('#newEmail').val(data.email);
-                loading();
+                fadingContent();
             }
         },
         error: loadingError
@@ -65,10 +64,7 @@ $(document).on(pageEvent, "#parametres",  function () {
 
 
     // SUPPRIMER LE COMPTE
-
-    // $('#btnDelAccountPop').on('click', function () {
-    //     $('#delAccountPop').popup("open", "fade");
-    // });
+    
 
     //  verifier que le mot de passe fait bien 6 caracteres
     $('#delAccountForm input').on('keyup', function () {

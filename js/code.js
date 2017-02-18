@@ -1,5 +1,5 @@
 $(document).on("pagebeforecreate", "#code", function () {
-  loading();
+  fadingContent();
   if (sessionStorage.qrcode) {
     $('#codeZone').qrcode({
       ecLevel : 'L',
