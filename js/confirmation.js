@@ -49,7 +49,7 @@ if (checkTime()) {
                       toast("Vous êtes confirmé !", 5000);
                       $.mobile.back();
                   } else if (data.reponse == "time") {
-                      toast("Vous ne pouvez plus annuler confirmer.", 5000);
+                      toast("Vous ne pouvez plus confirmer.", 5000);
                       $.mobile.back();
                   } else {
                       toast("Vous n'avez pas choisi de ticket !",5000);
@@ -65,7 +65,7 @@ if (checkTime()) {
 
 
 } else {
-    toast("Vous ne pouvez plus annuler confirmer.", 5000);
+    toast("Vous ne pouvez plus confirmer.", 5000);
     $.mobile.back();
 }
 

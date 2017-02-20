@@ -1,6 +1,4 @@
 var server = "localhost/prototype1/php/";
-var heureDebut = 0; // heure à partir de laquelle on peut confirmer
-var heureFin = 24; // heure à partir de laquelle on ne peut plus
 
 var pageEvent = "pageshow";
 
@@ -48,7 +46,9 @@ function disconnect() {
 function checkTime() {
   var date_actuelle = new Date();
   var heure = date_actuelle.getHours();
-  if (heure >= heureDebut && heure < heureFin) {
+  var minute = date_actuelle.getMinutes();
+
+  if (heure >= sessionStorage.startHour && heure < sessionStorage.startHour  && minute >= sessionStorage.startMin && minute < sessionStorage.endMin) {
     return true;
   } else {
     return false;
@@ -110,15 +110,10 @@ var loadingError = function () {
     $('.ui-content').html('<h3>Erreur de chargement</h3>');
 };
 
-function ajaxLoader() {
-   $(document).ajaxStart(function () {
-       $('.ui-page-theme-a .ui-header').css('animation', 'coloranim 1s infinite');
+$(document).ajaxStart(function () {
+    $('.ui-page-theme-a .ui-header').css('animation', 'coloranim 1s infinite');
+});
 
-   });
-
-    $(document).ajaxComplete(function () {
-        $('.ui-page-theme-a .ui-header').css('animation', 'none');
-    });
-}
-
-ajaxLoader();
+$(document).ajaxComplete(function () {
+   $('.ui-page-theme-a .ui-header').css('animation', 'none');
+});

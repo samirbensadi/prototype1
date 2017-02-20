@@ -19,6 +19,12 @@ $(document).on(pageEvent, "#mainmenu", function () {
           url: 'http://' + server + 'solde.php',
           success: function (data) {
               console.log(data);
+
+              sessionStorage.setItem('startHour', data.startHour);
+              sessionStorage.setItem('startMin', data.startMin);
+              sessionStorage.setItem('endHour', data.endHour);
+              sessionStorage.setItem('endMin', data.endMin);
+
               if (data.reponse == "disconnect") {
                 disconnect();
               } else if (data.reponse == true) {
@@ -43,7 +49,6 @@ $(document).on(pageEvent, "#mainmenu", function () {
               } else {
                   $('#soldeText h3').text("Vous n'avez aucun ticket.");
               }
-
               if (data.present == false ) {
                 $('#soldeDiv').append('<div class="card-action"><button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" disabled>Je viens manger</button></div>');
                 checkHour($('#confirmBtn'));
