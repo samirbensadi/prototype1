@@ -1,7 +1,7 @@
 <?php
 // cette fonction permet de générer une chaine de caractères alphanumérique, pseudo-aléatoire.
 
-sleep(1);
+// sleep(1);
 
 
 function str_random($length)
