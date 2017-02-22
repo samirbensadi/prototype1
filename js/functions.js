@@ -47,8 +47,9 @@ function checkTime() {
   var date_actuelle = new Date();
   var heure = date_actuelle.getHours();
   var minute = date_actuelle.getMinutes();
+  var time = heure + ":" + minute;
 
-  if (heure >= sessionStorage.startHour && heure < sessionStorage.startHour  && minute >= sessionStorage.startMin && minute < sessionStorage.endMin) {
+  if (time >= sessionStorage.startHour && time < sessionStorage.endHour) {
     return true;
   } else {
     return false;
@@ -57,13 +58,15 @@ function checkTime() {
 
 
 // fonction pour autoriser ou non la confirmation en fonction de l'heure
-function checkHour(cible) {
-  if (checkTime()) {
-    cible.prop("disabled", false);
-  } else {
-    cible.prop("disabled", true);
-  }
-}
+// function checkHour(cible) {
+//   if (checkTime()) {
+//     cible.prop("disabled", false);
+//     cible.addClass('ui-disabled');
+//   } else {
+//     cible.prop("disabled", true);
+//     cible.removeClass('ui-disabled');
+//   }
+// }
 
 // fonction pour limiter l'inscription au majeur
 function majeur() {
@@ -87,14 +90,22 @@ function chooseTicket() {
 
 function confirm() {
   $('#confirmBtn').on("tap", function () {
-    $.mobile.changePage('confirmation.html',{transition : "slide", reverse: false});
+    if (checkTime()) {
+      $.mobile.changePage('confirmation.html',{transition : "slide", reverse: false});
+    } else {
+      toast('Vous ne pouvez pas confirmer.',5000);
+    }
   });
 }
 
 // fonction pour deconfirmer
 function unconfirm() {
   $("#unConfirmBtn").on('tap', function () {
-    $.mobile.changePage('deconfirmation.html',{transition : "slide", reverse: false});
+    if (checkTime()) {
+      $.mobile.changePage('deconfirmation.html',{transition : "slide", reverse: false});
+    } else {
+      toast('Vous ne pouvez plus annuler.',5000);
+    }
   });
 }
 

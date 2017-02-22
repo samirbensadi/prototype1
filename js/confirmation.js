@@ -1,5 +1,5 @@
 $(document).on(pageEvent, "#confirmation", function () {
-if (checkTime()) {
+
   $.ajax({
       url: 'http://' + server + 'solde.php',
       success: function (data) {
@@ -60,15 +60,11 @@ if (checkTime()) {
                   toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
               }
           });
+      } else {
+          toast("Vous ne pouvez plus confirmer.", 5000);
+          $.mobile.back();
       }
+
   });
-
-
-} else {
-    toast("Vous ne pouvez plus confirmer.", 5000);
-    $.mobile.back();
-}
-
-
 
 });

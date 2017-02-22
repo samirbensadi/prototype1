@@ -20,10 +20,8 @@ $(document).on(pageEvent, "#mainmenu", function () {
           success: function (data) {
               console.log(data);
 
-              sessionStorage.setItem('startHour', data.startHour);
-              sessionStorage.setItem('startMin', data.startMin);
-              sessionStorage.setItem('endHour', data.endHour);
-              sessionStorage.setItem('endMin', data.endMin);
+              sessionStorage.setItem('startHour', data.start);
+              sessionStorage.setItem('endHour', data.end);
 
               if (data.reponse == "disconnect") {
                 disconnect();
@@ -50,13 +48,13 @@ $(document).on(pageEvent, "#mainmenu", function () {
                   $('#soldeText h3').text("Vous n'avez aucun ticket.");
               }
               if (data.present == false ) {
-                $('#soldeDiv').append('<div class="card-action"><button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary" disabled>Je viens manger</button></div>');
-                checkHour($('#confirmBtn'));
+                $('#soldeDiv').append('<div class="card-action"><button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary">Je viens manger</button></div>');
+                // checkHour($('#confirmBtn'));
                 confirm();
               } else {
                 soldeText.append('Je suis dans la liste (ticket ' + data.couleur + ')');
-                $('#soldeDiv').append('<div class="card-action"><button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary"  disabled>Je veux me décommander</button></div>');
-                checkHour($('#unConfirmBtn'));
+                $('#soldeDiv').append('<div class="card-action"><button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary">Je veux me décommander</button></div>');
+                // checkHour($('#unConfirmBtn'));
                 unconfirm();
               }
 
@@ -64,7 +62,6 @@ $(document).on(pageEvent, "#mainmenu", function () {
           error: function () {
               toast("<b>Erreur</b> : l'envoi a échoué. Vérifiez votre connexion.", 5000); // erreur de liaison avec le serveur
               $("#soldeText h3").text("Erreur de chargement.");
-              $('#refreshBtn').removeClass('rotationBtn');
           }
       });
     }

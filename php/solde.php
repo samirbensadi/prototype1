@@ -33,20 +33,11 @@ fclose($fichier);
 
 $horaires = json_decode($lecture);
 
-$partsStart = explode(":", $horaires->start);
-$partsEnd = explode(":", $horaires->end);
-
-$startHour = (int)$partsStart[0];
-$startMin = (int)$partsStart[1];
-$endHour = (int) $partsEnd[0];
-$endMin = (int) $partsEnd[1];
-
-
 
 if ($vert == 0 && $rose == 0 && $jaune == 0) {
-    $reponse = array("reponse" => "noticket", "present" => $present, "couleur" => $color, "startHour" => $startHour, "startMin" => $startMin, "endHour" => $endHour, "endMin" => $endMin );
+    $reponse = array("reponse" => "noticket", "present" => $present, "couleur" => $color, "start" => $horaires->start, "end" => $horaires->end);
 } else{
-    $reponse = array("reponse" => true, "vert" => $vert, "rose" => $rose, "jaune" => $jaune, "present" => $present, "couleur" => $color, "startHour" => $startHour, "startMin" => $startMin, "endHour" => $endHour, "endMin" => $endMin );
+    $reponse = array("reponse" => true, "vert" => $vert, "rose" => $rose, "jaune" => $jaune, "present" => $present, "couleur" => $color, "start" => $horaires->start, "end" => $horaires->end);
 }
 
 send_json($reponse);

@@ -136,10 +136,18 @@ function refreshSession() {
 }
 
 function checkTime() {
-    $heure_actuelle = date('H');
-    if ($heure_actuelle >= 0 && $heure_actuelle < 22 ) {
-        return true;
-    } else {
-        return false;
-    }
+  $heure_actuelle = date('H:i');
+
+  $fichier = fopen('http://localhost/Appli-du-chef/php/horaires.json', "r");
+
+  $lecture = fgets($fichier);
+  fclose($fichier);
+
+  $horaires = json_decode($lecture);
+
+  if ($heure_actuelle >= $horaires->start && $heure_actuelle < $horaires->end ) {
+    return true;
+  } else {
+    return false;
+  }
 }
