@@ -17,9 +17,6 @@
     <!--NativeDroid2 CSS color-->
     <!-- <link rel="stylesheet" type="text/css" href="css/bower_components/nativeDroid2/css/nativedroid2.color.deep-orange.css"> -->
 
-    <!--Materialize CSS-->
-     <!--<script type="text/javascript" src="materialize/css/materialize.min.css"></script>-->
-
     <!--Main CSS-->
     <link rel="stylesheet" type="text/css" href="css/index.css">
 
@@ -43,14 +40,23 @@
             <h3>Connexion</h3>
             <input type="text" name="login" id="login" placeholder="E-mail">
             <input type="password" name="mdp" id="mdp" placeholder="Mot de passe">
-            <button type="submit" id="btnCo" class="ui-btn ui-btn-raised clr-primary">Connexion</button>
+              <div class="ui-grid-a ">
+                  <div class="ui-block-a">
+                      <button type="submit" id="btnCo" class="ui-btn  ui-btn-raised clr-primary ">Se connecter</button>
+                  </div>
+                  <div class="ui-block-b">
+                      <a href="views/inscription.html" class="ui-btn ui-btn-raised " data-transition="slide">Inscription</a>
+                  </div>
+              </div>
+              <div class="ui-grid-solo ">
+                  <div class="ui-grid-a">
+                      <a href="views/forgot.html" data-transition="slide" class="ui-btn  ">Mot de passe oublié</a>
+                  </div>
+              </div>
+
           </form>
 
 
-            <a href="views/forgot.html" data-transition="slide">Mot de passe oublié</a>
-            <a href="views/inscription.html" class="ui-btn  ui-btn-raised clr-primary" data-transition="slide">Inscription</a>
-
-          <div class="loadArea"></div>
         </div>
 
     </div>
@@ -69,9 +75,6 @@
 
     <!--NativeDroid JS-->
     <script type="text/javascript" src="nativeDroid2/js/nativedroid2.js"></script>
-
-    <!--Materialize JS-->
-     <!--<script type="text/javascript" src="materialize/js/materialize.min.js"></script>-->
 
     <!--Main JS-->
     <script type="text/javascript" src="js/functions.js"></script>

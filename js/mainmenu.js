@@ -49,12 +49,10 @@ $(document).on(pageEvent, "#mainmenu", function () {
               }
               if (data.present == false ) {
                 $('#soldeDiv').append('<div class="card-action"><button id="confirmBtn" class="ui-btn ui-btn-inline clr-primary">Je viens manger</button></div>');
-                // checkHour($('#confirmBtn'));
                 confirm();
               } else {
-                soldeText.append('Je suis dans la liste (ticket ' + data.couleur + ')');
-                $('#soldeDiv').append('<div class="card-action"><button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary">Je veux me décommander</button></div>');
-                // checkHour($('#unConfirmBtn'));
+                soldeText.append("Je suis dans la liste aujourd'hui (ticket " + data.couleur + ")");
+                $('#soldeDiv').append('<div class="card-action"><button id="unConfirmBtn" class="ui-btn ui-btn-inline clr-primary">Je veux annuler</button></div>');
                 unconfirm();
               }
 

@@ -9,7 +9,7 @@ $(document).on(pageEvent, "#menucantine", function () {
               disconnect();
             } else if (data.length > 0) {
 
-              $('#cantineContent').html('<div id="liste"></div>');
+              // $('#cantineContent').html('<div id="liste"></div>');
               var longueur = data.length - 1;
 
               for (var i = longueur ; i >= 0; i--) { // on fait une boucle pour lister les menus (je décremente pour remettre la liste dans le bon ordre)
@@ -20,7 +20,7 @@ $(document).on(pageEvent, "#menucantine", function () {
                 var annee = dateMenu.getFullYear();
 
                 var titre = jours[jourSemaine] + " " + jourMois + " " + mois[moisAnnee];
-                $('#liste').append('<h3>' + titre + '</h3><div><h4>Entrée</h4><h5>' + data[i].entree + '</h5><h4>Plat</h4><h5>' + data[i].plat + '</h5><h4>Dessert</h4><h5>' + data[i].dessert + '</h5></div>');
+                $('#cantineContent').append('<div class="nd2-card"><div class="card-title"><h3 class="card-primary-title">' + titre + '</h3></div><div class="card-supporting-text"><h4>Entrée</h4><h5>' + data[i].entree + '</h5><h4>Plat</h4><h5>' + data[i].plat + '</h5><h4>Dessert</h4><h5>' + data[i].dessert + '</h5></div></div>');
               }
                 fadingContent();
             } else {

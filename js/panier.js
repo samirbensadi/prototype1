@@ -74,7 +74,6 @@ $(document).on(pageEvent, "#panier", function () {
 
 
         $('#payBtn').on('tap', function () {
-          ajaxLoader($('.loadArea'));
             var string = {jaune: sessionStorage.ticketJaune, vert: sessionStorage.ticketVert, rose: sessionStorage.ticketRose, total: sessionStorage.coutTotal};
 
             $.ajax({
