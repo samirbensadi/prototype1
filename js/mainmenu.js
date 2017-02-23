@@ -28,21 +28,21 @@ $(document).on(pageEvent, "#mainmenu", function () {
               } else if (data.reponse == true) {
                 $("#soldeText h3").text("Votre solde : ");
                   if (data.vert == 1) {
-                      soldeText.append("<p>- " + data.vert + " ticket vert</p>");
+                      soldeText.append("<p><i class='zmdi zmdi-circle' style='color:green'></i> " + data.vert + " ticket vert</p>");
                   } else if (data.vert > 1) {
-                    soldeText.append("<p>- " + data.vert + " tickets verts</p>");
+                    soldeText.append("<p><i class='zmdi zmdi-circle' style='color:green'></i> " + data.vert + " tickets verts</p>");
                   }
 
                   if (data.rose == 1) {
-                      soldeText.append("<p>- " + data.rose + " ticket rose</p>");
+                      soldeText.append("<p><i class='zmdi zmdi-circle' style='color:pink'></i> " + data.rose + " ticket rose</p>");
                   } else if (data.rose > 1) {
-                    soldeText.append("<p>- " + data.rose + " tickets roses</p>");
+                    soldeText.append("<p><i class='zmdi zmdi-circle' style='color:pink'></i> " + data.rose + " tickets roses</p>");
                   }
 
                   if (data.jaune == 1) {
-                      soldeText.append("<p>- " + data.jaune + " ticket jaune</p>");
+                      soldeText.append("<p><i class='zmdi zmdi-circle' style='color:yellow'></i> " + data.jaune + " ticket jaune</p>");
                   } else if (data.jaune > 1) {
-                    soldeText.append("<p>- " + data.jaune + " tickets jaunes</p>");
+                    soldeText.append("<p><i class='zmdi zmdi-circle' style='color:yellow'></i> " + data.jaune + " tickets jaunes</p>");
                   }
               } else {
                   $('#soldeText h3').text("Vous n'avez aucun ticket.");

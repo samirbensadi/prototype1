@@ -8,17 +8,17 @@ $(document).on(pageEvent, "#confirmation", function () {
           } else if (data.reponse == true) {
 
             if (data.jaune > 0) {
-              $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioJaune' value='jaune' ><label for='radioJaune'>Jaune</label>");
+              $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioJaune' value='jaune' ><label for='radioJaune'><i class='zmdi zmdi-circle' style='color:yellow'></i> Jaune</label>");
                 chooseTicket();
             }
 
             if (data.vert > 0) {
-                $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioVert' value='vert' ><label for='radioVert'>Vert</label>");
+                $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioVert' value='vert' ><label for='radioVert'><i class='zmdi zmdi-circle' style='color:green'></i> Vert</label>");
                 chooseTicket();
             }
 
             if (data.rose > 0) {
-                $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioRose' value='rose' ><label for='radioRose'>Rose</label>");
+                $('#confirmZone fieldset').append("<input type='radio' name='radioCouleur' id='radioRose' value='rose' ><label for='radioRose'><i class='zmdi zmdi-circle' style='color:pink'></i> Rose</label>");
                 chooseTicket();
             }
 

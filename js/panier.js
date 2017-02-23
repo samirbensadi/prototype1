@@ -35,6 +35,7 @@ $(document).on(pageEvent, "#panier", function () {
             $('#panierContent').html('<p>Votre panier est vide.</p>'); // on indique que le panier est vide
         } else { // sinon
             $('#panierContent').html('<ul data-role="listview"></ul>'); // on crée une liste dans laquelle
+
             if (sessionStorage.ticketJaune > 0) { // je vérifie par type de ticket sa valeur
                 var totalJaune = sessionStorage.ticketJaune * prixJaune; // je recalcule les sous totaux en fonction du tarifs du serveur
                 if (sessionStorage.ticketJaune == 1) {
@@ -42,7 +43,7 @@ $(document).on(pageEvent, "#panier", function () {
                 } else {
                     var orthographe = " tickets jaunes";
                 }
-                $('#panierContent ul').append('<li class="zone"><h2>' + sessionStorage.ticketJaune + orthographe + '</h2><p>Sous-total : ' + totalJaune + ' €</p></li>');
+                $('#panierContent ul').append('<li class="zone"><h2><i class="zmdi zmdi-circle" style="color:yellow"></i> ' + sessionStorage.ticketJaune + orthographe + '</h2><p>Sous-total : ' + totalJaune + ' €</p></li>');
                 total += totalJaune; // j'ajoute le sous-total au total général
             }
 
@@ -53,7 +54,7 @@ $(document).on(pageEvent, "#panier", function () {
                 } else {
                     var orthographe = " tickets verts";
                 }
-                $('#panierContent ul').append('<li class="zone"><h2>' + sessionStorage.ticketVert + orthographe + '</h2><p>Sous-total : ' + totalVert + ' €</p></li>');
+                $('#panierContent ul').append('<li class="zone"><h2><i class="zmdi zmdi-circle" style="color:green"></i> ' + sessionStorage.ticketVert + orthographe + '</h2><p>Sous-total : ' + totalVert + ' €</p></li>');
                 total += totalVert; // j'ajoute le sous-total au total général
             }
 
@@ -64,7 +65,7 @@ $(document).on(pageEvent, "#panier", function () {
                 } else {
                     var orthographe = " tickets roses";
                 }
-                $('#panierContent ul').append('<li class="zone"><h2>' + sessionStorage.ticketRose + orthographe + '</h2><p>Sous-total : ' + totalRose + ' €</p></li>');
+                $('#panierContent ul').append('<li class="zone"><h2><i class="zmdi zmdi-circle" style="color:pink"></i> ' + sessionStorage.ticketRose + orthographe + '</h2><p>Sous-total : ' + totalRose + ' €</p></li>');
                 total += totalRose; // j'ajoute le sous-total au total général
             }
 
